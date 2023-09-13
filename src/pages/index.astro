@@ -1,0 +1,685 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+const note = {
+	id: "3366513",
+	titulo: "Madre junto a sus dos hijas fueron asaltadas en Providencia: delincuentes las intimidaron con armas de fuego",
+	cachetxt:
+		"Una mujer, quien se encontraba junto a sus dos hijas, fue asaltada en la comuna de Providencia, región Metropolitana, por delincuentes que le robaron su vehículo. <br/><br/>La situación ocurrió particularmente en la calle Valenzuela Castillo de la comuna mencionada, a eso de las 14:15 horas, cuando dos individuos se acercaron al lugar donde la madre estaba estacionando su automóvil, y la intimidaron con armas de fuego.<br /><br /><br />Tras esto, la mujer decidió entregar se vehículo y escapar del lugar junto a sus hijas de 14 y 15 años de edad. <br /><br /><br />De acuerdo a un video difundido sobre el hecho, se puede observar que fueron los propios vecinos del sector quienes asistieron a las víctimas tras este asalto. <br /><br />Además, en el registro se aprecia que los delincuentes escaparon del lugar en dirección al oriente, por la calle Antonio Varas. <br /><br />Carabineros está indagando el suceso para dar con el paradero de los responsables.<br>La madre se encontraba junto a sus hijas de 14 y 15 años de edad.",
+	fpublicacion: "2023-09-05T03:00:00.000Z",
+	fcarga: "2023-09-05T03:00:00.000Z",
+	hcarga: "01:33:10",
+	proveedor: 2,
+	medio_id: 5,
+	seccion: "",
+	urlfuente:
+		"https://www.24horas.cl/actualidad/nacional/madre-junto-a-sus-dos-hijas-fueron-asaltadas-en-providencia-",
+	hex_bin: "51C338C04BA511EE909A0EB07535E017",
+	url_img:
+		"https://www.24horas.cl/24horas/site/artic/20230904/imag/foto_0000000220230904234230/Aton_324985.jpg",
+	tipo: 2,
+	path_file: null,
+	tono: 1,
+	valor: -1,
+	extra: {
+		area: "N/A",
+		pages: "N/A",
+		duracion: "N/A",
+		aparicion: "N/A",
+		audience: 7214013,
+		numwords: 184,
+		__typename: "Additional",
+	},
+	__typename: "PressNote",
+};
+
+const fecha = new Date(note.fpublicacion).toLocaleDateString('es-cl', { weekday:"long", year:"numeric", month:"short", day:"numeric"})
+const fechap = new Date(note.fcarga).toLocaleTimeString('es-cl', { hour:"numeric",minute:"numeric"})
+
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<div class="columna">
+			<div class="navbar">
+				<div class="izibrand flex align-center">
+
+					<!-- <img src="./img/izimedia2.svg" alt="" class="logo" /> -->
+					<div  class="hidden-pdf xs z2 vcenter pt2 pointer">
+						<div id="SidebarToggle" class="abrir">Ver Detalles</div>
+						<div id="SidebarToggleIn" class="cerrar hidden">Cerrar Detalles</div>
+					</div>
+					<div class="izipress">IZI PRESS # {note.extra.numwords}</div>
+				</div>
+				<div class="printdetails">
+					<div class="medio">
+						<img class="company" src="img/latercera.png" alt="">
+						<span>24horas.cl</span><span class="type">-</span> <span class="type">Internet</span>
+					</div>
+					
+					<div class="fecha">
+						<img class="date" src="img/calendar.svg" alt="">
+						<span>{fecha}</span>
+					</div>
+					<div class="fecha2">
+						<img class="upload" src="img/up.svg" alt="">
+						<span>{fechap} Hrs</span>
+					</div>
+					
+					
+					
+					<!-- {note.tono === 0 && <div class="denotacion denotation0"><img class="denotation " src="img/positivo.svg" alt=""></img>Connotación Positiva</div>}
+						{note.tono === 1 && <div class="denotacion negativa "><div class="denotation1"></div>Connotación Negativa</div> }
+						{note.tono === 2 && <div class="denotacion denotation2"><img class="denotation" src="img/neutral.svg" alt=""></img>Connotación Neutral</div> }
+						 -->
+						
+						<div class="seccion">
+							<img class="section" src="img/section3.svg" alt="">
+							<span>Sección Nacional</span>
+						</div>
+						
+						
+						
+				</div>
+				</div>
+			<div id="pdf" class="papel">
+				{(<div class="title">{note.titulo}</div>)}
+				{(<div set:html={note.cachetxt} class="cachetxt"></div>)}
+			</div>
+			
+		</div>
+		<div id="Sidebar" class="columnb">
+			
+			<div class="detalles">
+				<div class="items">
+					<span class="hidden-details block">
+					<div class="medio">
+						<img class="company" src="img/latercera.png" alt="">
+						<span>24horas.cl</span><span class="type">-</span> <span class="type">Internet</span>
+					</div>
+					<div class="fecha">
+						<img class="date" src="img/calendar.svg" alt="">
+						<span>{fecha}</span>
+					</div>
+						{note.tono === 0 && <div class="denotacion denotation0">Connotación Positiva</div>}
+						{note.tono === 1 && <div class="denotacion denotation1 negativa ">Connotación Negativa</div> }
+						{note.tono === 2 && <div class="denotacion denotation2">Connotación Neutral</div> }
+					<div class="seccion">
+						<img class="section" src="img/section3.svg" alt="">
+						<span>Sección Nacional</span>
+					</div>
+					
+					
+						
+					
+						<div class="fecha2">
+							<img class="upload" src="img/up.svg" alt="">
+							<span>{fechap} Hrs</span>
+						</div>
+
+					</span>
+
+						<img class="miniature" src={note.url_img} alt="">
+						<div class="flex pt2 gap hidden-pdf">
+						<div  id="url" class="copiar">
+							<object class="chain" type="image/svg+xml" data="img/copiar.svg">
+								
+							</object>
+							
+							<span class="precopy">Copiar Url</span>
+							<span class="postcopy hidden">Url Copiado!</span>
+						</div>
+						<div  onclick="window.print()" id="download" class="descargar">
+							<object class="download" type="image/svg+xml" data="img/download.svg">
+								
+							</object>
+							<span>Descargar Pdf</span>
+							<span class="hidden">Descargado!</span>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+		
+		<!-- <Card
+				href="https://docs.astro.build/"
+				title="Documentation"
+				body="Learn how Astro works and explore the official API docs."
+			/> -->
+	</main>
+</Layout>
+
+<style>
+	.block{
+		display: block;
+	}
+	.printdetails{
+		width: 100%;
+		display: grid;
+		grid-template-columns: auto auto auto;
+		justify-content: right;
+		column-gap: 15px;
+	}
+	
+	
+	main {
+		display: grid;
+		grid-template-columns: 70% 30%;
+		height: 100%;
+		overflow: auto;
+		overflow-x: hidden;
+		position: relative;
+	}
+	
+	.logo{
+		width: 70px;
+	}
+	.izibrand{
+		min-width: 197px;
+		height: fit-content;
+
+	}
+	.izibrand:before{
+    content: url('../img/izimedia2.svg');
+	width: 70px;
+}
+
+	.izipress{
+		font-family:'Open Sans';
+		font-size: 11px;
+		margin-top: 4px;
+		margin-left: 20px;
+	}
+	.xs {
+		display: none;
+	}
+	.papel{
+		width: 100%;
+		padding: 48px 3%;
+		
+	}
+	.title{
+		font-family: Raleway;
+		font-size: 33px;
+		font-weight: 600;
+		padding-bottom: 40px;
+	}
+	.cachetxt{
+		font-family: Nunito Sans;
+		font-size: 17px;
+		font-weight: 400;
+	}
+	
+	
+	.algo {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	.columna {
+		background-color: #E6E6E6;
+		height: 100%;
+	}
+	
+	.navbar {
+		display: flex;
+		flex-direction:row;
+		justify-content: space-between;
+		-ms-flex-align: baseline;
+		padding: 6px 10px;
+	}
+	.align-center{
+		align-items: center;
+	}
+	.columnb {
+		background-color: white;
+		box-shadow: -1px -3px 3px #00000029;
+		height: 100vh;
+		position: sticky;
+    	top: 0;
+		transition: 0.5s;
+		animation-timing-function: ease-in;
+		overflow: auto;
+		z-index: 19;
+		
+    align-items: center;
+	}
+	.vcenter{
+		align-self: center;
+	}
+	.pt2{
+		padding-top: 2px;
+	}
+	.pointer{
+		cursor: pointer;
+		pointer-events:all;
+	}
+	.detalles{
+		height: 100%;
+    display: grid;
+	
+	}
+	.items{
+		height: min-content;
+		min-height: 300px;
+		padding: 110px 6.5% ;
+		font-family: 'Open Sans';
+	}
+	.medio{
+		/* min-height: 30px; */
+		padding: 10px 0;
+		font-family: arial;
+		font-size: 18px;
+		font-weight: 400;
+		color: #5E94FF;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	.fecha{
+		padding: 10px 0;
+		font-family: Montserrat;
+		font-size: 13px;
+		font-weight: 600;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		text-transform: uppercase;
+	}
+	.fecha2{
+		padding: 10px 0;
+		font-family: 'Open Sans';
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 14px;
+	}
+	.denotacion{
+		padding: 10px 0;
+		font-family: 'Open Sans';
+		font-size: 13.2px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		min-width: 197px;
+    height: fit-content;
+	}
+	.company{
+		width: 24px;
+		border-radius: 4px;
+	}
+	.type{
+		color: #B0B0B0;
+		font-family: 'Open Sans';
+		font-size: 14.5px;
+	}
+	.date{margin-left: 3px;
+		margin-bottom: 1px;
+		width: 15px;
+	}
+	.section{margin-left: 3px;
+		margin-top: 2px;
+		width: 17px;
+	}
+	.upload{margin-left: 3px;
+		margin-bottom: 1px;
+		width: 18px;
+		border-radius: 4px;
+	}
+	.copy{margin-left: 3px;
+		margin-bottom: 1px;
+		width: 14px;
+		border-radius: 4px;
+		color: red;
+	}
+	.copy svg {
+		color: blue!important;
+	}
+
+	.copy svg path{
+  fill: currentcolor;
+}
+	
+	.download{margin-left: 3px;
+		margin-bottom: 1px;
+		width: 18px;
+		border-radius: 4px;
+	}
+	.denotation{
+	}
+	.denotation0::before{
+		content: url('../img/positivo.svg');
+		margin-left: 3px;
+		margin-bottom: 1px;
+		width: 16px;
+		height: 16px;
+	}
+	.denotation1::before{
+		content: url('../img/negativo2.svg');
+		margin-left: 3px;
+		margin-bottom: 1px;
+		width: 16px;
+		height: 16px;
+	}
+	/* .denotation1::before{
+		content: url('../img/negativo.svg');
+		margin-left: 3px;
+		margin-bottom: 1px;
+		width: 16px;
+		border-radius: 4px;
+	} */
+	
+	.denotation2::before{
+		content: url('../img/neutro.svg');
+		margin-left: 3px;
+		margin-bottom: 1px;
+		width: 16px;
+		height: 16px;
+	}
+	.negativa{
+		color: #E42E39!important;
+	}
+	.seccion{
+		padding: 10px 0;
+		font-family: 'Open Sans';
+		font-size: 14.2px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	.miniature{
+		width: 100%;
+    border: 2px solid white;
+    box-shadow: 0px 0px 3px #0000005c;
+
+	}
+	.copiar{
+		background-color: #E6E6E6;
+		width: fit-content;
+		border-radius: 35px;
+		padding: 10px 20px 10px 10px;
+		font-family: 'Open Sans';
+		font-size: 13.2px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		cursor: pointer;
+	}
+	.active-url{
+		color: #3D8B53;
+  animation-name: example;
+  animation-duration: 0;
+  animation-fill-mode: forwards;
+  animation-timing-function:ease-in;
+	}
+	@keyframes example {
+  from {background-color: #e6e6e6;}
+  to {background-color: #84C7A7;}
+  
+}
+	.active-download{
+		color: white;
+  animation-name: example2;
+  animation-duration: 0;
+  animation-fill-mode: forwards;
+  animation-timing-function:ease-in;
+	}
+	@keyframes example2 {
+  from {background-color: #e6e6e6;}
+  to {background-color: blue;}
+  
+}
+
+	
+	.descargar{
+		background-color: #E6E6E6;
+		width: fit-content;
+		border-radius: 35px;
+		padding: 10px 20px 10px 10px;
+		font-family: 'Open Sans';
+		font-size: 13.2px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		cursor: pointer;
+	}
+	.flex {
+		display: flex;
+	}
+	.gap {
+		flex-wrap: wrap;
+		gap: 4px;
+	}
+	@media (min-width: 1px) and (max-width: 960px){
+		main {
+			grid-template-columns: 100%;
+		}
+		.printdetails{
+			display: none;
+		}
+		.columnb {
+			position: fixed;
+			right: -90%;
+			width: 90%;
+			max-width: 400px;
+			opacity: 0;
+
+		}
+		.columnb.active-sidebar {
+			right: 0%;
+			opacity: 1;
+		}
+		.xs {
+			display: block;
+		}
+		.z2 {
+			z-index: 20;
+		}
+	}
+	
+	@media (min-width: 961px) and (max-width: 1600px) {
+		main {
+			grid-template-columns: 74% 26%!important;
+			
+		}
+		.printdetails{
+			display: none;
+		}
+		.navbar{
+			padding: 15px 22px;
+		}
+		.papel{
+		padding-left:8.5%;
+		padding-right:8.5%;
+	}
+	/* .items{
+		padding: 20px 6.5% 20px 6.5%;
+	} */
+	}
+	@media (min-width: 1601px){
+		main {
+			grid-template-columns: 70% 30%!important;
+			
+		}
+		.printdetails{
+			display: none;
+		}
+		
+		.papel{
+		padding-left:13.5%;
+		padding-right:13.5%;
+	}
+	
+	}
+	.hidden{
+		display: none;
+	}
+	@media print {
+		@page { size: auto;  margin: 3mm; }
+		body{
+			height: auto!important;
+			overflow: hidden!important;
+		}
+main{
+	overflow: hidden!important;
+	height: auto!important;
+	grid-template-columns: 100%!important;
+	
+}
+.papel{
+			padding: 20px 3%;
+		}
+.columnb{
+	position: relative!important;
+	height: fit-content;
+	width: 100%;
+	max-width: 100%;
+	opacity: 1;
+	right: 0;
+	top: 0;
+	box-shadow: none;
+padding: 0;
+}
+.miniature{
+	
+	border: none;
+}
+
+.printdetails{
+			display: grid;
+		}
+		.detalles{
+			padding: 0;
+		}
+		.items{
+			padding:20px 10px 0 10px;
+		} 
+.hidden-details{
+	display: none;
+}
+.hidden-pdf{
+	display: none;
+}
+
+		
+
+}
+	.astro-a {
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: auto;
+		z-index: -1;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(
+			rgba(var(--accent-dark), 66%),
+			rgba(var(--accent-dark), 33%)
+		);
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.instructions code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent-light));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+</style>
+<script is:inline>
+var sidetoggle = document.querySelector("#SidebarToggle");
+var sidetogglein = document.querySelector("#SidebarToggleIn");
+var sidebar = document.querySelector("#Sidebar");
+var urlButton = document.querySelector("#url");
+var download = document.querySelector("#download");
+
+sidetoggle.onclick = openDetails;
+sidetogglein.onclick = openDetails;
+
+let url2 = document.location.href
+urlButton.onclick = urlCopy;
+download.onclick = downloadPdf;
+function openDetails(evento) {
+	sidetoggle.classList.toggle("hidden");
+	sidetogglein.classList.toggle("hidden");
+	sidebar.classList.toggle("active-sidebar");
+}
+
+function urlCopy(evento) {
+	navigator.clipboard.writeText(url2).then(function () {
+		console.log('Copied!');
+	}, function () {
+		console.log('Copy error')
+	});
+	var chain = document.querySelector(".chain");
+	urlButton.classList.remove("active-url");
+	setTimeout(() => {
+		urlButton.classList.add("active-url")
+		urlButton.children[1].classList.add("hidden")
+		urlButton.children[2].classList.remove("hidden")
+	}, 10);
+	chain.getSVGDocument().getElementById("svgInternalID").setAttribute("fill", "#3D8B53")
+	chain.getSVGDocument().getElementById("svgInternalID2").setAttribute("fill", "#3D8B53")
+
+}
+function downloadPdf(evento) {
+	// navigator.clipboard.writeText(url2).then(function () {
+	// 	console.log('Copied!');
+	// }, function () {
+	// 	console.log('Copy error')
+	// });
+	var bajar = document.querySelector(".download");
+	download.classList.remove("active-url");
+	setTimeout(() => {
+		download.classList.add("active-download")
+		download.children[1].classList.add("hidden")
+		download.children[2].classList.remove("hidden")
+	}, 10);
+
+	bajar.getSVGDocument().getElementById("Capa_1").setAttribute("color", `white`)
+	window.print()
+	// bajar.getSVGDocument().getElementById("svgInternalID3").setAttribute("fill", "red")
+	// bajar.getSVGDocument().getElementById("svgInternalID4").setAttribute("fill", "#ffffff")
+
+
+}
+</script>
+
