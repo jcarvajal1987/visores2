@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from 'astro:assets';
 import Card from "../components/Card.astro";
 
 const note = {
@@ -99,6 +100,7 @@ const fechap = new Date(note.fcarga).toLocaleTimeString('es-cl', { hour:"numeric
 						<span>24horas.cl</span><span class="type">-</span> <span class="type">Internet</span>
 					</div>
 					<div class="fecha">
+						<!-- <Image src={myImage} alt="A description of my image." /> -->
 						<img class="date" src="img/calendar.svg" alt="">
 						<span>{fecha}</span>
 					</div>
@@ -120,7 +122,12 @@ const fechap = new Date(note.fcarga).toLocaleTimeString('es-cl', { hour:"numeric
 
 					</span>
 
-						<img class="miniature" src={note.url_img} alt="">
+						<!-- <img class="miniature" src={note.url_img} alt=""> -->
+						<Image
+						src={note.url_img}
+						alt="descriptive text"
+						width="200"
+						height="150" />
 						<div class="flex pt2 gap hidden-pdf">
 						<div  id="url" class="copiar">
 							<object class="chain" type="image/svg+xml" data="img/copiar.svg">
