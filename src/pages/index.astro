@@ -42,7 +42,7 @@ const fechap = new Date(note.fcarga).toLocaleTimeString('es-cl', { hour:"numeric
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
+	<main id="main">
 		<div class="columna">
 			<div class="navbar">
 				<div class="izibrand flex align-center">
@@ -654,6 +654,7 @@ function urlCopy(evento) {
 		console.log('Copy error')
 	});
 	var chain = document.querySelector(".chain");
+	var main = document.querySelector("#main");
 	urlButton.classList.remove("active-url");
 	setTimeout(() => {
 		urlButton.classList.add("active-url")
@@ -662,7 +663,7 @@ function urlCopy(evento) {
 	}, 10);
 	chain.getSVGDocument().getElementById("svgInternalID").setAttribute("fill", "#3D8B53")
 	chain.getSVGDocument().getElementById("svgInternalID2").setAttribute("fill", "#3D8B53")
-
+	
 }
 function downloadPdf(evento) {
 	// navigator.clipboard.writeText(url2).then(function () {
@@ -672,13 +673,15 @@ function downloadPdf(evento) {
 	// });
 	var bajar = document.querySelector(".download");
 	download.classList.remove("active-url");
+	
+	bajar.getSVGDocument().getElementById("Capa_1").setAttribute("color", `white`)
 	setTimeout(() => {
 		download.classList.add("active-download")
 		download.children[1].classList.add("hidden")
 		download.children[2].classList.remove("hidden")
+		
 	}, 10);
-
-	bajar.getSVGDocument().getElementById("Capa_1").setAttribute("color", `white`)
+	main.scrollTo(0,0)
 	window.print()
 	// bajar.getSVGDocument().getElementById("svgInternalID3").setAttribute("fill", "red")
 	// bajar.getSVGDocument().getElementById("svgInternalID4").setAttribute("fill", "#ffffff")
