@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from 'astro:assets';
+import myImage from "../../public/img/Aton_324985.jpg";
 import Card from "../components/Card.astro";
 
 const note = {
@@ -122,12 +123,8 @@ const fechap = new Date(note.fcarga).toLocaleTimeString('es-cl', { hour:"numeric
 
 					</span>
 
-						<!-- <img class="miniature" src={note.url_img} alt=""> -->
-						<Image
-						src={note.url_img}
-						alt="descriptive text"
-						width="200"
-						height="150" />
+						<img class="miniature" src={note.url_img} alt="">
+						
 						<div class="flex pt2 gap hidden-pdf">
 						<div  id="url" class="copiar">
 							<object class="chain" type="image/svg+xml" data="img/copiar.svg">
