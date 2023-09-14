@@ -12,6 +12,6 @@ export default defineConfig({
   build: {
     format: 'file',
     assets: 'assets',
-    assetsPrefix: '.'
+    assetsPrefix: './'
   }
 });

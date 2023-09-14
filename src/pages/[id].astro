@@ -2,7 +2,6 @@
 import { Image } from 'astro:assets';
 import type { GetStaticPaths } from "astro";
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
 import myImage from "../../public/img/Aton_324985.jpg";
 import Card from "../components/Card.astro";
 
@@ -234,7 +233,6 @@ const fechap = post.hcarga;
 							<div class="container grid">
 								<video
 									id="2"
-									name="media2"
 									class="video start1 invisibility print-visibility "
 									src={post.url_img}
 								></video>
@@ -242,7 +240,7 @@ const fechap = post.hcarga;
 									controls
 									autoplay
 									id="2"
-									name="media2"
+									
 									class="video start1 print-block print-invisibility"
 									src={post.url_img}
 								></video>
@@ -930,13 +928,7 @@ const fechap = post.hcarga;
 		text-align: center;
 		margin-bottom: 1em;
 	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
+	
 	.instructions {
 		margin-bottom: 2rem;
 		border: 1px solid rgba(var(--accent-light), 25%);
