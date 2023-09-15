@@ -12,7 +12,6 @@ export default defineConfig({
   // site: 'https://jcarvajal1987.github.io',
   // base:'/apr',
   build: {
-    client: './client',
     format: 'file',
     // assets: 'assets',
     assetsPrefix: '.'
