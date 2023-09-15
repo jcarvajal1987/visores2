@@ -7,7 +7,7 @@ export default defineConfig({
   image: {
     remotePatterns: [{ protocol: "https" }],
   },
-    output: 'server',
+    output: 'hybrid',
     adapter: netlify(),
   outDir: './docs',
   // site: 'https://jcarvajal1987.github.io',
