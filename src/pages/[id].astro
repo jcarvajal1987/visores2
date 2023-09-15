@@ -168,7 +168,7 @@ const fechap = post.hcarga;
 			<div class="start1">
 				<div class="navbar">
 					<div class="izibrand flex align-center">
-						<img class="logo" src="img/izimedia2.svg" alt="" width="86" height="43" />
+						<img class="logo" src="img/izimedia2.svg" alt="" width="114" height="57" />
 						
 						<div class="izipress">
 							IZI PRESS # {post.extra.numwords}
@@ -284,7 +284,7 @@ const fechap = post.hcarga;
 			</div>
 			<div class="hidden-pdf xs pointer detail-layout">
 				<div id="SidebarToggle" class="abrir flex">
-					Ver Detalles<img width="22" height="21.33" alt="options" src="img/right.svg" />
+					Detalles<img width="22" height="21.33" alt="options" src="img/right.svg" />
 				</div>
 			</div>
 		</div>
@@ -395,7 +395,7 @@ const fechap = post.hcarga;
 		width: 100%;
 		display: grid;
 		grid-template-columns: auto auto auto;
-		justify-content: right;
+		padding: 0 2%;
 		column-gap: 15px;
 	}
 
@@ -409,18 +409,18 @@ const fechap = post.hcarga;
 	}
 
 	.logo {
-		width: 86px;
-		height: 43px;
+		width: 114px;
+		height: 57px;
 	}
 	.izibrand {
 		min-width: 197px;
-		height: fit-content;
+		height: auto;
 	}
 
 	.izipress {
 		font-family: "Open Sans";
 		font-size: 11px;
-		margin-top: 4px;
+		margin-top: 9px;
 		margin-left: 20px;
 		flex: auto;
 	}
@@ -451,10 +451,7 @@ const fechap = post.hcarga;
 	.xs {
 		display: none;
 	}
-	.papel {
-		width: 100%;
-		padding: 8px 3%;
-	}
+	
 	.title {
 		font-family: "Raleway", math ;
 		font-size: 33px;
@@ -474,7 +471,7 @@ const fechap = post.hcarga;
 		padding-bottom: 25px;
 	}
 	.cachetxt {
-		font-family: Nunito Sans;
+		font-family: Nunito Sans, system-ui,unset;
 		font-size: 17px;
 		font-weight: 400;
 	}
@@ -518,10 +515,11 @@ const fechap = post.hcarga;
 
 	.navbar {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;;
 		justify-content: space-between;
 		-ms-flex-align: baseline;
-		padding: 6px 10px;
+		padding: 11px 10px;
+		height: auto;
 		grid-row-start: 1;
 		grid-column-start: 1;
 	}
@@ -781,7 +779,7 @@ const fechap = post.hcarga;
 			grid-template-columns: 100%;
 		}
 		.papel {
-			padding: 20px 3%;
+			padding: 0 3% 50px 3%;;
 		}
 		.printdetails {
 			display: none;
@@ -816,15 +814,16 @@ const fechap = post.hcarga;
 		main {
 			grid-template-columns: 74% 26% !important;
 		}
-		.printdetails {
-			display: none;
-		}
+		
 		.navbar {
 			padding: 15px 22px;
 		}
 		.papel {
 			padding-left: 8.5%;
 			padding-right: 8.5%;
+		}
+		.printdetails {
+			display: none;
 		}
 		/* .items{
 		padding: 20px 6.5% 20px 6.5%;
@@ -861,7 +860,7 @@ const fechap = post.hcarga;
 			grid-template-columns: 100% !important;
 		}
 		.papel {
-			padding: 20px 3%;
+			padding: 0 3% 30px 6%;
 		}
 		.columna {
 			background-color: #ffffff;
@@ -889,6 +888,7 @@ const fechap = post.hcarga;
 
 		.printdetails {
 			display: grid;
+			padding: 0 5%;
 		}
 		.detalles {
 			padding: 0;
