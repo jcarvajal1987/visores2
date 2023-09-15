@@ -8,7 +8,6 @@ export default defineConfig({
   },
     output: 'hybrid',
     adapter: netlify(),
-  outDir: './docs',
   // site: 'https://jcarvajal1987.github.io',
   // base:'/apr',
   build: {
