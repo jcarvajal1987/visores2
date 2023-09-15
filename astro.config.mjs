@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import netlify from '@astrojs/netlify/functions';
+import netlify from '@astrojs/netlify/edge-functions';
 // https://astro.build/config
 export default defineConfig({
   
@@ -11,7 +11,7 @@ export default defineConfig({
   // site: 'https://jcarvajal1987.github.io',
   // base:'/apr',
   build: {
-    client: './client',
+
     format: 'file',
     // assets: 'assets',
     assetsPrefix: '.'
