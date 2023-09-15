@@ -7,7 +7,7 @@ export default defineConfig({
     remotePatterns: [{ protocol: "https" }],
   },
     // output: 'static',
-  outDir: './docs',
+
   // site: 'https://jcarvajal1987.github.io',
   // base:'/apr',
   build: {
