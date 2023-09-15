@@ -5,10 +5,11 @@ import Layout from "../layouts/Layout.astro";
 import myImage from "../../public/img/Aton_324985.jpg";
 import Card from "../components/Card.astro";
 
-export const prerender = false
 
-export async function getStaticPaths() {
-	const posts = [
+
+const { id } = Astro.params;
+
+const posts = [
 	{
 		id: "3366827",
 		titulo: "Campaña nacional: DT anuncia inspección por uso de cargos 'multifunción\"",
@@ -134,18 +135,11 @@ export async function getStaticPaths() {
 		__typename: "PressNote",
 		video_id: null,
 	},
-];
+]
 
-  return posts.map((post, index) => {
-    return {
-      params: { id: index+1},
-      props: { post }
-    };
-  });
-}
+ const post = posts[id]
 
-const { id } = Astro.params;
-const {post} = Astro.props;
+
 
 
 
