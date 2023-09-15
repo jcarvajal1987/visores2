@@ -5,6 +5,8 @@ import Layout from "../layouts/Layout.astro";
 import myImage from "../../public/img/Aton_324985.jpg";
 import Card from "../components/Card.astro";
 
+export const prerender = false
+
 export async function getStaticPaths() {
 	const posts = [
 	{
