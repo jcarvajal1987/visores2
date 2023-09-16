@@ -390,7 +390,25 @@ const fechap = post.hcarga;
 					</div>
 				</div>
 				<div id="pdf" class={`papel ${ post.tipo === 3 && "strech" }`}>
-					
+					{
+						post.tipo === 3 && (
+							<div class="container grid">
+								<video
+									id="2"
+									class="video start1 invisibility print-visibility "
+									src={post.url_img}
+								></video>
+								<video
+									controls
+									autoplay
+									id="2"
+									
+									class="video start1 print-block print-invisibility"
+									src={post.url_img}
+								></video>
+							</div>
+						)
+					}
 
 					{
 						post.tipo === 1 && (
@@ -403,26 +421,6 @@ const fechap = post.hcarga;
 							<div class="title-video">{post.titulo}</div>
 						)
 					}
-
-{
-	post.tipo === 3 && (
-		<div class="container grid">
-			<video
-				id="2"
-				class="video start1 invisibility print-visibility "
-				src={post.url_img}
-			></video>
-			<video
-				controls
-				autoplay
-				id="2"
-				
-				class="video start1 print-block print-invisibility"
-				src={post.url_img}
-			></video>
-		</div>
-	)
-}
 
 					{
 						post.tipo === 1 && (
