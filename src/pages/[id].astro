@@ -309,7 +309,7 @@ const posts = [
 
 
 
-const post = posts[1]
+const post = posts[id+1]
 
 const fecha =  new Date(post.fpublicacion).toLocaleDateString("es-cl", {
 	weekday: "long",
@@ -507,7 +507,8 @@ const fechap = post.hcarga;
 						post.tipo === 2 && (
 							// <img class="miniature" src={post.url_img} alt="" width="1600" height="900" />
 							
-							<Image class="miniature" src={post.url_img} alt="Imagen Realacionada" width="320" height="180"/>
+							// <Image class="miniature" src={post.url_img} alt="Imagen Realacionada" width="320" height="180"/>
+							<img class="miniature" src="img/Aton_324985_rX8dU.webp" alt="" />
 						)
 					}
 
