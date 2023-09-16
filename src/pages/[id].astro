@@ -309,12 +309,9 @@ const posts = [
 
 
 
-
-
-
 const post = posts[id]
 
-const fecha = new Date(post.fpublicacion).toLocaleDateString("es-cl", {
+const fecha =  new Date(post.fpublicacion).toLocaleDateString("es-cl", {
 	weekday: "long",
 	year: "numeric",
 	month: "short",
