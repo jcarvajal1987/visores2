@@ -6,10 +6,8 @@ import myImage from "../../public/img/Aton_324985.jpg";
 import Card from "../components/Card.astro";
 
 
-
-const { id } = Astro.params;
-
-const posts = [
+export async function getStaticPaths() {
+	const posts = [
 	{
 		id: "3366827",
 		titulo: "Campaña nacional: DT anuncia inspección por uso de cargos 'multifunción\"",
@@ -135,11 +133,18 @@ const posts = [
 		__typename: "PressNote",
 		video_id: null,
 	},
-]
+];
 
- const post = posts[id]
+  return posts.map((post, index) => {
+    return {
+      params: { id: index+1},
+      props: { post }
+    };
+  });
+}
 
-
+const { id } = Astro.params;
+const {post} = Astro.props;
 
 
 
@@ -155,7 +160,6 @@ const fecha = new Date(post.fpublicacion).toLocaleDateString("es-cl", {
 	day: "numeric",
 });
 const fechap = post.hcarga;
-// const fechap = new Date(note.fcarga).toLocaleTimeString('es-cl', { hour:"numeric",minute:"numeric"})
 ---
 
 <Layout title="Welcome to Astro.">
@@ -280,7 +284,7 @@ const fechap = post.hcarga;
 			</div>
 			<div class="hidden-pdf xs pointer detail-layout">
 				<div id="SidebarToggle" class="abrir flex">
-					Detalles<img width="22" height="21.33" alt="options" src="img/right.svg" />
+					Detalles<img style="padding-top: 5px;" width="22" height="21.33" alt="options" src="img/right.svg" />
 				</div>
 			</div>
 		</div>
@@ -514,7 +518,7 @@ const fechap = post.hcarga;
 		flex-direction: column;;
 		justify-content: space-between;
 		-ms-flex-align: baseline;
-		padding: 11px 10px;
+		padding: 15px 22px;
 		height: auto;
 		grid-row-start: 1;
 		grid-column-start: 1;
@@ -856,7 +860,7 @@ const fechap = post.hcarga;
 			grid-template-columns: 100% !important;
 		}
 		.papel {
-			padding: 0 3% 30px 6%;
+			padding: 0 6% 30px 6%;
 		}
 		.columna {
 			background-color: #ffffff;
