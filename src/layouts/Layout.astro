@@ -430,8 +430,14 @@ const { title } = Astro.props;
 		width: 16px;
 		height: 16px;
 	}
+	.positiva {
+		color: #2ee49b !important;
+	}
 	.negativa {
 		color: #e42e39 !important;
+	}
+	.neutra {
+		color: #b9b9b9 !important;
 	}
 	.seccion {
 		padding: 10px 0;
@@ -521,7 +527,7 @@ const { title } = Astro.props;
 	}
 	@media (min-width: 1px) and (max-width: 960px) {
 		main {
-			grid-template-columns: 100%;
+			grid-template-columns: 100% 80%;
 		}
 		.papel {
 			padding: 0 3% 50px 3%;;
@@ -531,9 +537,10 @@ const { title } = Astro.props;
 		}
 
 		.columnb {
-			position: fixed;
-			right: -90%;
-			width: 90%;
+			
+			transform: translatex(0%);
+		
+			width: 100%;
 			max-width: 400px;
 			opacity: 0;
 		}
@@ -541,7 +548,7 @@ const { title } = Astro.props;
 			margin-top: -5px;
 		}
 		.columnb.active-sidebar {
-			right: 0%;
+			transform: translatex(-100%);
 			opacity: 1;
 		}
 		.video {
@@ -595,18 +602,18 @@ const { title } = Astro.props;
 	.hidden {
 		display: none;
 	}
-	@media print {
+	@media print{
 		@page {
 			size: auto;
 			margin: 3mm;
 		}
 		body {
 			height: auto !important;
-			overflow: hidden !important;
 		}
 		main {
+			display: grid;
 			overflow: hidden !important;
-			height: auto !important;
+			height: fit-content;
 			grid-template-columns: 100% !important;
 		}
 		.papel {
@@ -620,23 +627,23 @@ const { title } = Astro.props;
 			padding-bottom: 0;
 		}
 		.columnb {
-			position: relative !important;
+			transform: translatex(0%)!important;
+			display: block;
 			height: fit-content;
 			width: 100%;
 			max-width: 100%;
 			opacity: 1;
-			right: 0;
-			top: 0;
 			box-shadow: none;
 			padding: 0;
 		}
+		
 		.container {
 			width: 100%;
 			height: fit-content;
 			background-color: #e7e7e7;
 		}
 		.miniature {
-			display: grid;
+			display: block;
 			height: fit-content;
 			margin-bottom: 0;
 			padding: 0 6%;
