@@ -133,7 +133,7 @@ const { title } = Astro.props;
 	.printdetails {
 		width: 100%;
 		display: grid;
-		margin-bottom: 20px;
+		margin: 0 0 10px 0;
 		grid-template-columns: auto auto auto;
 		column-gap: 15px;
 	}
@@ -195,7 +195,7 @@ const { title } = Astro.props;
 		font-family: "Raleway", math ;
 		font-size: 33px;
 		font-weight: 600;
-		padding-bottom: 40px;
+		padding-bottom: 20px;
 	}
 	.title-papel {
 		font-family: "Acta W01 Medium", georgia;
@@ -563,8 +563,7 @@ const { title } = Astro.props;
 			padding: 15px 22px;
 		}
 		.papel {
-			padding-left: 8.5%;
-			padding-right: 8.5%;
+			padding: 0 8.5% 50px 8.5%;
 		}
 		.strech{
 			padding: 0 3%;
@@ -613,6 +612,9 @@ const { title } = Astro.props;
 		.columna {
 			background-color: #ffffff;
 		}
+		.navbar{
+			padding-bottom: 0;
+		}
 		.columnb {
 			position: relative !important;
 			
@@ -630,6 +632,7 @@ const { title } = Astro.props;
 			background-color: #e7e7e7;
 		}
 		.miniature {
+			display: grid;
 			margin-bottom: 0;
 			padding: 0 6%;
 			box-shadow: none;
