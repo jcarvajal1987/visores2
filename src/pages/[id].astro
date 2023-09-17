@@ -410,6 +410,18 @@ const fechap = post.hcarga;
 						)
 					}
 
+{
+	post.tipo === 4 && (
+		<div class="container grid">
+			<audio controls
+			>
+			<source src={post.url_img}type="audio/mpeg">
+			</audio>
+			
+		</div>
+	)
+}
+
 					{
 						post.tipo === 1 && (
 							<div class="title-papel">{post.titulo}</div>
