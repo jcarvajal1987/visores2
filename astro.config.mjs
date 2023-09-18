@@ -7,7 +7,11 @@ export default defineConfig({
     remotePatterns: [{ protocol: "https" }],
   },
     output: 'hybrid',
-    adapter: netlify(),
+    adapter: netlify(
+      {
+        builders: true,
+      }
+    ),
   // site: 'https://jcarvajal1987.github.io',
   // base:'/apr',
   build: {

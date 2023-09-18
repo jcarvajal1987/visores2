@@ -1,16 +1,16 @@
 import * as adapter from '@astrojs/netlify/netlify-functions.js';
 import { renderers } from './renderers.mjs';
-import { manifest } from './manifest_8f598015.mjs';
+import { manifest } from './manifest_2c6c7dc9.mjs';
 import './chunks/astro_f59ab796.mjs';
 import './chunks/pages/image-endpoint_03b0d1da.mjs';
 
 const _page0  = () => import('./chunks/image-endpoint_e3bb8217.mjs');
-const _page1  = () => import('./chunks/_id__217381f4.mjs');const pageMap = new Map([["node_modules/.pnpm/astro@3.0.8/node_modules/astro/dist/assets/image-endpoint.js", _page0],["src/pages/[id].astro", _page1]]);
+const _page1  = () => import('./chunks/_id__0742c9be.mjs');const pageMap = new Map([["node_modules/.pnpm/astro@3.0.8/node_modules/astro/dist/assets/image-endpoint.js", _page0],["src/pages/[id].astro", _page1]]);
 const _manifest = Object.assign(manifest, {
 	pageMap,
 	renderers,
 });
-const _args = {};
+const _args = {"builders":true};
 
 const _exports = adapter.createExports(_manifest, _args);
 const handler = _exports['handler'];
