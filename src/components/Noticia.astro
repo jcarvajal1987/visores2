@@ -1,0 +1,235 @@
+---
+const { post, id ,fecha ,fechap} = Astro.props;
+---
+<main id="main">
+    <div class="columna">
+        <div class="start1">
+            <div class="navbar">
+                <div class="izibrand flex align-center">
+                    
+
+                    <img class="logo" src="img/izimedia2.svg" alt="" width="114" height="57" />
+                    
+                    <div class="izipress">
+                        IZI PRESS # {post.extra.numwords}
+                    </div>
+
+                
+                </div>
+
+                
+            </div>
+            <div id="pdf" class={`papel ${ post.tipo === 3 && "strech" }`}>
+                <div class="printdetails">
+                    <div class="medio">
+                        <img
+                            class="company"
+                            src="img/latercera.png"
+                            alt=""
+                        />
+                        <span>24horas.cl</span><span class="type">-</span>
+                        <span class="type">Internet</span>
+                    </div>
+
+                    <div class="fecha">
+                        <img class="date" src="img/calendar.svg" alt="" />
+                        <span>{fecha}</span>
+                    </div>
+                    <div class="fecha2">
+                        <img class="upload" src="img/up.svg" alt="" />
+                        <span>{fechap} Hrs</span>
+                    </div>
+
+                    <div class="seccion">
+                        <img
+                            class="section"
+                            src="img/section3.svg"
+                            alt=""
+                        />
+                        <span>Sección Nacional</span>
+                    </div>
+
+                    {
+                        post.tono === 0 && (
+                            <div class="denotacion denotation0 positiva">
+                                Connotación Positiva
+                            </div>
+                        )
+                    }
+                    {
+                        post.tono === 1 && (
+                            <div class="denotacion denotation1 negativa ">
+                                Connotación Negativa
+                            </div>
+                        )
+                    }
+                    {
+                        post.tono === 2 && (
+                            <div class="denotacion denotation2 neutra">
+                                Connotación Neutral
+                            </div>
+                        )
+                    }
+                </div>
+                {
+                    post.tipo === 3 && (
+                        <div class="container grid">
+                            <video
+                                id="2"
+                                class="video start1 invisibility print-visibility "
+                                src={post.url_img}
+                            ></video>
+                            <video
+                                controls
+                                autoplay
+                                id="2"class="video start1 print-block print-invisibility"
+                                src={post.url_img}
+                                webkit-playsinline playsinline
+                            ></video>
+                        </div>
+                    )
+                }
+
+                {post.tipo ==4 && (
+                        <div class="container grid">
+                            <audio controls>
+                            <source src={post.url_img}type="audio/mpeg" />
+                            </audio>
+                            
+                        </div>
+                    )
+                }
+
+                {
+                    post.tipo === 1 && (
+                        <div class="title-papel">{post.titulo}</div>
+                    )
+                }
+
+                {post.tipo === 2 && <div class="title">{post.titulo}</div>}
+
+                {([3,4].indexOf(post.tipo)> -1 ) && (
+                        <div class="title-video" set:html={post.titulo}/>
+                    )
+                }
+
+                {
+                    post.tipo === 1 && (
+                        <div
+                            set:html={post.cachetxt}
+                            class="cachetxt-papel"
+                        />
+                    )
+                }
+                
+                {
+                    (post.tipo === 2||4||3) && (
+                        <div set:html={post.cachetxt} class="cachetxt" />
+                    )
+                }
+                
+            </div>
+        </div>
+        <div class="hidden-pdf xs pointer detail-layout">
+            <div id="SidebarToggle" class="abrir flex">
+                Detalles<img style="padding-top: 5px;" width="22" height="21.33" alt="options" src="img/right.svg" />
+            </div>
+        </div>
+    </div>
+    <div id="Sidebar" class="columnb">
+        <div class="detalles">
+            <div class="items">
+                <span class="hidden-details block">
+                    <div class="medio">
+                        <img
+                            class="company"
+                            src="img/latercera.png"
+                            alt=""
+                        />
+                        <span>24horas.cl</span><span class="type">-</span>
+                        <span class="type">Internet</span>
+                    </div>
+                    <div class="fecha">
+                        <!-- <Image src={myImage} alt="A description of my image." /> -->
+                        <img class="date" src="img/calendar.svg" alt="" />
+                        <span>{fecha}</span>
+                    </div>
+                    {
+                        post.tono === 0 && (
+                            <div class="denotacion denotation0 positiva">
+                                Connotación Positiva
+                            </div>
+                        )
+                    }
+                    {
+                        post.tono === 1 && (
+                            <div class="denotacion denotation1 negativa ">
+                                Connotación Negativa
+                            </div>
+                        )
+                    }
+                    {
+                        post.tono === 2 && (
+                            <div class="denotacion denotation2 neutra">
+                                Connotación Neutral
+                            </div>
+                        )
+                    }
+                    <div class="seccion">
+                        <img
+                            class="section"
+                            src="img/section3.svg"
+                            alt="section"
+                            width="17"
+                            height="10.56"
+                        />
+                        <span>Sección Nacional</span>
+                    </div>
+
+                    <div class="fecha2">
+                        <img class="upload" src="img/up.svg" alt="" />
+                        <span>{fechap} Hrs</span>
+                    </div>
+                </span>
+                {
+                    post.tipo === 2 && (
+                        // <img class="miniature" src={post.url_img} alt="" width="1600" height="900" />
+                        
+                        // <Image class="miniature" src={post.url_img} alt="Imagen Realacionada" width="320" height="180"/>
+                        <img class="miniature" src="img/Aton_324985_rX8dU.webp" alt="" />
+                    )
+                }
+
+                <div class="flex pt2 gap hidden-pdf">
+                    <div id="url" class="copiar">
+                        
+                        <img class="chain" src="img/copiar.svg" alt="" />
+
+                        <span class="precopy">Copiar Url</span>
+                        <span class="postcopy hidden">Url Copiado!</span>
+                    </div>
+                    <div
+                        id="download"
+                        class="descargar"
+                    >
+                        
+                        <img class="download" src="img/pdf.svg" alt="descargar pdf" />
+                                                    <span>Generar Pdf</span>
+                        <span class="hidden">Generado!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden-pdf xs pointer detail-layout2">
+                <div id="SidebarToggleIn" class="cerrar flex">
+                    Cerrar<img width="22" height="21.33" alt="cerrar" src="img/right.svg"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <Card
+            href="https://docs.astro.build/"
+            title="Documentation"
+            body="Learn how Astro works and explore the official API docs."
+        /> -->
+</main>
