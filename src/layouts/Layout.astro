@@ -196,7 +196,7 @@ const { title } = Astro.props;
 		display: grid;
 		grid-template-columns: 70% 30%;
 		height: 100%;
-		overflow:hidden;
+		overflow: hidden;
 		position: relative;
 	}
 
@@ -370,28 +370,28 @@ const { title } = Astro.props;
 		gap: 10px;
 	}
 	.value {
-    margin-left: 5px;
-    margin-bottom: 1px;
-    width: 12px;
-    height: 18.54px;
-    border-radius: 4px;
-}
+		margin-left: 5px;
+		margin-bottom: 1px;
+		width: 12px;
+		height: 18.54px;
+		border-radius: 4px;
+	}
 	.audience {
-    margin-left: 3px;
-    margin-bottom: 1px;
-    width: 17px;
-    height: 9.06px;
-    border-radius: 4px;
-}
+		margin-left: 3px;
+		margin-bottom: 1px;
+		width: 17px;
+		height: 9.06px;
+		border-radius: 4px;
+	}
 	.medium-sans {
 		font-family: "Open Sans";
 		font-size: 14px;
 	}
-	.yellow{
-		color: #F4B302;
+	.yellow {
+		color: #f4b302;
 	}
-	.purple{
-		color: #5D0CC4;
+	.purple {
+		color: #5d0cc4;
 	}
 	.medio {
 		/* min-height: 30px; */
@@ -533,6 +533,14 @@ const { title } = Astro.props;
 		align-items: center;
 		gap: 10px;
 	}
+	.actions-container {
+			display: flex;
+			flex-wrap: wrap;
+			row-gap: 8px;
+			column-gap: 6px;
+			margin-bottom: 10px;
+			margin-top: 5px;
+		}
 	.miniature {
 		width: 100%;
 		height: auto;
@@ -541,6 +549,7 @@ const { title } = Astro.props;
 		margin: 5px;
 	}
 	.miniature-news {
+		filter: contrast(0.9);
 		width: 100%;
 		height: auto;
 		border: 2px solid white;
@@ -693,7 +702,7 @@ const { title } = Astro.props;
 	.hidden {
 		display: none;
 	}
-	@media  print{
+	@media print {
 		@page {
 			size: auto;
 			margin: 3mm;
@@ -705,7 +714,6 @@ const { title } = Astro.props;
 			display: block;
 			height: fit-content !important;
 			overflow: hidden;
-
 		}
 		main {
 			display: block;
@@ -718,19 +726,18 @@ const { title } = Astro.props;
 			height: fit-content;
 			display: block;
 		}
-		.start1{
+		.start1 {
 			height: fit-content;
 			display: block;
 		}
-		.columna{
+		.columna {
 			height: fit-content;
 			display: block;
 		}
-		.cachetxt-papel{
+		.cachetxt-papel {
 			height: fit-content;
 			display: block;
 		}
-
 
 		.columna {
 			background-color: #ffffff;
@@ -761,7 +768,7 @@ const { title } = Astro.props;
 			background-color: #e7e7e7;
 		}
 		.miniature {
-			display:block;
+			display: block;
 			width: 100%;
 			height: auto;
 			margin-bottom: 0;
@@ -770,14 +777,19 @@ const { title } = Astro.props;
 			border: none;
 		}
 		.miniature-news {
-			display:block;
-			width: auto;
-			height: 100vh;
+			filter: contrast(1);
+
+			display: block;
+			width: fit-content;
+			height: fit-content;
+			max-width: 100%;
+			max-height: 100vh;
 			margin: 0;
 			padding: 0 6%;
 			box-shadow: none;
 			border: none;
 		}
+		
 
 		.printdetails {
 			width: fit-content;
@@ -813,7 +825,7 @@ const { title } = Astro.props;
 		.print-invisibility {
 			opacity: 0;
 		}
-		.sidebar{
+		.sidebar {
 			display: block;
 			overflow: hidden;
 			height: fit-content;
