@@ -532,6 +532,12 @@ const { title } = Astro.props;
 		height: auto;
 		border: 2px solid white;
 		box-shadow: 0px 0px 3px #0000005c;
+		margin: 5px;
+	}
+	.miniature-news {
+		width: 100%;
+		height: auto;
+		border: 2px solid white;
 		margin: 5px 0;
 	}
 
@@ -700,7 +706,22 @@ const { title } = Astro.props;
 		}
 		.papel {
 			padding: 0 6% 30px 6%;
+			height: fit-content;
+			display: block;
 		}
+		.start1{
+			height: fit-content;
+			display: block;
+		}
+		.columna{
+			height: fit-content;
+			display: block;
+		}
+		.cachetxt-papel{
+			height: fit-content;
+			display: block;
+		}
+
 
 		.columna {
 			background-color: #ffffff;
@@ -728,8 +749,18 @@ const { title } = Astro.props;
 			background-color: #e7e7e7;
 		}
 		.miniature {
-			display: block;
+			display:block;
+			width: 100%;
 			height: auto;
+			margin-bottom: 0;
+			padding: 0 50% 0 6%;
+			box-shadow: none;
+			border: none;
+		}
+		.miniature-news {
+			display:flex;
+			width: fit-content;
+			height: 100vh;
 			margin-bottom: 0;
 			padding: 0 6%;
 			box-shadow: none;
@@ -746,9 +777,11 @@ const { title } = Astro.props;
 		}
 		.detalles {
 			padding: 0;
+			display: block;
 			height: fit-content;
 		}
 		.items {
+			display: block;
 			padding: 0;
 			height: fit-content;
 			min-height: 0;
@@ -767,6 +800,10 @@ const { title } = Astro.props;
 		}
 		.print-invisibility {
 			opacity: 0;
+		}
+		.sidebar{
+			display: block;
+			overflow: hidden;
 		}
 	}
 	.astro-a {

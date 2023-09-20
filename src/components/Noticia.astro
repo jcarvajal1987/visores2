@@ -210,7 +210,7 @@ const { post,fecha ,fechap} = Astro.props;
                         <img class="chain" src="img/copiar.svg" alt="" />
 
                         <span class="precopy">Copiar Url</span>
-                        <span class="postcopy hidden">Url Copiado!</span>
+                        <span class="postcopy hidden">Copiado!</span>
                     </div>
                     
                     <div
@@ -231,6 +231,13 @@ const { post,fecha ,fechap} = Astro.props;
                                                     <span>Exportar a PR</span>
                         <span class="hidden">Exportado a PR!</span>
                     </div>
+                    
+                </div>
+                {
+                    [1].indexOf(post.tipo)> -1 && (
+                        <img class="miniature-news" width="320" height="180" src="img/diario1.jpg" alt="" />
+                    )
+                }
                     {
                         [2].indexOf(post.tipo)> -1 && (
                             // <img class="miniature" src={post.url_img} alt="" width="1600" height="900" />
@@ -239,13 +246,6 @@ const { post,fecha ,fechap} = Astro.props;
                             <img class="miniature" width="320" height="180" src="img/Aton_324985_rX8dU.webp" alt="" />
                         )
                     }
-                    {
-                        [1].indexOf(post.tipo)> -1 && (
-                            <img class="miniature" width="320" height="180" src="img/diario1.jpg" alt="" />
-                        )
-                    }
-                    
-                </div>
             </div>
             <div class="hidden-pdf xs pointer detail-layout2">
                 <div id="SidebarToggleIn" class="cerrar flex">
