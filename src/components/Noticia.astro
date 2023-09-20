@@ -1,4 +1,5 @@
 ---
+import Audio2 from "./Audio2.astro";
 const { post,fecha ,fechap} = Astro.props;
 ---
 <main id="main">
@@ -90,15 +91,7 @@ const { post,fecha ,fechap} = Astro.props;
                     )
                 }
 
-                {post.tipo ==4 && (
-                        <div class="container grid">
-                            <audio controls>
-                            <source src={post.url_img}type="audio/mpeg" />
-                            </audio>
-                            
-                        </div>
-                    )
-                }
+                
 
                 {
                     post.tipo === 1 && (
@@ -121,12 +114,23 @@ const { post,fecha ,fechap} = Astro.props;
                         />
                     )
                 }
-                
+                {post.tipo ==4 && (
+                    <div class=" grid" style="gap:20px;display:grid;margin-bottom:30px;">
+                        <audio src={post.url_img} controls preload="metadata">
+                        <source  type="audio/mpeg"  />
+                        </audio>
+
+                        
+                        <Audio2 src={post.url_img} />                
+                        </div>
+                        )
+            }
                 {
                     (post.tipo === 2||4||3) && (
                         <div set:html={post.cachetxt} class="cachetxt" />
                     )
                 }
+                
                 
             </div>
         </div>
@@ -233,3 +237,11 @@ const { post,fecha ,fechap} = Astro.props;
             body="Learn how Astro works and explore the official API docs."
         /> -->
 </main>
+
+<style>
+    
+</style>
+
+<script>
+    
+</script>
