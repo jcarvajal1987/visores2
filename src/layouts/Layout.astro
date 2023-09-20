@@ -1,5 +1,4 @@
 ---
-
 interface Props {
 	title: string;
 }
@@ -13,66 +12,112 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="img/icon.svg" type="image/svg+xml">
-		<link rel="preload" as="image" href="img/izimedia2.svg" type="image/svg+xml"/>
-		<link rel="preload" href="assets/w10.woff2" as="font" type="font/woff2" crossorigin />
-		<link rel="preload" href="https://fonts.gstatic.com/s/raleway/v28/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVsEpbCIPrE.woff2" as="font" type="font/woff2" crossorigin />
-		<link rel="preload" href="https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0B4gaVI.woff2" as="font" type="font/woff2" crossorigin />
-		<link rel="preload" href="https://fonts.gstatic.com/s/nunitosans/v15/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfUVwoNnq4CLz0_upHZPYsZ51Q42ptCprt1R-s.woff2" as="font" type="font/woff2" crossorigin />
-		<link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w5aXo.woff2" as="font" type="font/woff2" crossorigin />
-	
+		<link rel="icon" href="img/icon.svg" type="image/svg+xml" />
+		<link
+			rel="preload"
+			as="image"
+			href="img/izimedia2.svg"
+			type="image/svg+xml"
+		/>
+		<link
+			rel="preload"
+			href="assets/w10.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="https://fonts.gstatic.com/s/raleway/v28/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVsEpbCIPrE.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0B4gaVI.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="https://fonts.gstatic.com/s/nunitosans/v15/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfUVwoNnq4CLz0_upHZPYsZ51Q42ptCprt1R-s.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w5aXo.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
 <style is:global>
-@font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/raleway/v28/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVsEpbCIPrE.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-    font-family: "Acta W01 Medium";
-	font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-	  src: url("../assets/w10.woff2")format("woff2");
-}
-@font-face {
-  font-family: 'Nunito Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunitosans/v15/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfUVwoNnq4CLz0_upHZPYsZ51Q42ptCprt1R-s.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 500;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0B4gaVI.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
 	@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w5aXo.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+		font-family: "Raleway";
+		font-style: normal;
+		font-weight: 600;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/raleway/v28/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVsEpbCIPrE.woff2)
+			format("woff2");
+		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+			U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+			U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	@font-face {
+		font-family: "Acta W01 Medium";
+		font-style: normal;
+		font-weight: 500;
+		font-display: swap;
+		src: url("../assets/w10.woff2") format("woff2");
+	}
+	@font-face {
+		font-family: "Nunito Sans";
+		font-style: normal;
+		font-weight: 400;
+		font-stretch: 100%;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/nunitosans/v15/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfUVwoNnq4CLz0_upHZPYsZ51Q42ptCprt1R-s.woff2)
+			format("woff2");
+		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+			U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+			U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	@font-face {
+		font-family: "Open Sans";
+		font-style: normal;
+		font-weight: 500;
+		font-stretch: 100%;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0B4gaVI.woff2)
+			format("woff2");
+		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+			U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+			U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	@font-face {
+		font-family: "Montserrat";
+		font-style: normal;
+		font-weight: 600;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w5aXo.woff2)
+			format("woff2");
+		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+			U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+			U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
 
-/* @font-face {
+	/* @font-face {
     font-family: 'Acta W01 Medium';
 	font-style: normal;
   font-weight: 500;
@@ -82,16 +127,16 @@ const { title } = Astro.props;
 
 } */
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-.main::-webkit-scrollbar {
-  display: none;
-}
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	.main::-webkit-scrollbar {
+		display: none;
+	}
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.example {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
+	/* Hide scrollbar for IE, Edge and Firefox */
+	.example {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
 	:root {
 		--accent: 136, 58, 234;
 		--accent-light: 224, 204, 250;
@@ -193,9 +238,9 @@ const { title } = Astro.props;
 	.xs {
 		display: none;
 	}
-	
+
 	.title {
-		font-family: "Raleway", math ;
+		font-family: "Raleway", math;
 		font-size: 33px;
 		font-weight: 600;
 		padding-bottom: 30px;
@@ -207,19 +252,20 @@ const { title } = Astro.props;
 		padding-bottom: 30px;
 	}
 	.title-video {
-		font-family: "Raleway", math ;
+		font-family: "Raleway", math;
 		font-size: 26px;
 		font-weight: 600;
 		padding-bottom: 30px;
-    	
 	}
 	.cachetxt {
-		font-family: Nunito Sans, system-ui;
+		font-family:
+			Nunito Sans,
+			system-ui;
 		font-size: 17px;
 		font-weight: 400;
 	}
 	.cachetxt-papel {
-		font-family:  "Times New Roman", Georgia, Times, serif;
+		font-family: "Times New Roman", Georgia, Times, serif;
 		line-height: 32px;
 		font-size: 21px;
 		font-weight: 400;
@@ -231,49 +277,30 @@ const { title } = Astro.props;
 		place-items: center;
 		background-color: #000000;
 		margin-bottom: 20px;
-    	border-radius: 2px;
-    	overflow: hidden;
+		border-radius: 2px;
+		overflow: hidden;
 		margin-top: -10px;
 	}
 	.video {
 		width: 90%;
 	}
 	.radio {
-		gap:20px;display:grid;margin-bottom:30px;
-}
-.audio-player{
-	width: 100%;
-}
-.controls{
-	width: 100%;
-}
-.timeline{
-	width: 100%;
-}
-
-/* comienza el reproductor */
-
-
-
-
-
-
-
-
-
-
-
-	.algo {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
+		gap: 20px;
 		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+		margin-bottom: 30px;
 	}
+	.audio-player {
+		width: 100%;
+	}
+	.controls {
+		width: 100%;
+	}
+	.timeline {
+		width: 100%;
+	}
+
+	/* comienza el reproductor */
+
 	.columna {
 		background-color: #e6e6e6;
 		background-color: #e9ecef;
@@ -283,7 +310,7 @@ const { title } = Astro.props;
 
 	.navbar {
 		display: flex;
-		flex-direction: column;;
+		flex-direction: column;
 		justify-content: space-between;
 		-ms-flex-align: baseline;
 		padding: 15px 4%;
@@ -329,6 +356,36 @@ const { title } = Astro.props;
 		grid-row-start: 1;
 		grid-column-start: 1;
 		align-self: start;
+	}
+	.item {
+		height: 35px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	.value {
+    margin-left: 5px;
+    margin-bottom: 1px;
+    width: 12px;
+    height: 18.54px;
+    border-radius: 4px;
+}
+	.audience {
+    margin-left: 3px;
+    margin-bottom: 1px;
+    width: 17px;
+    height: 9.06px;
+    border-radius: 4px;
+}
+	.medium-sans {
+		font-family: "Open Sans";
+		font-size: 14px;
+	}
+	.yellow{
+		color: #F4B302;
+	}
+	.purple{
+		color: #5D0CC4;
 	}
 	.medio {
 		/* min-height: 30px; */
@@ -411,10 +468,10 @@ const { title } = Astro.props;
 	.copy svg path {
 		fill: currentcolor;
 	}
-.chain{
-	width: 16px;
-	height: 16px;
-}
+	.chain {
+		width: 16px;
+		height: 16px;
+	}
 	.download {
 		margin-left: 3px;
 		margin-bottom: 1px;
@@ -477,26 +534,15 @@ const { title } = Astro.props;
 		box-shadow: 0px 0px 3px #0000005c;
 		margin-bottom: 5px;
 	}
-	.copiar {
-		background-color: #e6e6e6;
-		width: fit-content;
-		border-radius: 35px;
-		padding: 10px 20px 10px 10px;
-		font-family: "Open Sans";
-		font-size: 13.2px;
-		display: flex;
-		align-items: center;
-		gap: 10px;
-		cursor: pointer;
-	}
-	.actions{
+
+	.actions {
 		height: 38px;
 		display: flex;
 		background-color: #e6e6e6;
 		border-radius: 35px;
 		padding: 0 20px 0 10px;
 		align-items: center;
-		gap:10px;
+		gap: 10px;
 		font-size: 13.2px;
 		cursor: pointer;
 	}
@@ -564,21 +610,20 @@ const { title } = Astro.props;
 			grid-template-columns: 100% 80%;
 		}
 		.papel {
-			padding: 0 3% 50px 3%;;
+			padding: 0 3% 50px 3%;
 		}
 		.printdetails {
 			display: none;
 		}
 
 		.columnb {
-			
 			transform: translatex(0%);
-		
+
 			width: 100%;
 			max-width: 450px;
 			opacity: 0;
 		}
-		.container{
+		.container {
 			margin-top: -5px;
 		}
 		.columnb.active-sidebar {
@@ -586,8 +631,8 @@ const { title } = Astro.props;
 			opacity: 1;
 		}
 		.video {
-    width: 100%;
-}
+			width: 100%;
+		}
 		.items {
 			padding: 87px 6.5% 10px 6.5%;
 		}
@@ -603,14 +648,14 @@ const { title } = Astro.props;
 		main {
 			grid-template-columns: 74% 26% !important;
 		}
-		
+
 		.navbar {
 			padding: 15px 22px;
 		}
 		.papel {
 			padding: 0 8.5% 50px 8.5%;
 		}
-		.strech{
+		.strech {
 			padding: 0 3%;
 		}
 		.printdetails {
@@ -636,12 +681,12 @@ const { title } = Astro.props;
 	.hidden {
 		display: none;
 	}
-	@media print{
+	@media print {
 		@page {
 			size: auto;
 			margin: 3mm;
 		}
-		html{
+		html {
 			background-color: #ffffff;
 		}
 		body {
@@ -656,27 +701,27 @@ const { title } = Astro.props;
 		.papel {
 			padding: 0 6% 30px 6%;
 		}
-		
+
 		.columna {
 			background-color: #ffffff;
 		}
-		.title{
+		.title {
 			padding-bottom: 30px;
 		}
-		.navbar{
+		.navbar {
 			padding-bottom: 0;
 		}
 		.columnb {
-			transform: translatex(0%)!important;
+			transform: translatex(0%) !important;
 			display: table-cell;
-			height:min-content;
+			height: min-content;
 			width: 100%;
 			max-width: 100%;
 			opacity: 1;
 			box-shadow: none;
 			padding: 0;
 		}
-		
+
 		.container {
 			width: 100%;
 			height: fit-content;
@@ -694,11 +739,10 @@ const { title } = Astro.props;
 		.printdetails {
 			width: fit-content;
 			padding: 15px 0;
-		display: grid;
-		grid-template-columns: auto auto auto;
-		column-gap: 35px;
-		height: fit-content;
-			
+			display: grid;
+			grid-template-columns: auto auto auto;
+			column-gap: 35px;
+			height: fit-content;
 		}
 		.detalles {
 			padding: 0;
@@ -741,7 +785,7 @@ const { title } = Astro.props;
 		text-align: center;
 		margin-bottom: 1em;
 	}
-	
+
 	.instructions {
 		margin-bottom: 2rem;
 		border: 1px solid rgba(var(--accent-light), 25%);
