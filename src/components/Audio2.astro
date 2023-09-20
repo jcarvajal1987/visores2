@@ -64,33 +64,40 @@ const { src } = Astro.props;
             align-items: center;
         }
         output {
-            font-size: 16px;
+            font-size: 10px;
         }
         #volume-output {
             color: #a9a9a9;
+            padding-bottom: 2px;
+            padding-right:5px
         }
         #volume-slider {
             margin: 0px 2.5%;
             width: 58%;
-            height: 9px;
-            overflow: hidden;
+            
         }
         #volume-slider::-webkit-slider-runnable-track {
-            background: rgba(0, 125, 181, 0.6);
+            background: #3e3d3c;
+            height:5px;
         }
         #volume-slider::-moz-range-track {
-            background: rgba(0, 125, 181, 0.6);
+            background: #3e3d3c;
+            height:5px;
         }
         #volume-slider::-ms-fill-upper {
-            background: rgba(0, 125, 181, 0.6);
+            background: #3e3d3c;
+            height:5px;
         }
         #volume-slider::before {
             width: var(--volume-before-width);
+            height: 5px;
+            overflow:hidden;
         }
         #mute-icon {
             margin: 0 2.5%;
             display: flex;
             align-items: center;
+            width:24px;
         }
         .grid-item {
             grid-column-start: 1;
@@ -131,13 +138,13 @@ const { src } = Astro.props;
             background-color: #eb6708;
             cursor: pointer;
         }
+        
         input[type="range"]::-webkit-slider-thumb {
             position: relative;
             -webkit-appearance: none;
             box-sizing: content-box;
             box-shadow:
-                0 0 0 1px white,
-                0 0 0 2px gray;
+                0 0 0 2px white;
             height: 14px;
             width: 14px;
             border-radius: 50%;
@@ -155,7 +162,6 @@ const { src } = Astro.props;
         }
         input[type="range"]:active::-webkit-slider-thumb {
             transform: scale(1.2);
-            background: #eb6708;
         }
         input[type="range"]::-moz-range-track {
             width: 100%;
@@ -184,7 +190,6 @@ const { src } = Astro.props;
         }
         input[type="range"]:active::-moz-range-thumb {
             transform: scale(1.2);
-            background: #eb6708;
         }
         input[type="range"]::-ms-track {
             width: 100%;
@@ -217,7 +222,6 @@ const { src } = Astro.props;
         }
         input[type="range"]:active::-ms-thumb {
             transform: scale(1.2);
-            background: #eb6708;
         }
         .audio-player {
             width: 100%;
