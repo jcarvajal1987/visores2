@@ -158,10 +158,7 @@ const { post,fecha ,fechap} = Astro.props;
                         <img class="value" src="img/value.svg" alt="" />
                         <span>1.380.000 CLP</span>
                     </div>
-                    <div class="item medium-sans purple">
-                        <img class="audience" src="img/audience.svg" alt="" />
-                        <span>{post.extra.audience.toLocaleString("cl")} audientes</span>
-                    </div>
+                    
                     {
                         post.tono === 0 && (
                             <div class="denotacion denotation0 positiva">
@@ -183,6 +180,10 @@ const { post,fecha ,fechap} = Astro.props;
                             </div>
                         )
                     }
+                    <div class="item medium-sans purple">
+                        <img class="audience" src="img/audience.svg" alt="" />
+                        <span>{post.extra.audience.toLocaleString("cl")} audientes</span>
+                    </div>
                     <div class="seccion">
                         <img
                             class="section"
@@ -201,14 +202,7 @@ const { post,fecha ,fechap} = Astro.props;
 
                     
                 </span>
-                {
-                    post.tipo === 2 && (
-                        // <img class="miniature" src={post.url_img} alt="" width="1600" height="900" />
-                        
-                        // <Image class="miniature" src={post.url_img} alt="Imagen Realacionada" width="320" height="180"/>
-                        <img class="miniature" width="320" height="180" src="img/Aton_324985_rX8dU.webp" alt="" />
-                    )
-                }
+                
 
                 <div class="flex pt2 gap hidden-pdf">
                     <div id="url" class="actions">
@@ -237,6 +231,19 @@ const { post,fecha ,fechap} = Astro.props;
                                                     <span>Exportar a PR</span>
                         <span class="hidden">Exportado a PR!</span>
                     </div>
+                    {
+                        [2].indexOf(post.tipo)> -1 && (
+                            // <img class="miniature" src={post.url_img} alt="" width="1600" height="900" />
+                            
+                            // <Image class="miniature" src={post.url_img} alt="Imagen Realacionada" width="320" height="180"/>
+                            <img class="miniature" width="320" height="180" src="img/Aton_324985_rX8dU.webp" alt="" />
+                        )
+                    }
+                    {
+                        [1].indexOf(post.tipo)> -1 && (
+                            <img class="miniature" width="320" height="180" src="img/diario1.jpg" alt="" />
+                        )
+                    }
                     
                 </div>
             </div>
