@@ -1,8 +1,8 @@
 ---
+import Audio2 from "./Audio2.astro";
+import Papel from "./papel.astro";
 const { post, fecha, fechap } = Astro.props;
 
-if (post.tipo == 4) {
-}
 ---
 
 <main id="main">
@@ -247,6 +247,7 @@ if (post.tipo == 4) {
                 </div>
                 {
                     [1].indexOf(post.tipo) > -1 && (
+                        <Papel/>
                         <div class="miniature-index">
                             <div>
                                 <img
