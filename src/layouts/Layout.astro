@@ -567,7 +567,6 @@ const { post , title } = Astro.props;
 			margin-top: 5px;
 		}
 		.miniature-index{
-			height: 100vh;
 		}
 		.miniature-container{
 			display: grid;
@@ -577,6 +576,10 @@ const { post , title } = Astro.props;
 			gap: 13px;
 			width: 100%;
 			flex-direction: row;
+		}
+		.image-container{
+			width: fit-content;
+			height:auto;
 		}
 
 	.miniature {
@@ -826,6 +829,13 @@ const { post , title } = Astro.props;
 			grid-area: auto;
 			height: 100vh;
 			max-height: 100vh;
+		}
+		.miniature-container{
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.container-image{
+			height: 100vh;
 		}
 		.miniature-news {
 			filter: contrast(1);
