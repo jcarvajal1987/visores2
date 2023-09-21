@@ -569,6 +569,7 @@ const { post , title } = Astro.props;
 		.miniature-index{
 			display: grid;
 			grid-template-columns: auto auto;
+			grid-template-rows: auto;
 			height: auto;
 			gap: 13px;
 			width: 100%;
@@ -830,7 +831,9 @@ const { post , title } = Astro.props;
 			box-shadow: none;
 			border: none;
 		}
-		
+		.miniature-index{
+			display: flex;
+		}
 
 		.printdetails {
 			width: fit-content;
