@@ -730,7 +730,7 @@ const { post , title } = Astro.props;
 		padding: 20px 6.5% 20px 6.5%;
 	} */
 	}
-	@media (min-width: 1601px) {
+	@media  (min-width: 1601px) {
 		main {
 			grid-template-columns: 70% 30% !important;
 		}
@@ -769,6 +769,7 @@ const { post , title } = Astro.props;
 			padding: 0 6% 30px 6%;
 			height: fit-content;
 			display: block;
+			min-height: 100vh;
 		}
 		.start1 {
 			height: fit-content;
@@ -825,6 +826,7 @@ const { post , title } = Astro.props;
 		}
 		.miniature-index{
 			display: flex;
+			height: fit-content;
 		}
 		.miniature-container{
 			display: flex;
@@ -834,8 +836,10 @@ const { post , title } = Astro.props;
 			gap: 0;
 		}
 		.container-image{
-			max-height: fit-content;
-			display: block;
+			width: auto;
+			max-width: 100%;
+			display:flex ;
+			height: fit-content;
 		}
 		.miniature-news {
 			filter: contrast(1);
