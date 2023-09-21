@@ -567,7 +567,9 @@ const { post , title } = Astro.props;
 			margin-top: 5px;
 		}
 		.miniature-index{
-			display: flex;
+			display: grid;
+			grid-template-columns: auto auto;
+			height: fit-content;
 			gap: 13px;
 			width: 100%;
 			flex-direction: row;
@@ -583,6 +585,7 @@ const { post , title } = Astro.props;
 	.miniature-news {
 		filter: contrast(0.9);
 		width: 100%;
+		height: auto;
 		border: 2px solid white;
 		margin: 5px 0;
 	}
