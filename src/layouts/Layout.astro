@@ -569,15 +569,18 @@ const { post , title } = Astro.props;
 		.miniature-index{
 		}
 		.miniature-container{
-			display: grid;
-			grid-template-columns: auto auto;
-			grid-template-rows: auto;
-			height: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			
 			gap: 13px;
 			width: 100%;
 			flex-direction: row;
 		}
 		.image-container{
+			
+		}
+		.container-image{
+			display: flex;
 			width: fit-content;
 			height:auto;
 		}
@@ -591,9 +594,8 @@ const { post , title } = Astro.props;
 	}
 	.miniature-news {
 		filter: contrast(0.9);
-		width: auto;
-		border: 2px solid white;
-		margin: 5px 0;
+		width: 100%;
+    max-width: min-content;
 	}
 
 	.actions {
@@ -744,7 +746,7 @@ const { post , title } = Astro.props;
 	.hidden {
 		display: none;
 	}
-	@media print{
+	@media print {
 		@page {
 			size: auto;
 			margin: 3mm;
@@ -774,6 +776,7 @@ const { post , title } = Astro.props;
 		}
 		.columna {
 			height: fit-content;
+			min-height: 100vh;
 			display: block;
 		}
 		.cachetxt-papel {
@@ -796,7 +799,7 @@ const { post , title } = Astro.props;
 			transform: translatex(0%) !important;
 			display: block;
 			overflow: hidden;
-			height: fit-content;
+			height: auto;
 			width: 100%;
 			max-width: 100%;
 			opacity: 1;
@@ -806,15 +809,11 @@ const { post , title } = Astro.props;
 
 		.container {
 			width: 100%;
-			height: fit-content;
+			height: auto;
 			background-color: #e7e7e7;
 		}
-		.miniature-index{
-			height: 100vh;
-		}
-		.h100{
-			height: max-content;
-		}
+		
+		
 		.miniature {
 			display: block;
 			width: 100%;
@@ -825,23 +824,25 @@ const { post , title } = Astro.props;
 			border: none;
 		}
 		.miniature-index{
-			display: grid;
-			grid-area: auto;
-			height: 100vh;
-			max-height: 100vh;
+			display: flex;
 		}
 		.miniature-container{
 			display: flex;
 			flex-wrap: wrap;
+			height: fit-content;
+			max-height: fit-content;
+			gap: 0;
 		}
 		.container-image{
-			height: 100vh;
+			max-height: fit-content;
+			display: block;
 		}
 		.miniature-news {
 			filter: contrast(1);
 			width: 100%;
-			max-width: fit-content;
-			height: auto;
+			max-width: 100%;
+			display:flex ;
+			height: fit-content;
 			max-height: 100vh;
 		}
 
