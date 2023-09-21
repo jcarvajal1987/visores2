@@ -108,12 +108,12 @@ const { post,fecha ,fechap} = Astro.props;
                 
 
                 {
-                    post.tipo === 1 && (
+                    post.tipo == 1 && 
                         <div class="title-papel">{post.titulo}</div>
-                    )
+                    
                 }
 
-                {post.tipo === 2 && <div class="title">{post.titulo}</div>}
+                {post.tipo == 2 && <div class="title">{post.titulo}</div>}
 
                 {([3,4].indexOf(post.tipo)> -1 ) && (
                         <div class="title-video" set:html={post.titulo}/>
@@ -128,14 +128,14 @@ const { post,fecha ,fechap} = Astro.props;
                         />
                     )
                 }
-                {post.tipo ==4 && (
+                {post.tipo == 4 && (
                     <div class="radio hidden-pdf">
                         <Audio2 src={post.url_img} />                
                         </div>
                         )
             }
                 {
-                    (post.tipo === 2||4||3) && (
+                    ([2,3,4].indexOf(post.tipo)> -1 ) && (
                         <div set:html={post.cachetxt} class="cachetxt" />
                     )
                 }
