@@ -567,10 +567,13 @@ const { post , title } = Astro.props;
 			margin-top: 5px;
 		}
 		.miniature-index{
+			height: 100vh;
+		}
+		.miniature-container{
 			display: grid;
 			grid-template-columns: auto auto;
 			grid-template-rows: auto;
-			height: auto;
+			height: 100%;
 			gap: 13px;
 			width: 100%;
 			flex-direction: row;
@@ -585,8 +588,7 @@ const { post , title } = Astro.props;
 	}
 	.miniature-news {
 		filter: contrast(0.9);
-		width: 100%;
-		height: auto;
+		width: auto;
 		border: 2px solid white;
 		margin: 5px 0;
 	}
@@ -823,16 +825,13 @@ const { post , title } = Astro.props;
 			display: grid;
 			grid-area: auto;
 			height: 100vh;
+			max-height: 100vh;
 		}
 		.miniature-news {
 			filter: contrast(1);
-			
 			width: 100%;
 			height: auto;
-			margin: 0;
-			padding: 0 6%;
-			box-shadow: none;
-			border: none;
+			max-height: 100vh;
 		}
 
 		.printdetails {
