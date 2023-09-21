@@ -225,13 +225,13 @@ const fechap = post.hcarga;
 
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout post={post} title="Welcome to Astro.">
 	<Noticia post={post} fecha={fecha} fechap={fechap} />
 </Layout>
 
 
 
-<script>
+<script >
 	var sidetoggle = document.querySelector("#SidebarToggle");
 	var sidetogglein = document.querySelector("#SidebarToggleIn");
 	var sidebar = document.querySelector("#Sidebar");

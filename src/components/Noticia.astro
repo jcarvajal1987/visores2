@@ -1,6 +1,9 @@
 ---
-import Audio2 from "./Audio2.astro";
 const { post,fecha ,fechap} = Astro.props;
+
+if (post.tipo == 4) {
+    
+}
 ---
 <main id="main">
     <div class="columna">
@@ -128,7 +131,7 @@ const { post,fecha ,fechap} = Astro.props;
                         />
                     )
                 }
-                {post.tipo == 4 && (
+                {post.tipo === 4 && (
                     <div class="radio hidden-pdf">
                         <Audio2 src={post.url_img} />                
                         </div>
