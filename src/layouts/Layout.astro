@@ -766,7 +766,7 @@ const { post , title } = Astro.props;
 			grid-template-columns: 100% !important;
 		}
 		.papel {
-			padding: 0 6% 30px 6%;
+			padding: 0px 6% 10px 6%;
 			height: fit-content;
 			display: block;
 		}
@@ -775,6 +775,7 @@ const { post , title } = Astro.props;
 			display: block;
 		}
 		.columna {
+			overflow: auto;
 			height: fit-content;
 			min-height: 100vh;
 			display: block;
@@ -839,7 +840,7 @@ const { post , title } = Astro.props;
 		}
 		.miniature-news {
 			filter: contrast(1);
-			width: 100%;
+			width: auto;
 			max-width: 100%;
 			display:flex ;
 			height: fit-content;
