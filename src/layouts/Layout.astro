@@ -217,12 +217,13 @@ const { post , title } = Astro.props;
 	main {
 		display: grid;
 		grid-template-columns: 70% 30%;
-		height: fit-content;
+		grid-template-rows: auto;
+		height: 100vh;
 		min-height: 100vh;
 		overflow: hidden;
 		position: relative;
 	}
-	footer{
+	.footer{
 		display: block;
 		padding: 46px 22px 22px 22px;
 		font-size: 13px;
@@ -683,7 +684,7 @@ const { post , title } = Astro.props;
 		.printdetails {
 			display: none;
 		}
-		footer{
+		.footer{
 			padding: 30px 3% 30px 3%;
 		}
 		.columnb {
@@ -891,7 +892,7 @@ const { post , title } = Astro.props;
 			overflow: hidden;
 			height: fit-content;
 		}
-		footer{
+		.footer{
 			display: none;
 		}
 	}
