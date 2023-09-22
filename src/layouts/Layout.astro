@@ -156,9 +156,7 @@ const { post , title } = Astro.props;
 	.columna::-webkit-scrollbar {
 		width: 1px;
 	}
-	/* .columna::-webkit-scrollbar {
-		width: 1px;
-	} */
+
 
 	/* Hide scrollbar for IE, Edge and Firefox */
 	.example {
@@ -334,13 +332,14 @@ const { post , title } = Astro.props;
 	}
 
 	/* comienza el reproductor */
-
+	
 	.columna {
 		overflow: auto;
 		background-color: #e6e6e6;
 		background-color: #e9ecef;
 		height: 100%;
-		display: grid;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.navbar {
@@ -604,7 +603,6 @@ const { post , title } = Astro.props;
 		filter: contrast(0.9);
 		width: auto;
     max-width: 100%;
-	height: auto;
 	max-height: 217px;
 	}
 
@@ -765,31 +763,46 @@ const { post , title } = Astro.props;
 			background-color: #ffffff;
 		}
 		body {
-			display: block;
-			height: fit-content !important;
-			overflow: hidden;
+			
 		}
 		main {
-			display: block;
-			overflow: hidden !important;
-			height: fit-content;
-			grid-template-columns: 100% !important;
+			height: auto;
+			min-height: auto;
+			max-height: auto;
+			overflow: auto;
+			display: flex;
+			flex-direction: column;
 		}
 		.papel {
-			padding: 0px 6% 10px 6%;
-			height: fit-content;
+			padding: 0px 6% 0px 6%;
+			height: auto;
+			min-height: auto;
+			max-height: auto;
+			overflow: auto;
 			display: block;
 		}
+		.printdetails {
+			width: fit-content;
+			padding: 15px 0;
+			display: grid;
+			grid-template-columns: auto auto auto;
+			column-gap: 35px;
+			height: fit-content;
+		}
+		.title-papel{
+			height: auto;
+			display: block;
+		}
+		.cachetxt-papel{
+			height: auto;
+			display: block;
+		}
+
 		.start1 {
 			height: fit-content;
 			display: block;
 		}
-		.columna {
-			overflow: auto;
-			height: fit-content;
-			min-height: 100vh;
-			display: block;
-		}
+		
 		.cachetxt-papel {
 			height: fit-content;
 			display: block;
@@ -832,6 +845,7 @@ const { post , title } = Astro.props;
 			border: none;
 		}
 		.miniature-index{
+			page-break-before: always; 
 			display: flex;
 			height: fit-content;
 		}
@@ -844,7 +858,7 @@ const { post , title } = Astro.props;
 			gap: 0;
 		}
 		.container-image{
-			width: auto;
+			width: fit-content;
 			max-width: 100%;
 			display:flex ;
 			min-height: 100vh;
@@ -860,14 +874,7 @@ const { post , title } = Astro.props;
 			max-height: 100vh;
 		}
 
-		.printdetails {
-			width: fit-content;
-			padding: 15px 0;
-			display: grid;
-			grid-template-columns: auto auto auto;
-			column-gap: 35px;
-			height: fit-content;
-		}
+		
 		.detalles {
 			padding: 0;
 			display: block;
