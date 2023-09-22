@@ -217,11 +217,13 @@ const { post , title } = Astro.props;
 	main {
 		display: grid;
 		grid-template-columns: 70% 30%;
-		height: 100%;
+		height: fit-content;
+		min-height: 100vh;
 		overflow: hidden;
 		position: relative;
 	}
 	footer{
+		display: block;
 		padding: 46px 22px 22px 22px;
 		font-size: 13px;
 		font-family: 'Nunito Sans';
@@ -365,6 +367,9 @@ const { post , title } = Astro.props;
 		z-index: 19;
 
 		align-items: center;
+	}
+	.papel{
+		display: block;
 	}
 	.vcenter {
 		align-self: center;
