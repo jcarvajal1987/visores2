@@ -577,8 +577,8 @@ const { post , title } = Astro.props;
 			height: fit-content;
 		}
 		.miniature-container{
-			display: grid;
-			grid-template-columns: auto auto;
+			display: flex;
+			flex-wrap: wrap;
 			
 			gap: 13px;
 			width: 100%;
@@ -603,7 +603,7 @@ const { post , title } = Astro.props;
 	.miniature-news {
 		filter: contrast(0.9);
 		width: auto;
-    max-width: min-content;
+    max-width: 100%;
 	}
 
 	.actions {
