@@ -21,6 +21,17 @@ const { post, fecha, fechap } = Astro.props;
                 <div class="izipress">
                     IZI PRESS # {post.extra.numwords}
                 </div>
+                <div class="hidden-pdf xs pointer detail-layout">
+                    <div id="SidebarToggle" class="abrir flex">
+                        Detalles<img
+                            style="padding-top: 5px;"
+                            width="22"
+                            height="21.33"
+                            alt="options"
+                            src="img/right.svg"
+                        />
+                    </div>
+                </div>
             </div>
         </div>
         <div id="pdf" class={`papel ${post.tipo === 3 && "strech"}`}>
@@ -147,17 +158,7 @@ const { post, fecha, fechap } = Astro.props;
             © Izimedia Soluciones Digitales para el Análisis de Prensa
         </div>
 
-        <div class="hidden-pdf xs pointer detail-layout">
-            <div id="SidebarToggle" class="abrir flex">
-                Detalles<img
-                    style="padding-top: 5px;"
-                    width="22"
-                    height="21.33"
-                    alt="options"
-                    src="img/right.svg"
-                />
-            </div>
-        </div>
+        
     </div>
     <div id="Sidebar" class="columnb">
         <div class="detalles">
