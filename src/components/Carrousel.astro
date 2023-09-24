@@ -1,0 +1,148 @@
+---
+import Papel from "./Papel.astro";
+const { miniatures} = Astro.props;
+
+---
+
+<div class="carrousel">
+    <div class="galery">
+        <div class="carrousel-container">
+            <div id="image-container" class="container-image-carrousel">
+        
+                <img
+                class="miniature-news-carrousel"
+                width="320"
+                height="180"
+                src={miniatures[0].recorte}
+                alt=""
+                />
+                
+            </div>
+        <!-- {miniatures.map( (pagina)=>
+        
+                <div class="container-image-carrousel">
+        
+                    <img
+                    class="miniature-news-carrousel"
+                    width="320"
+                    height="180"
+                    src={pagina.recorte}
+                    alt=""
+                    />
+                    
+                </div>
+                <div class="container-image-carrousel">
+                    
+                <img
+                class="miniature-news-carrousel"
+                width="320"
+                height="180"
+                src={pagina.contexto}
+                alt=""
+                />
+                </div>
+                )} -->
+                </div>
+    </div>
+    <!-- <Papel miniatures={miniatures}/> -->
+</div>
+
+<style>
+    .carrousel{
+		position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+	}
+    .galery{
+        height: fit-content;
+    }
+    .carrousel-container {
+    display: grid;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100vh;
+    flex-direction: row;
+}
+.container-image-carrousel{
+    overflow: hidden;
+    display: grid;
+    justify-items: center;
+    grid-row-start: 1;
+    grid-column-start: 1;
+			width: 100vw;
+			height:100vh;
+		}
+        .miniature-news-carrousel{
+		filter: contrast(0.9);
+		width: auto;
+		height: fit-content;
+        transition: 1s;
+	}
+        @media print {
+            .carrousel{
+                position: relative;
+                height: fit-content;
+            }
+            .carrousel-container{
+                height: fit-content;
+            }
+            .container-image-carrousel{
+                grid-row-start: auto;
+    grid-column-start: auto;
+            }
+            .container-image-carrousel{
+			width: fit-content;
+			max-width: 100%;
+			display:flex ;
+			min-height: 100vh;
+			height: auto;
+			max-height: 100vh;
+		}
+        .miniature-news-carrousel {
+			filter: contrast(1);
+			width: auto;
+			max-width: 100%;
+			display:flex ;
+			height: fit-content;
+			max-height: 100vh;
+		}
+    }
+    #image-container img:hover {
+      cursor: zoom-in;
+}
+</style>
+
+<script>
+    
+let currentZoom = 1;
+let minZoom = 0.5;
+let maxZoom = 3;
+let stepSize = 0.1;
+
+let container = document.getElementById('image-container');
+  
+container.addEventListener('wheel', function (event) {
+    // Zoom in or out based on the scroll direction
+    let direction = event.deltaY > 0 ? -1 : 1;
+    zoomImage(direction);
+});
+
+
+function zoomImage(direction) {
+    let newZoom = currentZoom + direction * stepSize;
+  
+    // Limit the zoom level to the minimum and maximum values
+    if (newZoom < minZoom || newZoom > maxZoom) {
+        return;
+    }
+  
+    currentZoom = newZoom;
+  
+    // Update the CSS transform of the image to scale it
+    let image = document.querySelector('#image-container img');
+    image.style.transform = 'scale(' + currentZoom + ')';
+}
+</script>

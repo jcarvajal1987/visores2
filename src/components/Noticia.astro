@@ -1,6 +1,7 @@
 ---
-import Audio2 from "./Audio2.astro";
 import Papel from "./Papel.astro";
+import Audio2 from "./Audio2.astro";
+import Carrousel from "./Carrousel.astro";
 const { post, fecha, fechap } = Astro.props;
 
 ---
@@ -135,13 +136,13 @@ const { post, fecha, fechap } = Astro.props;
                 )
             }
         </div>
-        <div class="carrousel">
-            <div class="galery">
-
-                <Papel/>
-            </div>
-            <Papel/>
-        </div>
+        {
+            post.tipo === 1 && (
+               
+                <Carrousel miniatures={post.extra.miniatures} /> 
+            )
+        }
+         
         <div class="footer">
             © Izimedia Soluciones Digitales para el Análisis de Prensa
         </div>
@@ -255,7 +256,7 @@ const { post, fecha, fechap } = Astro.props;
                 {
                     [1].indexOf(post.tipo) > -1 && (
                         
-                        <Papel/>
+                        <Papel miniatures={post.extra.miniatures}/>
                         
                     )
                 }

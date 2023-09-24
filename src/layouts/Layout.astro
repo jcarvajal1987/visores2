@@ -371,6 +371,7 @@ const { post , title } = Astro.props;
 	.papel{
 		display: block;
 	}
+	
 	.vcenter {
 		align-self: center;
 	}
@@ -572,7 +573,8 @@ const { post , title } = Astro.props;
 			margin-top: 5px;
 		}
 		.miniature-index{
-			display: block;
+			display: grid;
+			grid-template-columns: 100%;
 			height: fit-content;
 		}
 		.miniature-container{
@@ -591,6 +593,7 @@ const { post , title } = Astro.props;
 			width: fit-content;
 			height:auto;
 		}
+		
 
 	.miniature {
 		width: 100%;
@@ -602,7 +605,8 @@ const { post , title } = Astro.props;
 	.miniature-news {
 		filter: contrast(0.9);
 		width: auto;
-    max-width: 100%;
+		height: fit-content;
+    max-width: 120px;
 	max-height: 217px;
 	}
 
@@ -816,16 +820,7 @@ const { post , title } = Astro.props;
 			padding-bottom: 0;
 		}
 		.columnb {
-			transform: translatex(0%) !important;
-			display: block;
-			overflow: hidden;
-			max-height: max-content;
-			height: fit-content;
-			width: 100%;
-			max-width: 100%;
-			opacity: 1;
-			box-shadow: none;
-			padding: 0;
+			display: none;
 		}
 
 		.container {
@@ -835,7 +830,7 @@ const { post , title } = Astro.props;
 		}
 		
 		
-		.miniature {
+		/* .miniature {
 			display: block;
 			width: 100%;
 			height: auto;
@@ -845,9 +840,7 @@ const { post , title } = Astro.props;
 			border: none;
 		}
 		.miniature-index{
-			page-break-before: always; 
-			display: flex;
-			height: fit-content;
+			page-break-before: always;
 		}
 		.miniature-container{
 			display: flex;
@@ -865,6 +858,7 @@ const { post , title } = Astro.props;
 			height: auto;
 			max-height: 100vh;
 		}
+		
 		.miniature-news {
 			filter: contrast(1);
 			width: auto;
@@ -872,10 +866,10 @@ const { post , title } = Astro.props;
 			display:flex ;
 			height: fit-content;
 			max-height: 100vh;
-		}
+		} */
 
 		
-		.detalles {
+		/* .detalles {
 			padding: 0;
 			display: block;
 			height: fit-content;
@@ -885,7 +879,7 @@ const { post , title } = Astro.props;
 			padding: 0;
 			height: fit-content;
 			min-height: 0;
-		}
+		} */
 		.hidden-details {
 			display: none;
 		}
@@ -901,11 +895,11 @@ const { post , title } = Astro.props;
 		.print-invisibility {
 			opacity: 0;
 		}
-		.sidebar {
+		/* .sidebar {
 			display: block;
 			overflow: hidden;
 			height: fit-content;
-		}
+		} */
 		.footer{
 			display: none;
 		}

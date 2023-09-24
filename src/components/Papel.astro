@@ -1,26 +1,31 @@
-<div class="miniature-index">
-    
-    <div class="miniature-container">
-        <div class="container-image">
+---
+const { miniatures} = Astro.props;
+---
 
+<div class="miniature-index">
+    {miniatures.map( (pagina)=>
+        
+        <div class="miniature-container start1">
+            <div class="container-image">
+                <img
+                class="miniature-news"
+                width="320"
+                height="180"
+                src={pagina.recorte}
+                alt=""
+                />
+                
+            </div>
+            <div class="container-image">
+                
             <img
             class="miniature-news"
             width="320"
             height="180"
-            src="img/diario1.jpg"
+            src={pagina.contexto}
             alt=""
             />
-            
+            </div>
         </div>
-        <div class="container-image">
-            
-        <img
-        class="miniature-news"
-        width="320"
-        height="180"
-        src="img/diario2.jpg"
-        alt=""
-        />
-        </div>
-    </div>
+    )}
 </div>
