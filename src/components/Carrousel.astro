@@ -43,13 +43,18 @@ const { miniatures} = Astro.props;
                 </div>
                 )} -->
                 </div>
+                <div class="indice">
+
+                    <Papel miniatures={miniatures}/>
+                </div>
     </div>
-    <!-- <Papel miniatures={miniatures}/> -->
 </div>
 
 <style>
     .carrousel{
+        z-index: 20;
 		position: fixed;
+        background-color: rgba(0, 0, 0, 0.781);
     width: 100%;
     height: 100vh;
     display: grid;
@@ -58,28 +63,39 @@ const { miniatures} = Astro.props;
 	}
     .galery{
         height: fit-content;
+        display: grid;
+    grid-template-columns: 3fr 1fr;
     }
     .carrousel-container {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 5;
     display: grid;
     flex-wrap: wrap;
     width: 100%;
     height: 100vh;
     flex-direction: row;
 }
+.indice{
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
 .container-image-carrousel{
     overflow: hidden;
     display: grid;
+
     justify-items: center;
     grid-row-start: 1;
     grid-column-start: 1;
-			width: 100vw;
+			width: 100%;
 			height:100vh;
 		}
         .miniature-news-carrousel{
 		filter: contrast(0.9);
 		width: auto;
 		height: fit-content;
-        transition: 1s;
+        /* transition: 1s; */
 	}
         @media print {
             .carrousel{
@@ -119,26 +135,13 @@ let currentZoom = 1;
 let minZoom = 0.5;
 let maxZoom = 3;
 let stepSize = 0.1;
-
 let container = document.getElementById('image-container');
-  
+let image = document.querySelector('#image-container img');
 container.addEventListener('wheel', function (event) {
     // Zoom in or out based on the scroll direction
     let direction = event.deltaY > 0 ? -1 : 1;
     zoomImage(direction);
 });
-
-
-container.addEventListener("dragover", function(e){
-    e = e || window.event;
-    var dragX = e.pageX, dragY = e.pageY;
-
-    // console.log("X: "+dragX+" Y: "+dragY);
-    container.innerText = `mouse point on drag: ${dragX}:${dragY}`
-}, false);
-
-
-
 
 function zoomImage(direction) {
     let newZoom = currentZoom + direction * stepSize;
@@ -151,7 +154,49 @@ function zoomImage(direction) {
     currentZoom = newZoom;
   
     // Update the CSS transform of the image to scale it
-    let image = document.querySelector('#image-container img');
-    image.style.transform = 'scale(' + currentZoom + ')';
+    image.style.transform = 'translateX(' + (currentMoveX) + 'px'+ ')' + 'translateY(' + (currentMoveY) + 'px'+ ')' + 'scale(' + currentZoom + ')';
 }
+
+
+
+
+let startX: 0;
+let startY: 0;
+let matrix = new WebKitCSSMatrix(image.style.transform)
+   let x = matrix.m41
+   let y = matrix.m42
+let currentMoveX = 0;
+let currentMoveY = 0;
+let stepMove = 1.5;
+
+container.addEventListener("mousedown", inicio);
+
+function inicio(event){
+    startX = event.pageX - x;
+    startY= event.pageY - y;
+    container.addEventListener("mousemove", moviendo);
+}
+
+function moviendo(e){
+    e.preventDefault();
+    currentMoveX = (e.pageX - startX )
+    currentMoveY = (e.pageY- startY)
+    image.style.transform = 'translateX(' + (currentMoveX) + 'px'+ ')' + 'translateY(' + (currentMoveY) + 'px'+ ')' + 'scale(' + currentZoom + ')';
+    container.addEventListener("mouseleave", terminar);
+    
+}
+
+container.addEventListener("mouseup", terminar);
+
+function terminar(){
+    x = currentMoveX
+    y = currentMoveY
+    console.log(x)
+    container.removeEventListener("mousemove", moviendo);
+    container.removeEventListener("mouseleave", terminar);
+    
+}
+
+
+
 </script>
