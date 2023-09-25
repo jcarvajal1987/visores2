@@ -1,10 +1,10 @@
 ---
 const { miniatures} = Astro.props;
 ---
-<div id="Index" class="index-pag hidden-pdf">
+<div class="index-pag hidden-pdf">
     Página:
     {miniatures.map( (pagina, i) =>
-    <div>{pagina.pagina}</div>
+    <div class={"number-page " + pagina.pagina + (i == 0 ? " active-page":"")}>{pagina.pagina}</div>
     )}
      
 </div>
@@ -12,7 +12,7 @@ const { miniatures} = Astro.props;
     
     {miniatures.map( (pagina, i)=>
         
-        <div id={i+1} class="miniature-container start1">
+        <div class={'miniature-container start1 '+ pagina.pagina + (i == 0 ? " active-page-container":"")  }>
             <div class="container-image">
                 <img
                 class="miniature-news"
@@ -38,6 +38,10 @@ const { miniatures} = Astro.props;
 </div>
 
 <style>
+    .active-page{
+        color: white;
+        background-color: #171717;
+    }
     .index-pag{
         display: flex;
         flex-direction: row;
@@ -51,11 +55,16 @@ const { miniatures} = Astro.props;
 		.miniature-container{
 			display: flex;
 			flex-wrap: wrap;
-			
+			opacity: 0;
+            pointer-events: none;
 			gap: 13px;
 			width: 100%;
 			flex-direction: row;
 		}
+        .active-page-container{
+            opacity: 1;
+            pointer-events: all;
+        }
 		.container-image{
 			display: flex;
 			width: fit-content;
@@ -72,8 +81,17 @@ const { miniatures} = Astro.props;
 </style>
 
 <script is:inline>
-    let indice = document.getElementById('Index');
-    indice.addEventListener("mousedown", (event) => {
-        console.log("k")
-    });
+    let activepagina = 0
+    let paginas = document.querySelectorAll('.number-page')
+    let contenedores = document.querySelectorAll('.miniature-container')
+    paginas.forEach((item,i) => {
+  item.addEventListener('click', event => {
+    console.log(i)
+    paginas[activepagina].classList.remove("active-page")
+    contenedores[activepagina].classList.remove("active-page-container")
+    paginas[i].classList.add("active-page")
+    contenedores[i].classList.add("active-page-container")
+    activepagina = i
+  })
+})
 </script>
