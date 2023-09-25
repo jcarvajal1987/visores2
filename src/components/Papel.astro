@@ -65,6 +65,9 @@ const { miniatures} = Astro.props;
             opacity: 1;
             pointer-events: all;
         }
+        .active-miniature{
+            border: 1px solid red;
+        }
 		.container-image{
 			display: flex;
 			width: fit-content;
@@ -77,21 +80,51 @@ const { miniatures} = Astro.props;
         max-width: 120px;
         max-height: 217px;
         }
+        @media print {
+            .container-image-carrousel{
+                opacity: 1;
+            } 
+        }
 		
 </style>
 
-<script is:inline>
-    let activepagina = 0
-    let paginas = document.querySelectorAll('.number-page')
-    let contenedores = document.querySelectorAll('.miniature-container')
-    paginas.forEach((item,i) => {
-  item.addEventListener('click', event => {
-    console.log(i)
-    paginas[activepagina].classList.remove("active-page")
-    contenedores[activepagina].classList.remove("active-page-container")
-    paginas[i].classList.add("active-page")
-    contenedores[i].classList.add("active-page-container")
-    activepagina = i
-  })
-})
+<script>
+    let carrousel = document.querySelector('.carrousel');
+    let carrouselimage = document.querySelectorAll('.container-image-carrousel');
+    let activepage = 0
+    let pages = document.querySelectorAll('.number-page')
+
+    let containers = document.querySelectorAll('.miniature-container')
+    pages.forEach((item,i) => {
+        item.addEventListener('click', event => {
+            pages[activepage].classList.remove("active-page")
+            containers[activepage].classList.remove("active-page-container")
+            pages[i].classList.add("active-page")
+            containers[i].classList.add("active-page-container")
+            activepage = i
+            console.log(carrousel)
+            
+        })
+    })
+
+    let activesuplement = 0
+    let miniatures = document.querySelectorAll('.container-image')
+    miniatures.forEach((item,i) => {
+        item.addEventListener('click', event => {
+            miniatures[activesuplement].classList.remove("active-miniature")
+           item.classList.add("active-miniature")
+           activesuplement = i
+           carrousel.classList.add("active-carrousel")
+           carrouselimage[i].classList.add("active-container-image-carrousel")
+
+        })
+    })
+
+
+    let suplements = document.querySelectorAll('.container-image-carrousel')
+    suplements.forEach((item,i) => {
+        item.addEventListener('click', event => {
+            
+        })
+    })
 </script>
