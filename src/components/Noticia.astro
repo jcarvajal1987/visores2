@@ -257,7 +257,7 @@ const { post, fecha, fechap } = Astro.props;
                 {
                     [1].indexOf(post.tipo) > -1 && (
                         
-                        <Papel miniatures={post.extra.miniatures}/>
+                        <Papel miniatures={post.extra.miniatures} padre="index-sidebar"/>
                         
                     )
                 }

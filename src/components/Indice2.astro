@@ -2,22 +2,21 @@
 const { miniatures, padre} = Astro.props;
 ---
 <div class={"hidden-pdf "+ padre}>
-    
-<div class="index-pag">
+<div class="index-pag2">
     Página:
     {miniatures.map( (pagina, i) =>
-    <div class={"number-page " + pagina.pagina + (i == 0 ? " active-page":"")}>{pagina.pagina}</div>
+    <div class={"number-page2 " + pagina.pagina + (i == 0 ? " active-page":"")}>{pagina.pagina}</div>
     )}
      
 </div>
-<div class="miniature-index">
+<div class="miniature-index2">
     
     {miniatures.map( (pagina, i)=>
         
-        <div class={'miniature-container start1 '+ pagina.pagina + (i == 0 ? " active-page-container":"")  }>
-            <div class="container-image">
+        <div class={'miniature-container2 start1 '+ pagina.pagina + (i == 0 ? " active-page-container":"")  }>
+            <div class="container-image2">
                 <img
-                class="miniature-news"
+                class="miniature-news2"
                 width="320"
                 height="180"
                 src={pagina.recorte}
@@ -25,10 +24,10 @@ const { miniatures, padre} = Astro.props;
                 />
                 
             </div>
-            <div class="container-image">
+            <div class="container-image2">
                 
             <img
-            class="miniature-news"
+            class="miniature-news2"
             width="320"
             height="180"
             src={pagina.contexto}
@@ -45,17 +44,17 @@ const { miniatures, padre} = Astro.props;
         color: white;
         background-color: #171717;
     }
-    .index-pag{
+    .index-pag2{
         display: flex;
         flex-direction: row;
         gap: 10px;
     }
-    .miniature-index{
+    .miniature-index2{
 			display: grid;
 			grid-template-columns: 100%;
 			height: fit-content;
 		}
-		.miniature-container{
+		.miniature-container2{
 			display: flex;
 			flex-wrap: wrap;
 			opacity: 0;
@@ -71,20 +70,21 @@ const { miniatures, padre} = Astro.props;
         .active-miniature{
             border: 1px solid red;
         }
-		.container-image{
+		.container-image2{
 			display: flex;
 			width: fit-content;
 			height:auto;
 		}
-        .miniature-news {
+        .miniature-news2 {
 		filter: contrast(0.9);
 		width: auto;
 		height: fit-content;
         max-width: 120px;
         max-height: 217px;
         }
+        
         @media print {
-            .container-image-carrousel{
+            .container-image2-carrousel{
                 opacity: 1;
             } 
         }
@@ -92,24 +92,28 @@ const { miniatures, padre} = Astro.props;
 </style>
 
 <script is:inline>
-    let carrousel = document.querySelector('.carrousel');
-    let carrouselimage = document.querySelectorAll('.container-image-carrousel');
-    let activepage = 0
-let activesuplement = 0
-    let containers = document.querySelector('.index-sidebar').querySelectorAll(".miniature-container")
-   
-    let pages = document.querySelectorAll('.number-page')
-    pages2 = document.querySelectorAll('.number-page2')
-    pages.forEach((item,i) => {
+
+    
+    
+    
+    // function activation() {pages.forEach((item,i) => {
+    //     if (item.classList.contains( 'active-page' )) {
+            
+            
+    //         activepage = i
+    //         console.log(i)
+    //             }
+    //         })
+    //     }
+    //     activation() 
+    let containers2 = document.querySelector('.index-carrousel').querySelectorAll(".miniature-container2")
+    let pages2 = document.querySelectorAll('.number-page2')
+    pages2.forEach((item,i) => {
         item.addEventListener('click', event => {
             
-            pages[activepage].classList.remove("active-page")
             pages2[activepage].classList.remove("active-page")
-            containers[activepage].classList.remove("active-page-container")
             containers2[activepage].classList.remove("active-page-container")
-            pages[i].classList.add("active-page")
             pages2[i].classList.add("active-page")
-            containers[i].classList.add("active-page-container")
             containers2[i].classList.add("active-page-container")
             activepage = i
             console.log(carrousel)
@@ -117,23 +121,25 @@ let activesuplement = 0
         })
     })
 
-    let miniatures = document.querySelectorAll('.container-image')
-    miniatures.forEach((item,i) => {
+    
+    let miniatures2 = document.querySelector('.index-carrousel').querySelectorAll(".container-image2")
+    console.log()
+    miniatures2.forEach((item,i) => {
         item.addEventListener('click', event => {
-            miniatures[activesuplement].classList.remove("active-miniature")
+            miniatures2[activesuplement].classList.remove("active-miniature")
            item.classList.add("active-miniature")
-           activesuplement = i
-           carrousel.classList.add("active-carrousel")
+            carrouselimage[activesuplement].classList.remove("active-container-image-carrousel")
            carrouselimage[i].classList.add("active-container-image-carrousel")
+           activesuplement = i
             
         })
     })
 
 
-    // let suplements = document.querySelectorAll('.container-image-carrousel')
-    // suplements.forEach((item,i) => {
-    //     item.addEventListener('click', event => {
+    let suplements = document.querySelectorAll('.container-image2-carrousel')
+    suplements.forEach((item,i) => {
+        item.addEventListener('click', event => {
             
-    //     })
-    // })
+        })
+    })
 </script>

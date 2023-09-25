@@ -1,5 +1,5 @@
 ---
-import Papel from "./Papel.astro";
+import Indice2 from "./Indice2.astro";
 const { miniatures} = Astro.props;
 
 ---
@@ -46,7 +46,7 @@ const { miniatures} = Astro.props;
                 </div>
                 <div class="indice">
 
-                    <!-- <Papel miniatures={miniatures}/> -->
+                    <Indice2 miniatures={miniatures} padre="index-carrousel"/>
                 </div>
     </div>
 </div>
@@ -110,6 +110,10 @@ const { miniatures} = Astro.props;
         max-width: 100%;
         /* transition: 1s; */
 	}
+    .indice{
+            z-index: 999;
+            position: relative;
+        }
         @media print {
             .carrousel{
                 position: relative;
