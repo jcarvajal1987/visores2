@@ -1,14 +1,18 @@
 ---
 const { miniatures} = Astro.props;
 ---
-<div class="index-pag hidden-pdf">
-    Página: 1 2 3
+<div id="Index" class="index-pag hidden-pdf">
+    Página:
+    {miniatures.map( (pagina, i) =>
+    <div>{i}</div>
+    )}
+     
 </div>
 <div class="miniature-index">
     
-    {miniatures.map( (pagina)=>
+    {miniatures.map( (pagina, i)=>
         
-        <div class="miniature-container start1">
+        <div id={i+1} class="miniature-container start1">
             <div class="container-image">
                 <img
                 class="miniature-news"
@@ -32,3 +36,44 @@ const { miniatures} = Astro.props;
         </div>
     )}
 </div>
+
+<style>
+    .index-pag{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+    .miniature-index{
+			display: grid;
+			grid-template-columns: 100%;
+			height: fit-content;
+		}
+		.miniature-container{
+			display: flex;
+			flex-wrap: wrap;
+			
+			gap: 13px;
+			width: 100%;
+			flex-direction: row;
+		}
+		.container-image{
+			display: flex;
+			width: fit-content;
+			height:auto;
+		}
+        .miniature-news {
+		filter: contrast(0.9);
+		width: auto;
+		height: fit-content;
+        max-width: 120px;
+        max-height: 217px;
+        }
+		
+</style>
+
+<script is:inline>
+    let indice = document.getElementById('Index');
+    indice.addEventListener("mousedown", (event) => {
+        console.log("k")
+    });
+</script>
