@@ -4,7 +4,7 @@ const { miniatures} = Astro.props;
 <div id="Index" class="index-pag hidden-pdf">
     Página:
     {miniatures.map( (pagina, i) =>
-    <div>{i}</div>
+    <div>{pagina.pagina}</div>
     )}
      
 </div>
