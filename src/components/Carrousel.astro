@@ -125,9 +125,9 @@ const { miniatures} = Astro.props;
     justify-items: center;
     grid-row-start: 1;
     grid-column-start: 1;
-			width: 100%;
+			width: fit-content;
 			height:auto;
-            max-height: fit-content;
+            max-height: max-content;
             transition:1s;
 		}
         .active-container-image-carrousel{
@@ -140,7 +140,7 @@ const { miniatures} = Astro.props;
 			max-width: 100%;
 			display:flex ;
 			height: fit-content;
-			max-height: fit-content;
+			max-height: max-content;
 	}
     .indice{
             z-index: 999;
