@@ -99,7 +99,7 @@ const { miniatures} = Astro.props;
     display: grid;
     flex-wrap: wrap;
     width: 100%;
-    height: 100vh;
+    height: fit-content;
     flex-direction: row;
 }
 .indice{
@@ -136,11 +136,12 @@ const { miniatures} = Astro.props;
         }
         .miniature-news-carrousel{
 		filter: contrast(0.9);
-		width: auto;
+        width: min-content;
 			max-width: 100%;
 			display:flex ;
 			height: fit-content;
 			max-height: max-content;
+            
 	}
     .indice{
             z-index: 999;
