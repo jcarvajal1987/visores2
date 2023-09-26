@@ -746,6 +746,10 @@ const { post , title } = Astro.props;
 			display: flex;
 			flex-direction: column;
 		}
+		.columna{
+			page-break-after: always;
+			height: fit-content;
+		}
 		.papel {
 			padding: 0px 6% 0px 6%;
 			height: auto;
@@ -753,7 +757,7 @@ const { post , title } = Astro.props;
 			max-height: auto;
 			overflow: auto;
 			display: block;
-			page-break-after: always;
+			
 		}
 		.printdetails {
 			width: fit-content;
