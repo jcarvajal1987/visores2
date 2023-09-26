@@ -129,6 +129,7 @@ const { miniatures} = Astro.props;
 			height:auto;
             max-height: 100vh;
             transition:1s;
+            padding-bottom: 100px;
 		}
         .active-container-image-carrousel{
             opacity: 1;
@@ -161,9 +162,9 @@ const { miniatures} = Astro.props;
             }
             
             .container-image-carrousel{
-                overflow: hidden;
-                grid-row-start: auto;
-    grid-column-start: auto;
+            overflow: hidden;
+            grid-row-start: auto;
+            grid-column-start: auto;
 			width: fit-content;
 			max-width: 100%;
 			display:flex ;
@@ -171,6 +172,7 @@ const { miniatures} = Astro.props;
 			height: 100vh;
 			max-height: 100vh;
             opacity: 1;
+            padding-bottom: 0;
 		}
         .miniature-news-carrousel {
 			filter: contrast(1);
