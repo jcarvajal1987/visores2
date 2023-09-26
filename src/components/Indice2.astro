@@ -63,6 +63,7 @@ const { miniatures, padre} = Astro.props;
 			width: 100%;
 			flex-direction: row;
             transition: 1s;
+            height: fit-content;
 		}
         .active-page-container{
             opacity: 1;
@@ -93,8 +94,11 @@ const { miniatures, padre} = Astro.props;
 </style>
 
 <script is:inline>
-
-    
+    let cerrarcarrousel = document.querySelector('.carrousel-cerrar')
+    cerrarcarrousel.addEventListener('click', event => {
+        carrousel.classList.add("over-carrousel")
+        carrousel.classList.remove("active-carrousel")
+    })
     
     
     // function activation() {pages.forEach((item,i) => {
@@ -112,9 +116,13 @@ const { miniatures, padre} = Astro.props;
     pages2.forEach((item,i) => {
         item.addEventListener('click', event => {
             
+            pages[activepage].classList.remove("active-page")
             pages2[activepage].classList.remove("active-page")
+            containers[activepage].classList.remove("active-page-container")
             containers2[activepage].classList.remove("active-page-container")
+            pages[i].classList.add("active-page")
             pages2[i].classList.add("active-page")
+            containers[i].classList.add("active-page-container")
             containers2[i].classList.add("active-page-container")
             activepage = i
             console.log(carrousel)

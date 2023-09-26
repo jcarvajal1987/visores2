@@ -5,6 +5,7 @@ const { miniatures} = Astro.props;
 ---
 
 <div class="carrousel">
+    
     <div class="galery">
         <div class="carrousel-container">
             
@@ -44,6 +45,7 @@ const { miniatures} = Astro.props;
                 
             </div> -->
                 </div>
+                <div class="carrousel-cerrar">cerrar</div>
                 <div class="indice">
 
                     <Indice2 miniatures={miniatures} padre="index-carrousel"/>
@@ -53,7 +55,7 @@ const { miniatures} = Astro.props;
 
 <style>
     .carrousel{
-        z-index: 20;
+        z-index: -1;
 		position: fixed;
         opacity: 0;
         pointer-events: none;
@@ -65,9 +67,25 @@ const { miniatures} = Astro.props;
     grid-template-rows: 100%;
     transition:1s;
 	}
+    @keyframes example {
+    0%   {z-index: -1;opacity: 0;}
+    1%  {z-index: 20;}
+    100% {opacity: 1;z-index: 20;}
+    }
     .active-carrousel{
-        opacity: 1;
+        animation-name: example;
+        animation-fill-mode: forwards;
+        animation-duration: 1s;
         pointer-events: all;
+    }
+    .over-carrousel{
+        animation-name: example2;
+        animation-duration: 1s;
+    }
+    @keyframes example2 {
+    0%   {z-index: 20;opacity: 1;}
+    99%  {z-index: 20;opacity: 0;}
+    100% {opacity: 0;z-index: -1;}
     }
     .galery{
         height: fit-content;
@@ -86,8 +104,18 @@ const { miniatures} = Astro.props;
 }
 .indice{
     grid-row-start: 1;
-    grid-column-start: 2;
     grid-column-end: 3;
+    height: fit-content;
+    margin: auto 0;
+    max-width: 166px;
+    justify-self: right;
+}
+.carrousel-cerrar{
+    z-index: 99;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    justify-self: right;
+    margin-right: 30px;
 }
 .container-image-carrousel{
     overflow-y: scroll;

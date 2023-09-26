@@ -64,6 +64,7 @@ const { miniatures, padre} = Astro.props;
 			width: 100%;
 			flex-direction: row;
             transition: 1s;
+            height: fit-content;
 		}
         .active-page-container{
             opacity: 1;
@@ -94,6 +95,7 @@ const { miniatures, padre} = Astro.props;
 
 <script is:inline>
     let carrousel = document.querySelector('.carrousel');
+    
     let carrouselimage = document.querySelectorAll('.container-image-carrousel');
     let activepage = 0
 let activesuplement = 0
@@ -121,12 +123,14 @@ let activesuplement = 0
     let miniatures = document.querySelectorAll('.container-image')
     miniatures.forEach((item,i) => {
         item.addEventListener('click', event => {
-            miniatures[activesuplement].classList.remove("active-miniature")
-           item.classList.add("active-miniature")
-           activesuplement = i
+            
+            miniatures2[activesuplement].classList.remove("active-miniature")
+            activesuplement = i
+            miniatures2[activesuplement].classList.add("active-miniature")
            carrousel.classList.add("active-carrousel")
+           carrousel.classList.remove("over-carrousel")
            carrouselimage[i].classList.add("active-container-image-carrousel")
-           event.addEventListener
+
             
         })
     })
@@ -199,4 +203,6 @@ function terminar(e){
     e.toElement.removeEventListener("mouseleave", terminar);
     
 }
+
+
 </script>
