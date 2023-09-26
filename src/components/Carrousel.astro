@@ -144,26 +144,28 @@ const { miniatures} = Astro.props;
             z-index: 999;
             position: relative;
         }
-        @media print {
+        @media print{
             .carrousel{
                 position: relative;
                 height: fit-content;
                 opacity: 1;
+                z-index: 20;
             }
             .carrousel-container{
                 height: fit-content;
             }
+            
             .container-image-carrousel{
+                overflow: hidden;
                 grid-row-start: auto;
     grid-column-start: auto;
-            }
-            .container-image-carrousel{
 			width: fit-content;
 			max-width: 100%;
 			display:flex ;
 			min-height: 100vh;
 			height: auto;
 			max-height: 100vh;
+            opacity: 1;
 		}
         .miniature-news-carrousel {
 			filter: contrast(1);
@@ -173,9 +175,9 @@ const { miniatures} = Astro.props;
 			height: auto;
 			max-height: 100vh;
 		}
-        .container-image-carrousel{
-                opacity: 1;
-            }
+        .indice{
+            display: none;
+        }
             
     }
     
