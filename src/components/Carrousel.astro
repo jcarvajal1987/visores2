@@ -148,7 +148,7 @@ const { miniatures} = Astro.props;
             z-index: 999;
             position: relative;
         }
-        @media print{
+        @media {
             .carrousel{
                 background-color: white;
                 position: relative;
@@ -159,12 +159,16 @@ const { miniatures} = Astro.props;
             }
             .carrousel-container{
                 height: fit-content;
+                page-break-before: always;
             }
             
             .container-image-carrousel{
+                page-break-before: always;
             overflow: hidden;
             grid-row-start: auto;
+            grid-row-end: auto;
             grid-column-start: auto;
+            grid-column-end: auto;
 			width: fit-content;
 			max-width: 100%;
 			display:flex ;
