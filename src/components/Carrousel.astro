@@ -151,15 +151,13 @@ const { miniatures} = Astro.props;
         @media print{
             .carrousel{
                 background-color: white;
-                
+                position: relative;
                 height: fit-content;
                 opacity: 1;
                 z-index: 20;
                 page-break-before: always;
-                display: block; page-break-before: always;
             }
-            .crrousel:first-child { display: block; page-break-before: avoid; }
-    
+            
             .carrousel-container{
                 height: fit-content;
                 page-break-before: always;
