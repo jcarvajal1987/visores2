@@ -126,7 +126,7 @@ const { miniatures} = Astro.props;
     grid-row-start: 1;
     grid-column-start: 1;
 			width: 100%;
-			height:100vh;
+			height:auto;
             transition:1s;
 		}
         .active-container-image-carrousel{
@@ -150,6 +150,7 @@ const { miniatures} = Astro.props;
                 height: fit-content;
                 opacity: 1;
                 z-index: 20;
+                page-break-before: always;
             }
             .carrousel-container{
                 height: fit-content;
@@ -163,7 +164,7 @@ const { miniatures} = Astro.props;
 			max-width: 100%;
 			display:flex ;
 			min-height: 100vh;
-			height: auto;
+			height: 100vh;
 			max-height: 100vh;
             opacity: 1;
 		}
