@@ -98,6 +98,7 @@ const { miniatures, padre} = Astro.props;
     cerrarcarrousel.addEventListener('click', event => {
         carrousel.classList.add("over-carrousel")
         carrousel.classList.remove("active-carrousel")
+        carrouselimage[activesuplement].classList.remove("active-container-image-carrousel")
     })
     
     
