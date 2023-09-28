@@ -5,11 +5,13 @@ const { miniatures, padre} = Astro.props;
     
 <div class="index-pag">
     Página:
-    {miniatures.map( (pagina, i) =>
-    <div class={"number-page " + pagina.pagina + (i == 0 ? " active-page":"")}>{pagina.pagina}</div>
-    )}
-     
+        <div class="index-container">
+        {miniatures.map( (pagina, i) =>
+        <div class={"number-page " + pagina.pagina + (i == 0 ? " active-page":"")}>{pagina.pagina}</div>
+        )}
+    </div>
 </div>
+
 <div class="miniature-index">
     
     {miniatures.map( (pagina, i)=>
@@ -41,14 +43,20 @@ const { miniatures, padre} = Astro.props;
 </div>
 
 <style>
-    .active-page{
-        color: white;
-        background-color: #171717;
-    }
+    
     .index-pag{
         display: flex;
         flex-direction: row;
-        gap: 10px;
+        gap: 5px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 10px 0;
+    }
+    .index-container{
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
     }
     .miniature-index{
 			display: grid;
@@ -70,6 +78,19 @@ const { miniatures, padre} = Astro.props;
             opacity: 1;
             pointer-events: all;
         }
+        .number-page{
+            height: 38px;
+            width: 38px;
+            display: grid;
+            place-content: center;
+            background-color: #e6e6e6;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .active-page{
+        color: white;
+        background-color: #171717;
+    }
         .active-miniature{
             border: 1px solid red;
         }
