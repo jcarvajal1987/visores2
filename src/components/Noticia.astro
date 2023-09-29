@@ -21,8 +21,8 @@ const { post, fecha, fechap } = Astro.props;
                 <div class="izipress">
                     IZI PRESS # {post.extra.numwords}
                 </div>
-                <div class="hidden-pdf xs pointer detail-layout">
-                    <div id="SidebarToggle" class="abrir flex">
+                <div id="SidebarToggle" class="hidden-pdf xs pointer detail-layout">
+                    <div class="abrir flex">
                         Detalles<img
                             style="padding-top: 5px;"
                             width="22"
@@ -228,7 +228,7 @@ const { post, fecha, fechap } = Astro.props;
                 </span>
 
                 <div class="actions-container hidden-pdf">
-                    <div id="url" class="actions">
+                    <div id="url" class="actions" >
                         <img class="chain" src="img/copiar.svg" alt="" />
 
                         <span class="precopy">Copiar Url</span>
@@ -276,9 +276,10 @@ const { post, fecha, fechap } = Astro.props;
                     )
                 }
             </div>
-            <div class="hidden-pdf xs pointer detail-layout2">
-                <div id="SidebarToggleIn" class="cerrar flex">
+            <div id="SidebarToggleIn" class="hidden-pdf xs pointer detail-layout2">
+                <div  class="cerrar flex">
                     Cerrar<img
+                        style=" margin-top: 2px"
                         width="22"
                         height="21.33"
                         alt="cerrar"

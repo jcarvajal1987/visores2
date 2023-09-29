@@ -252,14 +252,14 @@ const { post , title } = Astro.props;
 		grid-column-start: 1;
 		align-self: start;
 		justify-self: right;
-		padding: 33px 25px 26px 0;
+		padding: 29px 25px 26px 0;
 	}
 	.detail-layout2 {
 		grid-row-start: 1;
 		grid-column-start: 1;
 		align-self: start;
 		justify-self: right;
-		padding: 33px 28px 26px 0;
+		padding: 35px 30px 35px 10px;
 	}
 	.abrir {
 		gap: 10px;
@@ -414,6 +414,9 @@ const { post , title } = Astro.props;
 		width: 17px;
 		height: 9.06px;
 		border-radius: 4px;
+	}
+	#url{
+		width: 120px;
 	}
 	.rating{
 		width: 18px;
@@ -596,12 +599,12 @@ const { post , title } = Astro.props;
 	}
 	.active-url {
 		color: #3d8b53;
-		animation-name: example;
+		animation-name: url;
 		animation-duration: 0;
 		animation-fill-mode: forwards;
 		animation-timing-function: ease-in;
 	}
-	@keyframes example {
+	@keyframes url {
 		from {
 			background-color: #e6e6e6;
 		}
@@ -609,9 +612,17 @@ const { post , title } = Astro.props;
 			background-color: #84c7a7;
 		}
 	}
+	@keyframes download {
+		from {
+			background-color: #e6e6e6;
+		}
+		to {
+			background-color: #1e51de;
+		}
+	}
 	.active-download {
 		color: white;
-		animation-name: example2;
+		animation-name: download;
 		animation-duration: 0;
 		animation-fill-mode: forwards;
 		animation-timing-function: ease-in;
@@ -749,6 +760,7 @@ const { post , title } = Astro.props;
 		.columna{
 			page-break-after: always;
 			height: fit-content;
+			background-color: #ffffff;
 		}
 		.papel {
 			padding: 0px 6% 0px 6%;

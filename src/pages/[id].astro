@@ -236,14 +236,24 @@ const fechap = post.hcarga;
 
 
 <script >
-	var sidetoggle = document.querySelector("#SidebarToggle");
-	var sidetogglein = document.querySelector("#SidebarToggleIn");
+	document.addEventListener("click", (e)=> {
+        if(e.target.matches(".cerrado-global-carrousel")){
+            carrousel.classList.add("over-carrousel")
+        carrousel.classList.remove("active-carrousel")
+        carrouselimage[activesuplement].classList.remove("active-container-image-carrousel")
+        }
+		if (e.target.matches(".detail-layout,.detail-layout img,.detail-layout2,.detail-layout2 img, .abrir, .cerrar")) {
+			openDetails()
+		}
+    })
+
+	// var sidetogglein = document.querySelector("#SidebarToggleIn");
 	var sidebar = document.querySelector("#Sidebar");
 	var urlButton = document.querySelector("#url");
 	var download = document.querySelector("#download");
 
-	sidetoggle.onclick = openDetails;
-	sidetogglein.onclick = openDetails;
+	// sidetoggle.onclick = openDetails;
+	// sidetogglein.onclick = openDetails;
 
 	let url2 = document.location.href;
 	urlButton.onclick = urlCopy;
@@ -280,7 +290,7 @@ const fechap = post.hcarga;
 		// 	console.log('Copy error')
 		// });
 		var bajar = document.querySelector(".download");
-		download.classList.remove("active-url");
+		download.classList.remove("active-download");
 
 		
 		setTimeout(() => {

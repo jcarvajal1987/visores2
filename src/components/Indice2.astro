@@ -94,12 +94,19 @@ const { miniatures, padre} = Astro.props;
 </style>
 
 <script is:inline>
-    let cerrarcarrousel = document.querySelector('.carrousel-cerrar')
-    cerrarcarrousel.addEventListener('click', event => {
-        carrousel.classList.add("over-carrousel")
-        carrousel.classList.remove("active-carrousel")
-        carrouselimage[activesuplement].classList.remove("active-container-image-carrousel")
-    })
+    
+
+    // let cerrarcarrousel = document.querySelectorAll('.cerrado-global-carrousel')
+    // cerrarcarrousel.forEach((item)=>{
+    //     item.addEventListener('click', event => {
+    // event.preventDefault()
+    //     carrousel.classList.add("over-carrousel")
+    //     carrousel.classList.remove("active-carrousel")
+    //     carrouselimage[activesuplement].classList.remove("active-container-image-carrousel")
+    // })
+
+    //})
+   
     
     
     // function activation() {pages.forEach((item,i) => {
