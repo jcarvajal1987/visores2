@@ -163,6 +163,16 @@ const { miniatures} = Astro.props;
 			max-height: max-content;
             
 	}
+    @media (min-width: 1px) and (max-width: 960px) {
+        .indice{
+            display: none;
+        }
+        .carrousel-cerrar{
+            background-color: #00000078;
+            top: 10px;
+            right: 10px;
+        }
+    }
     
         @media print{
             .carrousel{
@@ -203,7 +213,7 @@ const { miniatures} = Astro.props;
 			height: fit-content;
 			max-height: 100vh;
 		}
-        .indice{
+        .indice2{
             display: none;
         }
             
