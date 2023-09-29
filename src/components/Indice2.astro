@@ -4,9 +4,12 @@ const { miniatures, padre} = Astro.props;
 <div class={"hidden-pdf "+ padre}>
 <div class="index-pag2">
     Página:
-    {miniatures.map( (pagina, i) =>
+    <div class="index-container2">
+
+        {miniatures.map( (pagina, i) =>
     <div class={"number-page2 " + pagina.pagina + (i == 0 ? " active-page":"")}>{pagina.pagina}</div>
     )}
+    </div>
      
 </div>
 <div class="miniature-index2">
@@ -46,8 +49,9 @@ const { miniatures, padre} = Astro.props;
     }
     .index-pag2{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: 10px;
+        color: white;
     }
     .miniature-index2{
 			display: grid;
@@ -70,20 +74,42 @@ const { miniatures, padre} = Astro.props;
             pointer-events: all;
         }
         .active-miniature{
-            border: 1px solid red;
+            border: 3px solid red;
         }
 		.container-image2{
 			display: flex;
 			width: fit-content;
 			height:auto;
+            cursor: pointer;
 		}
         .miniature-news2 {
 		filter: contrast(0.9);
 		width: auto;
 		height: fit-content;
-        max-width: 120px;
+        max-width: 100%;
         max-height: 217px;
         }
+        
+    .number-page2{
+            height: 38px;
+            width: 38px;
+            display: grid;
+            place-content: center;
+            background-color: #373737;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .index-pag2 .active-page{
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .index-container2{
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        margin-bottom: 10px;
+    }
         
         @media print {
             .container-image2-carrousel{

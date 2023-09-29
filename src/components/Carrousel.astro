@@ -45,7 +45,9 @@ const { miniatures} = Astro.props;
                 
             </div> -->
                 </div>
-                <div class="carrousel-cerrar cerrado-global-carrousel">cerrar</div>
+                <div class="carrousel-cerrar cerrado-global-carrousel">
+                    <img class="cerrado-global-carrousel" src="img/close.svg" width="20" height="20" alt="">
+                </div>
                 <div class="indice">
 
                     <Indice2 miniatures={miniatures} padre="index-carrousel"/>
@@ -102,20 +104,37 @@ const { miniatures} = Astro.props;
     height: fit-content;
     flex-direction: row;
 }
-.indice{
-    grid-row-start: 1;
-    grid-column-end: 3;
-    height: fit-content;
-    margin: auto 0;
-    max-width: 166px;
-    justify-self: right;
-}
+.indice {
+    display: grid;
+        grid-row-start: 1;
+        grid-column-end: 4;
+        height: fit-content;
+        top: 82px;
+        max-width: min-content;
+        min-width: 120px;
+        background-color: black;
+        padding: 10px;
+        z-index: 999;
+        position: relative;
+        right: 42px;
+        border-radius: 5px;
+    }
+    
 .carrousel-cerrar{
     z-index: 99;
-    grid-column-end: 3;
+    grid-column-end: 4;
     grid-row-start: 1;
-    justify-self: right;
-    margin-right: 30px;
+    position: relative;
+    right: 5px;
+    top: 14px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: grid;
+    place-content: center;
+    background-color: #000000;
+    color: #ffffff;
+    cursor: pointer;
 }
 .container-image-carrousel{
     overflow-y: scroll;
@@ -144,10 +163,7 @@ const { miniatures} = Astro.props;
 			max-height: max-content;
             
 	}
-    .indice{
-            z-index: 999;
-            position: relative;
-        }
+    
         @media print{
             .carrousel{
                 background-color: white;
