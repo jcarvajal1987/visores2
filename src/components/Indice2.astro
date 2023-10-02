@@ -7,7 +7,7 @@ const { miniatures, padre} = Astro.props;
     <div class="index-container2">
 
         {miniatures.map( (pagina, i) =>
-    <div class={"number-page2 " + pagina.pagina + (i == 0 ? " active-page":"")}>{pagina.pagina}</div>
+    <div data-pagina={i} class={"number-page2 "  + (i == 0 ? " active-page":"")}>{pagina.pagina}</div>
     )}
     </div>
      
@@ -16,9 +16,10 @@ const { miniatures, padre} = Astro.props;
     
     {miniatures.map( (pagina, i)=>
         
-        <div class={'miniature-container2 start1 '+ pagina.pagina + (i == 0 ? " active-page-container":"")  }>
+        <div class={'miniature-container2 start1 ' + (i == 0 ? " active-page-container":"")  }>
             <div class="container-image2">
                 <img
+                data-pagina={i+i}
                 class="miniature-news2"
                 width="320"
                 height="180"
@@ -30,6 +31,7 @@ const { miniatures, padre} = Astro.props;
             <div class="container-image2">
                 
             <img
+            data-pagina={i+i+1}
             class="miniature-news2"
             width="320"
             height="180"
@@ -119,70 +121,3 @@ const { miniatures, padre} = Astro.props;
 		
 </style>
 
-<script is:inline>
-    
-
-    // let cerrarcarrousel = document.querySelectorAll('.cerrado-global-carrousel')
-    // cerrarcarrousel.forEach((item)=>{
-    //     item.addEventListener('click', event => {
-    // event.preventDefault()
-    //     carrousel.classList.add("over-carrousel")
-    //     carrousel.classList.remove("active-carrousel")
-    //     carrouselimage[activesuplement].classList.remove("active-container-image-carrousel")
-    // })
-
-    //})
-   
-    
-    
-    // function activation() {pages.forEach((item,i) => {
-    //     if (item.classList.contains( 'active-page' )) {
-            
-            
-    //         activepage = i
-    //         console.log(i)
-    //             }
-    //         })
-    //     }
-    //     activation() 
-    let containers2 = document.querySelector('.index-carrousel').querySelectorAll(".miniature-container2")
-    let pages2 = document.querySelectorAll('.number-page2')
-    pages2.forEach((item,i) => {
-        item.addEventListener('click', event => {
-            
-            pages[activepage].classList.remove("active-page")
-            pages2[activepage].classList.remove("active-page")
-            containers[activepage].classList.remove("active-page-container")
-            containers2[activepage].classList.remove("active-page-container")
-            pages[i].classList.add("active-page")
-            pages2[i].classList.add("active-page")
-            containers[i].classList.add("active-page-container")
-            containers2[i].classList.add("active-page-container")
-            activepage = i
-            console.log(carrousel)
-            
-        })
-    })
-
-    
-    let miniatures2 = document.querySelector('.index-carrousel').querySelectorAll(".container-image2")
-    console.log()
-    miniatures2.forEach((item,i) => {
-        item.addEventListener('click', event => {
-            miniatures2[activesuplement].classList.remove("active-miniature")
-           item.classList.add("active-miniature")
-            carrouselimage[activesuplement].classList.remove("active-container-image-carrousel")
-           carrouselimage[i].classList.add("active-container-image-carrousel")
-           activesuplement = i
-            
-        })
-    })
-
-
-    let suplements = document.querySelectorAll('.container-image2-carrousel')
-    suplements.forEach((item,i) => {
-        item.addEventListener('click', event => {
-            
-        })
-    })
-</script>

@@ -147,12 +147,7 @@ const { post, fecha, fechap } = Astro.props;
                 )
             }
         </div>
-        {
-            post.tipo === 1 && (
-               
-                <Carrousel miniatures={post.extra.miniatures} /> 
-            )
-        }
+        
          
         <div class="footer">
             © Izimedia Soluciones Digitales para el Análisis de Prensa
@@ -289,6 +284,13 @@ const { post, fecha, fechap } = Astro.props;
             </div>
         </div>
     </div>
+
+    {
+        post.tipo === 1 && (
+           
+            <Carrousel miniatures={post.extra.miniatures} /> 
+        )
+    }
 
     <!-- <Card
             href="https://docs.astro.build/"
