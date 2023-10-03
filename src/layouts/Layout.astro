@@ -768,7 +768,7 @@ const { post , title } = Astro.props;
 			height: auto;
 			min-height: auto;
 			max-height: auto;
-			overflow: auto;
+			overflow: hidden;
 			display: block;
 			
 		}
@@ -807,66 +807,18 @@ const { post , title } = Astro.props;
 			padding-bottom: 0;
 		}
 		.columnb {
-			display: none;
+			box-shadow: none;
+			height: fit-content;
+			opacity: 1;
 		}
-
+		.items{
+			padding: 25px 8.5% 0px 8.5%;
+		}
 		.container {
 			width: 100%;
 			height: auto;
 			background-color: #e7e7e7;
 		}
-		
-		
-		/* .miniature {
-			display: block;
-			width: 100%;
-			height: auto;
-			margin-bottom: 0;
-			padding: 0 50% 0 6%;
-			box-shadow: none;
-			border: none;
-		}
-		.miniature-index{
-			page-break-before: always;
-		}
-		.miniature-container{
-			display: flex;
-			width: 100%;
-			flex-wrap: wrap;
-			height: fit-content;
-			max-height: fit-content;
-			gap: 0;
-		}
-		.container-image{
-			width: fit-content;
-			max-width: 100%;
-			display:flex ;
-			min-height: 100vh;
-			height: auto;
-			max-height: 100vh;
-		}
-		
-		.miniature-news {
-			filter: contrast(1);
-			width: auto;
-			max-width: 100%;
-			display:flex ;
-			height: fit-content;
-			max-height: 100vh;
-		} */
-
-		
-		/* .detalles {
-			padding: 0;
-			display: block;
-			height: fit-content;
-		}
-		.items {
-			display: block;
-			padding: 0;
-			height: fit-content;
-			min-height: 0;
-		} */
 		.hidden-details {
 			display: none;
 		}
