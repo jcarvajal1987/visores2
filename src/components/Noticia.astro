@@ -29,6 +29,7 @@ const { post, fecha, fechap } = Astro.props;
                             height="21.33"
                             alt="options"
                             src="img/right.svg"
+                            
                         />
                     </div>
                 </div>
@@ -101,11 +102,7 @@ const { post, fecha, fechap } = Astro.props;
             {
                 post.tipo === 3 && (
                     <div class="container grid">
-                        <video
-                            id="2"
-                            class="video start1 invisibility print-visibility "
-                            src={post.url_img}
-                        />
+                        
                         <video
                             controls
                             autoplay
@@ -270,6 +267,7 @@ const { post, fecha, fechap } = Astro.props;
                         />
                     )
                 }
+                
             </div>
             <div id="SidebarToggleIn" class="hidden-pdf xs pointer detail-layout2">
                 <div  class="cerrar flex">
@@ -303,6 +301,17 @@ const { post, fecha, fechap } = Astro.props;
                 src="img/Aton_324985.jpg"
                 alt=""
             />
+        )
+    }
+    {
+        post.tipo === 3 && (
+            <div class="container grid">
+                <video
+                    id="2"
+                    class="video start1 invisibility print-visibility "
+                    src={post.url_img}
+                />
+            </div>
         )
     }
 

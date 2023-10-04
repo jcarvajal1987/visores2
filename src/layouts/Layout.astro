@@ -739,7 +739,7 @@ const { post , title } = Astro.props;
 	.hidden {
 		display: none;
 	}
-	@media print{
+	@media {
 		@page {
 			size: auto;
 			margin: 3mm;
@@ -840,9 +840,11 @@ const { post , title } = Astro.props;
 		}
 		.print-visibility {
 			opacity: 1;
+			display: block;
 		}
 		.print-invisibility {
 			opacity: 0;
+			display: none;
 		}
 		/* .sidebar {
 			display: block;
