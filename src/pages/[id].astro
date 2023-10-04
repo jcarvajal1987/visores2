@@ -274,8 +274,10 @@ const fechap = post.hcarga;
 		urlButton.classList.remove("active-url");
 		setTimeout(() => {
 			urlButton.classList.add("active-url");
-			urlButton.children[1].classList.add("hidden");
-			urlButton.children[2].classList.remove("hidden");
+			urlButton.children[0].classList.add("hidden");
+			urlButton.children[1].classList.remove("hidden");
+			urlButton.children[2].classList.add("hidden");
+			urlButton.children[3].classList.remove("hidden");
 		}, 10);
 		
 	}
