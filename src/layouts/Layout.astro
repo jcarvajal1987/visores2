@@ -739,7 +739,7 @@ const { post , title } = Astro.props;
 	.hidden {
 		display: none;
 	}
-	@media print {
+	@media print{
 		@page {
 			size: auto;
 			margin: 3mm;
@@ -811,14 +811,23 @@ const { post , title } = Astro.props;
 			box-shadow: none;
 			height: fit-content;
 			opacity: 1;
+			display: none;
 		}
 		.items{
-			padding: 25px 8.5% 0px 8.5%;
+			padding: 0 8.5% 0px 0;
+			min-height: fit-content;
+		}
+		.detalles{
+			height: fit-content;
 		}
 		.container {
 			width: 100%;
-			height: auto;
+			height: fit-content;
 			background-color: #e7e7e7;
+		}
+		.img-internet{
+			width: 100%;
+			height: auto;
 		}
 		.hidden-details {
 			display: none;
