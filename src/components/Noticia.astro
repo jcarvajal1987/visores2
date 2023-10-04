@@ -105,7 +105,6 @@ const { post, fecha, fechap } = Astro.props;
                         
                         <video
                             controls
-                            autoplay
                             id="2"
                             class="video start1 print-block print-invisibility"
                             src={post.url_img}
@@ -306,10 +305,14 @@ const { post, fecha, fechap } = Astro.props;
     {
         post.tipo === 3 && (
             <div class="container grid">
+                
                 <video
-                    id="2"
-                    class="video start1 invisibility print-visibility "
+                    
+                    autoplay
+                    class="video start1 print-block print-visibility"
                     src={post.url_img}
+                    webkit-playsinline
+                    playsinline
                 />
             </div>
         )
