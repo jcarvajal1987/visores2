@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 import type { GetStaticPaths } from "astro";
 import Layout from "../layouts/Layout.astro";
 import Noticia from "../components/Noticia.astro";
@@ -27,10 +27,30 @@ const posts = [
 		extra: {
 			area: "267x1444",
 			pages: "3",
-			miniatures:[{pagina:"4",recorte:"/img/diario1.jpg",contexto:"/img/diario2.jpg"},
-					{pagina:"5",recorte:"/img/diario3.png",contexto:"/img/diario2.jpg"}],
-			images:[{pagina:"4",recorte:"/img/diario1.jpg",contexto:"/img/diario2.jpg"},
-					{pagina:"5",recorte:"/img/diario1.jpg",contexto:"/img/diario2.jpg"}],
+			miniatures: [
+				{
+					pagina: "4",
+					recorte: "/img/diario1.jpg",
+					contexto: "/img/diario2.jpg",
+				},
+				{
+					pagina: "5",
+					recorte: "/img/diario3.png",
+					contexto: "/img/diario2.jpg",
+				},
+			],
+			images: [
+				{
+					pagina: "4",
+					recorte: "/img/diario1.jpg",
+					contexto: "/img/diario2.jpg",
+				},
+				{
+					pagina: "5",
+					recorte: "/img/diario1.jpg",
+					contexto: "/img/diario2.jpg",
+				},
+			],
 			duracion: "N/A",
 			aparicion: "N/A",
 			audience: 143000,
@@ -168,9 +188,9 @@ const posts = [
 	},
 ];
 
-const post = await posts[id -1]
+const post = await posts[id - 1];
 
-const fecha =  new Date(post.fpublicacion).toLocaleDateString("es-cl", {
+const fecha = await new Date(post.fpublicacion).toLocaleDateString("es-cl", {
 	weekday: "long",
 	year: "numeric",
 	month: "short",
@@ -219,31 +239,22 @@ const fechap = post.hcarga;
 //     };
 //   });
 // }
-
-
-
-
-
-
-
 ---
 
 <Layout post={post} title="Welcome to Astro.">
 	<Noticia post={post} fecha={fecha} fechap={fechap} />
 </Layout>
 
-
-
-<script >
-	
-	
-	document.addEventListener("click", (e)=> {
-        
-		if (e.target.matches(".detail-layout,.detail-layout img,.detail-layout2,.detail-layout2 img, .abrir, .cerrar")) {
-			openDetails()
+<script>
+	document.addEventListener("click", (e) => {
+		if (
+			e.target.matches(
+				".detail-layout,.detail-layout img,.detail-layout2,.detail-layout2 img, .abrir, .cerrar",
+			)
+		) {
+			openDetails();
 		}
-		
-    })
+	});
 
 	var sidebar = document.querySelector("#Sidebar");
 	var urlButton = document.querySelector("#url");
@@ -278,7 +289,6 @@ const fechap = post.hcarga;
 			urlButton.children[2].classList.add("hidden");
 			urlButton.children[3].classList.remove("hidden");
 		}, 10);
-		
 	}
 	function downloadPdf(evento) {
 		// navigator.clipboard.writeText(url2).then(function () {
@@ -289,7 +299,6 @@ const fechap = post.hcarga;
 		var bajar = document.querySelector(".download");
 		download.classList.remove("active-download");
 
-		
 		setTimeout(() => {
 			download.classList.add("active-download");
 			download.children[1].classList.add("hidden");

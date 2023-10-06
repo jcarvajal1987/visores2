@@ -1,39 +1,36 @@
 ---
 import Indice2 from "./Indice2.astro";
-const { miniatures} = Astro.props;
-
+const { miniatures } = Astro.props;
 ---
 
-<div class="carrousel">
-    
+<div class="carrousel" style="display:block;page-break-after: always;">
     <div class="galery">
         <div class="carrousel-container">
-            
-        {miniatures.map( (pagina)=>
-        
-                <div class="container-image-carrousel cerrado-global-carrousel">
-        
-                    <img
-                    class="miniature-news-carrousel"
-                    width="320"
-                    height="180"
-                    src={pagina.recorte}
-                    alt=""
-                    />
-                    
-                </div>
-                <div class="container-image-carrousel cerrado-global-carrousel">
-                    
-                <img
-                class="miniature-news-carrousel"
-                width="320"
-                height="180"
-                src={pagina.contexto}
-                alt=""
-                />
-                </div>
-                )}
-                <!-- <div id="image-container" class="container-image-carrousel">
+            {
+                miniatures.map((pagina) => (
+                    <>
+                        <div class="container-image-carrousel cerrado-global-carrousel">
+                            <img
+                                class="miniature-news-carrousel"
+                                width="320"
+                                height="180"
+                                src={pagina.recorte}
+                                alt=""
+                            />
+                        </div>
+                        <div class="container-image-carrousel cerrado-global-carrousel">
+                            <img
+                                class="miniature-news-carrousel"
+                                width="320"
+                                height="180"
+                                src={pagina.contexto}
+                                alt=""
+                            />
+                        </div>
+                    </>
+                ))
+            }
+            <!-- <div id="image-container" class="container-image-carrousel">
         
                 <img
                 class="miniature-news-carrousel"
@@ -44,68 +41,89 @@ const { miniatures} = Astro.props;
                 />
                 
             </div> -->
-                </div>
-                <div class="carrousel-cerrar cerrado-global-carrousel">
-                    <img class="cerrado-global-carrousel" src="img/close.svg" width="20" height="20" alt="">
-                </div>
-                <div class="indice">
-
-                    <Indice2 miniatures={miniatures} padre="index-carrousel"/>
-                </div>
+        </div>
+        <div class="carrousel-cerrar cerrado-global-carrousel">
+            <img
+                class="cerrado-global-carrousel"
+                src="img/close.svg"
+                width="20"
+                height="20"
+                alt=""
+            />
+        </div>
+        <div class="indice">
+            <Indice2 miniatures={miniatures} padre="index-carrousel" />
+        </div>
     </div>
 </div>
 
 <style>
-    .carrousel{
+    .carrousel {
         z-index: -1;
-		position: fixed;
+        position: fixed;
         opacity: 0;
         pointer-events: none;
         background-color: rgba(0, 0, 0, 0.781);
-    width: 100%;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 100%;
-    transition:1s;
-	}
-    @keyframes example {
-    0%   {z-index: 20;}
-    1%  {opacity: 0;}
-    100% {opacity: 1;z-index: 20;}
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+        transition: 1s;
     }
-    .active-carrousel{
+    @keyframes example {
+        0% {
+            z-index: 20;
+        }
+        1% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            z-index: 20;
+        }
+    }
+    .active-carrousel {
         animation-name: example;
         animation-fill-mode: forwards;
         animation-duration: 1s;
         pointer-events: all;
     }
-    .over-carrousel{
+    .over-carrousel {
         animation-name: example2;
         animation-duration: 1s;
     }
     @keyframes example2 {
-    0%   {z-index: 20;opacity: 1;}
-    99%  {z-index: 20;opacity: 0;}
-    100% {opacity: 0;z-index: -1;}
+        0% {
+            z-index: 20;
+            opacity: 1;
+        }
+        99% {
+            z-index: 20;
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+            z-index: -1;
+        }
     }
-    .galery{
+    .galery {
         height: fit-content;
         display: grid;
-    grid-template-columns: 3fr 1fr;
+        grid-template-columns: 3fr 1fr;
     }
     .carrousel-container {
-    grid-row-start: 1;
-    grid-column-start: 1;
-    grid-column-end: 5;
-    display: grid;
-    flex-wrap: wrap;
-    width: 100%;
-    height: fit-content;
-    flex-direction: row;
-}
-.indice {
-    display: grid;
+        grid-row-start: 1;
+        grid-column-start: 1;
+        grid-column-end: 5;
+        display: grid;
+        flex-wrap: wrap;
+        width: 100%;
+        height: fit-content;
+        flex-direction: row;
+    }
+    .indice {
+        display: grid;
         grid-row-start: 1;
         grid-column-end: 4;
         height: fit-content;
@@ -119,236 +137,266 @@ const { miniatures} = Astro.props;
         right: 42px;
         border-radius: 5px;
     }
-    
-.carrousel-cerrar{
-    z-index: 99;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    position: relative;
-    right: 5px;
-    top: 14px;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    display: grid;
-    place-content: center;
-    background-color: #000000;
-    color: #ffffff;
-    cursor: pointer;
-}
-.container-image-carrousel{
-    overflow-y: scroll;
-    display: grid;
-    opacity: 0;
-    pointer-events: none;
-    justify-items: center;
-    grid-row-start: 1;
-    grid-column-start: 1;
-			width: 100%;
-			height:auto;
-            max-height: 100vh;
-            transition:1s;
-            padding-bottom: 100px;
-		}
-        .active-container-image-carrousel{
-            opacity: 1;
-            pointer-events: all;
-        }
-        .miniature-news-carrousel{
-		filter: contrast(0.9);
+
+    .carrousel-cerrar {
+        z-index: 99;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        position: relative;
+        right: 5px;
+        top: 14px;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        display: grid;
+        place-content: center;
+        background-color: #000000;
+        color: #ffffff;
+        cursor: pointer;
+    }
+    .container-image-carrousel {
+        overflow-y: scroll;
+        display: grid;
+        opacity: 0;
+        pointer-events: none;
+        justify-items: center;
+        grid-row-start: 1;
+        grid-column-start: 1;
+        width: 100%;
+        height: auto;
+        max-height: 100vh;
+        transition: 1s;
+        padding-bottom: 100px;
+    }
+    .active-container-image-carrousel {
+        opacity: 1;
+        pointer-events: all;
+    }
+    .miniature-news-carrousel {
+        filter: contrast(0.9);
         width: min-content;
-			max-width: 100%;
-			display:flex ;
-			height: fit-content;
-			max-height: max-content;
-            
-	}
+        max-width: 100%;
+        display: flex;
+        height: fit-content;
+        max-height: max-content;
+    }
     @media (min-width: 1px) and (max-width: 960px) {
-        .indice{
+        .indice {
             display: none;
         }
-        .carrousel-cerrar{
+        .carrousel-cerrar {
             background-color: #00000078;
             top: 10px;
             right: 10px;
         }
     }
-    
-        @media print{
-            .carrousel{
-                background-color: white;
-                position: relative;
-                height: fit-content;
-                opacity: 1;
-                z-index: 20;
-                page-break-before: always;
-            }
-            
-            .carrousel-container{
-                height: fit-content;
-                page-break-before: always;
-            }
-            
-            .container-image-carrousel{
-                page-break-before: always;
+
+    @media print {
+        .carrousel {
+            background-color: white;
+            position: relative;
+            height: fit-content;
+            opacity: 1;
+            z-index: 20;
+            page-break-before: always;
+        }
+
+        .carrousel-container {
+            height: fit-content;
+            page-break-before: always;
+        }
+
+        .container-image-carrousel {
+            page-break-before: always;
             overflow: hidden;
             grid-row-start: auto;
             grid-row-end: auto;
             grid-column-start: auto;
             grid-column-end: auto;
-			width: fit-content;
-			max-width: 100%;
-			display:flex ;
-			min-height: 100vh;
-			height: 100vh;
-			max-height: 100vh;
+            width: fit-content;
+            max-width: 100%;
+            display: flex;
+            min-height: 100vh;
+            height: 100vh;
+            max-height: 100vh;
             opacity: 1;
             padding-bottom: 0;
-		}
+        }
         .miniature-news-carrousel {
-			filter: contrast(1);
-			width: auto;
-			max-width: 100%;
-			display:flex ;
-			height: fit-content;
-			max-height: 100vh;
-		}
-        .indice2{
+            filter: contrast(1);
+            width: auto;
+            max-width: 100%;
+            display: flex;
+            height: fit-content;
+            max-height: 100vh;
+        }
+        .indice2 {
             display: none;
         }
-            
     }
-    
 </style>
 <script is:inline>
-    
-    let currentZoom = 1;
-    let minZoom = 0.5;
-    let maxZoom = 3;
-    let stepSize = 0.1;
-    let startX= 0;
-    let startY= 0;
+let currentZoom = 1;
+let minZoom = 0.5;
+let maxZoom = 3;
+let stepSize = 0.1;
+let startX = 0;
+let startY = 0;
 
-    let currentMoveX = 0;
-    let currentMoveY = 0;
-    let containerimage = document.querySelectorAll('.container-image2');
+let currentMoveX = 0;
+let currentMoveY = 0;
+let containerimage = document.querySelectorAll(".container-image2");
 
+let carrousel = document.querySelector(".carrousel");
+let activepage = 0;
+let activesuplement = 0;
+let containers = document
+    .querySelector(".index-sidebar")
+    .querySelectorAll(".miniature-container");
+let containers2 = document
+    .querySelector(".index-carrousel")
+    .querySelectorAll(".miniature-container2");
+let pages = document.querySelectorAll(".number-page");
+let pages2 = document.querySelectorAll(".number-page2");
+let carrouselimage = document.querySelectorAll(
+    ".container-image-carrousel",
+);
+let miniatures = document.querySelectorAll(".miniature-news");
 
-    let carrousel = document.querySelector('.carrousel')
-	let activepage = 0
-	let activesuplement = 0
-	let containers = document.querySelector('.index-sidebar').querySelectorAll(".miniature-container")
-	let containers2 = document.querySelector('.index-carrousel').querySelectorAll(".miniature-container2")
-	let pages = document.querySelectorAll('.number-page')
-	let pages2 = document.querySelectorAll('.number-page2')
-	let carrouselimage = document.querySelectorAll('.container-image-carrousel');
-	let miniatures = document.querySelectorAll('.miniature-news')
-
-document.addEventListener("click", (e)=> {
-    if(e.target.matches(".cerrado-global-carrousel")){
-        carrousel.removeEventListener("mousedown",terminar)
-        carrouselimage[activesuplement].classList.remove("active-container-image-carrousel")
-        carrousel.classList.remove("active-carrousel")
-        carrousel.classList.add("over-carrousel")
+document.addEventListener("click", (e) => {
+    if (e.target.matches(".cerrado-global-carrousel")) {
+        carrousel.removeEventListener("mousedown", terminar);
+        carrouselimage[activesuplement].classList.remove(
+            "active-container-image-carrousel",
+        );
+        carrousel.classList.remove("active-carrousel");
+        carrousel.classList.add("over-carrousel");
     }
     if (e.target.matches(".number-page")) {
         if (activepage !== e.target.dataset.pagina) {
-            pages[activepage].classList.remove("active-page")
-            containers[activepage].classList.remove("active-page-container")
-            pages2[activepage].classList.remove("active-page")
-            containers2[activepage].classList.remove("active-page-container")
-            activepage = e.target.dataset.pagina
-            containers[activepage].classList.add("active-page-container")
-            pages[activepage].classList.add("active-page")
-            containers2[activepage].classList.add("active-page-container")
-            pages2[activepage].classList.add("active-page")
+            pages[activepage].classList.remove("active-page");
+            containers[activepage].classList.remove(
+                "active-page-container",
+            );
+            pages2[activepage].classList.remove("active-page");
+            containers2[activepage].classList.remove(
+                "active-page-container",
+            );
+            activepage = e.target.dataset.pagina;
+            containers[activepage].classList.add("active-page-container");
+            pages[activepage].classList.add("active-page");
+            containers2[activepage].classList.add("active-page-container");
+            pages2[activepage].classList.add("active-page");
         }
-        
-        
     }
     if (e.target.matches(".number-page2")) {
         if (activepage !== e.target.dataset.pagina) {
-            pages[activepage].classList.remove("active-page")
-            containers[activepage].classList.remove("active-page-container")
-            pages2[activepage].classList.remove("active-page")
-            containers2[activepage].classList.remove("active-page-container")
-            activepage = e.target.dataset.pagina
-            containers[activepage].classList.add("active-page-container")
-            pages[activepage].classList.add("active-page")
-            containers2[activepage].classList.add("active-page-container")
-            pages2[activepage].classList.add("active-page")
+            pages[activepage].classList.remove("active-page");
+            containers[activepage].classList.remove(
+                "active-page-container",
+            );
+            pages2[activepage].classList.remove("active-page");
+            containers2[activepage].classList.remove(
+                "active-page-container",
+            );
+            activepage = e.target.dataset.pagina;
+            containers[activepage].classList.add("active-page-container");
+            pages[activepage].classList.add("active-page");
+            containers2[activepage].classList.add("active-page-container");
+            pages2[activepage].classList.add("active-page");
         }
-        
-        
     }
-    if (e.target.matches('.miniature-news')) {
-        carrousel.addEventListener("mousedown", (e)=> {
-        if (e.target.matches(".miniature-news-carrousel")) {
-            inicio(e)
-        }
-        })
+    if (e.target.matches(".miniature-news")) {
+        carrousel.addEventListener("mousedown", (e) => {
+            if (e.target.matches(".miniature-news-carrousel")) {
+                inicio(e);
+            }
+        });
 
-        carrousel.classList.remove("over-carrousel")
-        carrousel.classList.add("active-carrousel")
+        carrousel.classList.remove("over-carrousel");
+        carrousel.classList.add("active-carrousel");
 
-        
         if (activesuplement !== e.target.id) {
-            containerimage[activesuplement].classList.remove("active-miniature")
-            carrouselimage[activesuplement].classList.remove("active-container-image-carrousel")
-            activesuplement = e.target.id
-            containerimage[activesuplement].classList.add("active-miniature")
-            carrouselimage[activesuplement].classList.add("active-container-image-carrousel")
+            containerimage[activesuplement].classList.remove(
+                "active-miniature",
+            );
+            carrouselimage[activesuplement].classList.remove(
+                "active-container-image-carrousel",
+            );
+            activesuplement = e.target.id;
+            containerimage[activesuplement].classList.add(
+                "active-miniature",
+            );
+            carrouselimage[activesuplement].classList.add(
+                "active-container-image-carrousel",
+            );
         }
         if (activesuplement == e.target.id) {
-            containerimage[activesuplement].classList.add("active-miniature")
-            carrouselimage[activesuplement].classList.add("active-container-image-carrousel")
+            containerimage[activesuplement].classList.add(
+                "active-miniature",
+            );
+            carrouselimage[activesuplement].classList.add(
+                "active-container-image-carrousel",
+            );
         }
     }
-    if (e.target.matches('.miniature-news2')) {
-        
+    if (e.target.matches(".miniature-news2")) {
         if (activesuplement !== e.target.dataset.pagina) {
-            containerimage[activesuplement].classList.remove("active-miniature")
-            carrouselimage[activesuplement].classList.remove("active-container-image-carrousel")
-            activesuplement = e.target.dataset.pagina
-            containerimage[activesuplement].classList.add("active-miniature")
-            carrouselimage[activesuplement].classList.add("active-container-image-carrousel")
+            containerimage[activesuplement].classList.remove(
+                "active-miniature",
+            );
+            carrouselimage[activesuplement].classList.remove(
+                "active-container-image-carrousel",
+            );
+            activesuplement = e.target.dataset.pagina;
+            containerimage[activesuplement].classList.add(
+                "active-miniature",
+                );
+                carrouselimage[activesuplement].classList.add(
+                    "active-container-image-carrousel",
+                );
+            }
         }
-        
+    });
+
+    function inicio(event) {
+        let matrix = new WebKitCSSMatrix(event.toElement.style.transform);
+        let x = matrix.m41;
+        let y = matrix.m42;
+        startX = event.pageX - x;
+        startY = event.pageY - y;
+        event.toElement.addEventListener("mousemove", moviendo);
+        event.toElement.addEventListener("mouseup", terminar);
+        event.toElement.addEventListener("mouseover", terminar);
     }
-})
 
-function inicio(event){
-    let matrix = new WebKitCSSMatrix(event.toElement.style.transform)
-   let x = matrix.m41
-   let y = matrix.m42
-    startX = event.pageX - x;
-    startY= event.pageY - y;
-    event.toElement.addEventListener("mousemove", moviendo);
-    event.toElement.addEventListener("mouseup", terminar);
-    event.toElement.addEventListener("mouseover", terminar);
-}
+    function moviendo(e) {
+        e.preventDefault();
+        currentMoveX = e.pageX - startX;
+        currentMoveY = e.pageY - startY;
+        e.toElement.style.transform =
+            "translateX(" +
+            currentMoveX +
+            "px" +
+            ")" +
+            "translateY(" +
+            0 +
+            "px" +
+            ")" +
+            "scale(" +
+            currentZoom +
+            ")";
+        // e.toElement.addEventListener("mouseleave", terminar);
+    }
 
-function moviendo(e){
-    e.preventDefault();
-    currentMoveX = (e.pageX - startX )
-    currentMoveY = (e.pageY- startY)
-    e.toElement.style.transform = 'translateX(' + (currentMoveX) + 'px'+ ')' + 'translateY(' + 0 + 'px'+ ')' + 'scale(' + currentZoom + ')';
-    // e.toElement.addEventListener("mouseleave", terminar);
-    
-}
-
-function terminar(e){
-    let matrix = new WebKitCSSMatrix(e.toElement.style.transform)
-   let x = matrix.m41
-   let y = matrix.m42
-    x = currentMoveX
-    y = currentMoveY
-    console.log("kyo")
-    e.toElement.removeEventListener("mousemove", moviendo);
-    e.toElement.removeEventListener("mouseleave", terminar);
-    
-}
-
-
-
+    function terminar(e) {
+        let matrix = new WebKitCSSMatrix(e.toElement.style.transform);
+        let x = matrix.m41;
+        let y = matrix.m42;
+        x = currentMoveX;
+        y = currentMoveY;
+        console.log("kyo");
+        e.toElement.removeEventListener("mousemove", moviendo);
+        e.toElement.removeEventListener("mouseleave", terminar);
+    }
 </script>

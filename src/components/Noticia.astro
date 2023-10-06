@@ -3,7 +3,6 @@ import Papel from "./Papel.astro";
 import Audio2 from "./Audio2.astro";
 import Carrousel from "./Carrousel.astro";
 const { post, fecha, fechap } = Astro.props;
-
 ---
 
 <main id="main">
@@ -21,7 +20,10 @@ const { post, fecha, fechap } = Astro.props;
                 <div class="izipress">
                     IZI PRESS # {post.extra.numwords}
                 </div>
-                <div id="SidebarToggle" class="hidden-pdf xs pointer detail-layout">
+                <div
+                    id="SidebarToggle"
+                    class="hidden-pdf xs pointer detail-layout"
+                >
                     <div class="abrir flex">
                         Detalles<img
                             style="padding-top: 5px;"
@@ -29,7 +31,6 @@ const { post, fecha, fechap } = Astro.props;
                             height="21.33"
                             alt="options"
                             src="img/right.svg"
-                            
                         />
                     </div>
                 </div>
@@ -137,7 +138,7 @@ const { post, fecha, fechap } = Astro.props;
             {
                 post.tipo === 4 && (
                     <div class="radio hidden-pdf">
-                        <Audio2  src={post.url_img} />
+                        <Audio2 src={post.url_img} />
                     </div>
                 )
             }
@@ -147,13 +148,10 @@ const { post, fecha, fechap } = Astro.props;
                 )
             }
         </div>
-        
-         
+
         <div class="footer">
             © Izimedia Soluciones Digitales para el Análisis de Prensa
         </div>
-
-        
     </div>
     <div id="Sidebar" class="columnb">
         <div class="detalles">
@@ -223,9 +221,13 @@ const { post, fecha, fechap } = Astro.props;
                 </span>
 
                 <div class="actions-container hidden-pdf">
-                    <div id="url" class="actions" >
+                    <div id="url" class="actions">
                         <img class="chain" src="img/copiar.svg" alt="" />
-                        <img class="chain hidden" src="img/copiar2.svg" alt="" />
+                        <img
+                            class="chain hidden"
+                            src="img/copiar2.svg"
+                            alt=""
+                        />
 
                         <span class="precopy">Copiar Url</span>
                         <span class="postcopy hidden">Copiado!</span>
@@ -252,9 +254,10 @@ const { post, fecha, fechap } = Astro.props;
                 </div>
                 {
                     [1].indexOf(post.tipo) > -1 && (
-                        
-                        <Papel miniatures={post.extra.miniatures} padre="index-sidebar"/>
-                        
+                        <Papel
+                            miniatures={post.extra.miniatures}
+                            padre="index-sidebar"
+                        />
                     )
                 }
                 {
@@ -271,10 +274,12 @@ const { post, fecha, fechap } = Astro.props;
                         />
                     )
                 }
-                
             </div>
-            <div id="SidebarToggleIn" class="hidden-pdf xs pointer detail-layout2">
-                <div  class="cerrar flex">
+            <div
+                id="SidebarToggleIn"
+                class="hidden-pdf xs pointer detail-layout2"
+            >
+                <div class="cerrar flex">
                     Cerrar<img
                         style=" margin-top: 2px"
                         width="22"
@@ -287,12 +292,7 @@ const { post, fecha, fechap } = Astro.props;
         </div>
     </div>
 
-    {
-        post.tipo === 1 && (
-           
-            <Carrousel miniatures={post.extra.miniatures} /> 
-        )
-    }
+    {post.tipo === 1 && <Carrousel miniatures={post.extra.miniatures} />}
     {
         [2].indexOf(post.tipo) > -1 && (
             // <img class="miniature" src={post.url_img} alt="" width="1600" height="900" />
@@ -307,12 +307,6 @@ const { post, fecha, fechap } = Astro.props;
             />
         )
     }
-
-    <!-- <Card
-            href="https://docs.astro.build/"
-            title="Documentation"
-            body="Learn how Astro works and explore the official API docs."
-        /> -->
 </main>
 
 <style></style>
