@@ -71,6 +71,8 @@ const { miniatures } = Astro.props;
         grid-template-rows: 100%;
         transition: 1s;
     }
+    
+
     @keyframes example {
         0% {
             z-index: 20;
@@ -110,7 +112,7 @@ const { miniatures } = Astro.props;
     .galery {
         height: fit-content;
         display: grid;
-        grid-template-columns: 3fr 1fr;
+        grid-template-columns: 100%;
     }
     .carrousel-container {
         grid-row-start: 1;
@@ -123,18 +125,17 @@ const { miniatures } = Astro.props;
         flex-direction: row;
     }
     .indice {
-        display: grid;
-        grid-row-start: 1;
-        grid-column-end: 4;
+        display: block;
+        position:fixed;
         height: fit-content;
+        max-height: fit-content;
         top: 82px;
+        right: 52px;
         max-width: min-content;
         min-width: 120px;
-        background-color: black;
+        background-color: #000000;
         padding: 10px;
         z-index: 999;
-        position: relative;
-        right: 42px;
         border-radius: 5px;
     }
 
@@ -142,8 +143,8 @@ const { miniatures } = Astro.props;
         z-index: 99;
         grid-column-end: 4;
         grid-row-start: 1;
-        position: relative;
-        right: 5px;
+        position: fixed;
+        right: 87px;
         top: 14px;
         border-radius: 50%;
         height: 50px;
@@ -187,7 +188,7 @@ const { miniatures } = Astro.props;
         .carrousel-cerrar {
             background-color: #00000078;
             top: 10px;
-            right: 10px;
+            right: 32px;
         }
     }
 
