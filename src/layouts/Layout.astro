@@ -359,7 +359,7 @@ const { post , title } = Astro.props;
 	}
 	.columnb {
 		width: 100%;
-		max-width: ;
+		max-width:100%;
 		display: grid;
 		background-color: white;
 		box-shadow: -1px -3px 3px #00000029;
@@ -755,8 +755,11 @@ const { post , title } = Astro.props;
 	}
 	@media print{
 		@page {
-			size: auto;
-			margin: 3mm;
+			size:auto;
+			margin:auto;
+		}
+		* {
+		box-sizing: border-box;
 		}
 		html {
 			background-color: #ffffff;
