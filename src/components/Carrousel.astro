@@ -3,7 +3,7 @@ import Indice2 from "./Indice2.astro";
 const { miniatures } = Astro.props;
 ---
 
-<div class="carrousel" style="display:block;page-break-after: always;">
+<div class="carrousel">
     <div class="galery">
         <div class="carrousel-container">
             {
@@ -203,20 +203,21 @@ const { miniatures } = Astro.props;
     @media print {
         .carrousel {
             background-color: white;
+            display: block;
+            page-break-before: always;
             position: relative;
             height: fit-content;
             opacity: 1;
             z-index: 20;
-            page-break-before: always;
         }
 
         .carrousel-container {
             height: fit-content;
-            page-break-before: always;
+            display: block;
+            
         }
 
         .container-image-carrousel {
-            page-break-before: always;
             overflow: hidden;
             grid-row-start: auto;
             grid-row-end: auto;
@@ -240,7 +241,7 @@ const { miniatures } = Astro.props;
             height: fit-content;
             max-height: 100vh;
         }
-        .indice2 {
+        .indice {
             display: none;
         }
     }

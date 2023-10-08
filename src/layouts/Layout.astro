@@ -359,14 +359,15 @@ const { post , title } = Astro.props;
 		background-color: white;
 		box-shadow: -1px -3px 3px #00000029;
 		height: 100vh;
-		position: sticky;
 		top: 0;
 		transition: 0.5s;
-		animation-timing-function: ease-in;
 		overflow: auto;
 		z-index: 19;
-
 		align-items: center;
+	}
+	.index-sidebar{
+		width: 100%;
+		display: block;
 	}
 	.papel{
 		display: block;
@@ -764,7 +765,7 @@ const { post , title } = Astro.props;
 			min-height: auto;
 			max-height: auto;
 			overflow: auto;
-			display: flex;
+			display: block;
 			flex-direction: column;
 		}
 		.columna{
@@ -820,7 +821,7 @@ const { post , title } = Astro.props;
 		.columnb {
 			box-shadow: none;
 			height: fit-content;
-			opacity: 1;
+			opacity: ;
 			display: none;
 		}
 		.items{
