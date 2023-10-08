@@ -14,28 +14,11 @@ const { post , title } = Astro.props;
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="img/icon.svg" type="image/svg+xml" />
-		<link
-			rel="preload"
-			as="image"
-			href="img/izimedia2.svg"
-			type="image/svg+xml"
-		/>
+		<link rel="preload" as="image" href="img/izimedia2.svg" type="image/svg+xml" />
 		{ post.tipo === 1 && 
-			<link
-				rel="preload"
-				href="assets/w10.woff2"
-				as="font"
-				type="font/woff2"
-				crossorigin
-			/>
+			<link rel="preload" href="assets/w10.woff2" as="font" type="font/woff2" crossorigin />
 		
-		<link
-			rel="preload"
-			href="assets/Utopia.ttf"
-			as="font"
-			type="font/woff2"
-			crossorigin
-		/>
+		<link rel="preload" href="assets/Utopia.ttf" as="font" type="font/woff2" crossorigin />
 		<style>
 			@font-face {
 			font-family: "Acta W01 Medium";
@@ -53,34 +36,11 @@ const { post , title } = Astro.props;
 			}
 			</style>
 		}
-		<link
-			rel="preload"
-			href="https://fonts.gstatic.com/s/raleway/v28/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVsEpbCIPrE.woff2"
-			as="font"
-			type="font/woff2"
-			crossorigin
+		<link rel="preload" href="https://fonts.gstatic.com/s/raleway/v28/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVsEpbCIPrE.woff2" as="font" type="font/woff2" crossorigin
 		/>
-		<link
-			rel="preload"
-			href="https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0B4gaVI.woff2"
-			as="font"
-			type="font/woff2"
-			crossorigin
-		/>
-		<link
-			rel="preload"
-			href="https://fonts.gstatic.com/s/nunitosans/v15/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfUVwoNnq4CLz0_upHZPYsZ51Q42ptCprt1R-s.woff2"
-			as="font"
-			type="font/woff2"
-			crossorigin
-		/>
-		<link
-			rel="preload"
-			href="https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w5aXo.woff2"
-			as="font"
-			type="font/woff2"
-			crossorigin
-		/>
+		<link rel="preload" href="https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0B4gaVI.woff2" as="font" type="font/woff2" crossorigin/>
+		<link rel="preload" href="https://fonts.gstatic.com/s/nunitosans/v15/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfUVwoNnq4CLz0_upHZPYsZ51Q42ptCprt1R-s.woff2" as="font" type="font/woff2" crossorigin/>
+		<link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w5aXo.woff2" as="font" type="font/woff2" crossorigin/>
 
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -138,16 +98,6 @@ const { post , title } = Astro.props;
 			U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
 			U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 	}
-
-	/* @font-face {
-    font-family: 'Acta W01 Medium';
-	font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("./img/w10.woff2")format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-
-} */
 
 	/* Hide scrollbar for Chrome, Safari and Opera */
 	main::-webkit-scrollbar {
@@ -542,14 +492,6 @@ const { post , title } = Astro.props;
 		width: 16px;
 		height: 16px;
 	}
-	/* .denotation1::before{
-		content: url('../img/negativo.svg');
-		margin-left: 3px;
-		margin-bottom: 1px;
-		width: 16px;
-		border-radius: 4px;
-	} */
-
 	.denotation2::before {
 		content: url("../img/neutral.svg");
 		margin-left: 3px;
@@ -854,57 +796,9 @@ const { post , title } = Astro.props;
 			opacity: 0;
 			display: none;
 		}
-		/* .sidebar {
-			display: block;
-			overflow: hidden;
-			height: fit-content;
-		} */
 		.footer{
 			display: none;
 		}
 	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(
-			rgba(var(--accent-dark), 66%),
-			rgba(var(--accent-dark), 33%)
-		);
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
+	
 </style>
