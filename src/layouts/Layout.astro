@@ -663,7 +663,7 @@ const { post , title } = Astro.props;
 	}
 	@media (min-width: 1px) and (max-width: 960px) {
 		main {
-			grid-template-columns: 100% 80%;
+			grid-template-columns: 100%;
 		}
 		.papel {
 			padding: 0 3% 50px 3%;
@@ -674,18 +674,24 @@ const { post , title } = Astro.props;
 		.footer{
 			padding: 30px 3% 30px 3%;
 		}
+		.columna{
+		grid-row-start: 1;
+    	grid-column-start: 1;
+		}
 		.columnb {
-			transform: translatex(0%);
-
+			transform: translatex(100%);
+			grid-row-start: 1;
+    		grid-column-start: 1;
 			width: 100%;
-			max-width: 450px;
+			max-width: 320px;
 			opacity: 0;
+			justify-self: right;
 		}
 		.container {
 			margin-top: -5px;
 		}
 		.columnb.active-sidebar {
-			transform: translatex(-100%);
+			transform: translatex(0%);
 			opacity: 1;
 		}
 		.video {
