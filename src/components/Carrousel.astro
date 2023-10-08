@@ -200,7 +200,7 @@ const { miniatures } = Astro.props;
         }
     }
 
-    @media print {
+    @media print{
         .carrousel {
             background-color: white;
             display: block;
@@ -220,15 +220,11 @@ const { miniatures } = Astro.props;
 
         .container-image-carrousel {
             overflow: hidden;
-            grid-row-start: auto;
-            grid-row-end: auto;
-            grid-column-start: auto;
-            grid-column-end: auto;
             width: fit-content;
             max-width: 100%;
-            display: flex;
-            min-height: 100vh;
-            height: 100vh;
+            display: block;
+            gap: 0;
+            height: auto;
             max-height: 100vh;
             opacity: 1;
             padding-bottom: 0;
@@ -238,13 +234,15 @@ const { miniatures } = Astro.props;
             filter: contrast(1);
             width: auto;
             max-width: 100%;
-            display: flex;
-            height: fit-content;
+            display: block;
+            height: auto;
             max-height: 100vh;
         }
         .indice {
             display: none;
         }
+        .carrousel-cerrar{display: none;}
+        .galery{display:block;}
     }
 </style>
 <script is:inline>
