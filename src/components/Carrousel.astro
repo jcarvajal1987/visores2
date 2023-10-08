@@ -157,6 +157,7 @@ const { miniatures } = Astro.props;
     }
     .container-image-carrousel {
         overflow-y: scroll;
+        overflow-x: hidden;
         display: grid;
         opacity: 0;
         pointer-events: none;
@@ -166,12 +167,18 @@ const { miniatures } = Astro.props;
         width: 100%;
         height: auto;
         max-height: 100vh;
-        transition: 1s;
         padding-bottom: 100px;
+        transition: 1s;
     }
     .active-container-image-carrousel {
         opacity: 1;
         pointer-events: all;
+        
+    }
+    .active-container-image-carrousel-first {
+        opacity: 1;
+        pointer-events: all;
+        transition: 0s;
     }
     .miniature-news-carrousel {
         filter: contrast(0.9);
@@ -246,7 +253,7 @@ let startY = 0;
 
 let currentMoveX = 0;
 let currentMoveY = 0;
-let containerimage = document.querySelectorAll(".container-image2");
+let containerimage = document.querySelectorAll(".container-miniature-in2");
 
 let carrousel = document.querySelector(".carrousel");
 let activepage = 0;
@@ -267,9 +274,8 @@ let miniatures = document.querySelectorAll(".miniature-news");
 document.addEventListener("click", (e) => {
     if (e.target.matches(".cerrado-global-carrousel")) {
         carrousel.removeEventListener("mousedown", terminar);
-        carrouselimage[activesuplement].classList.remove(
-            "active-container-image-carrousel",
-        );
+        carrouselimage[activesuplement].classList.remove("active-container-image-carrousel",);
+        carrouselimage[activesuplement].classList.remove("active-container-image-carrousel-first",);
         carrousel.classList.remove("active-carrousel");
         carrousel.classList.add("over-carrousel");
     }
@@ -329,7 +335,7 @@ document.addEventListener("click", (e) => {
                 "active-miniature",
             );
             carrouselimage[activesuplement].classList.add(
-                "active-container-image-carrousel",
+                "active-container-image-carrouse-first",
             );
         }
         if (activesuplement == e.target.id) {
@@ -337,7 +343,7 @@ document.addEventListener("click", (e) => {
                 "active-miniature",
             );
             carrouselimage[activesuplement].classList.add(
-                "active-container-image-carrousel",
+                "active-container-image-carrousel-first",
             );
         }
     }
@@ -348,6 +354,9 @@ document.addEventListener("click", (e) => {
             );
             carrouselimage[activesuplement].classList.remove(
                 "active-container-image-carrousel",
+            );
+            carrouselimage[activesuplement].classList.remove(
+                "active-container-image-carrousel-first",
             );
             activesuplement = e.target.dataset.pagina;
             containerimage[activesuplement].classList.add(
@@ -391,12 +400,7 @@ document.addEventListener("click", (e) => {
     }
 
     function terminar(e) {
-        let matrix = new WebKitCSSMatrix(e.toElement.style.transform);
-        let x = matrix.m41;
-        let y = matrix.m42;
-        x = currentMoveX;
-        y = currentMoveY;
-        console.log("kyo");
+        
         e.toElement.removeEventListener("mousemove", moviendo);
         e.toElement.removeEventListener("mouseleave", terminar);
     }

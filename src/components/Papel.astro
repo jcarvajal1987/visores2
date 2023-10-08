@@ -17,7 +17,7 @@ const { miniatures, padre} = Astro.props;
     {miniatures.map( (pagina, i)=>
         
         <div class={'miniature-container start1 '+ pagina.pagina + (i == 0 ? " active-page-container":"")  }>
-            <div class="container-image">
+            <div class="container-miniature-in">
                 <img
                 id={i+i}
                 class="miniature-news"
@@ -28,7 +28,7 @@ const { miniatures, padre} = Astro.props;
                 />
                 
             </div>
-            <div class="container-image">
+            <div class="container-miniature-in">
                 
             <img
             id={i+i+1}
@@ -97,7 +97,7 @@ const { miniatures, padre} = Astro.props;
         .active-miniature{
             border: 1px solid red;
         }
-		.container-image{
+		.container-miniature-in{
 			display: flex;
 			width: fit-content;
 			height:auto;
@@ -111,7 +111,7 @@ const { miniatures, padre} = Astro.props;
         max-height: 217px;
         }
         @media print {
-            .container-image-carrousel{
+            .container-miniature-in-carrousel{
                 opacity: 1;
             } 
         }
