@@ -2,7 +2,6 @@
 import Indice2 from "./Indice2.astro";
 const { miniatures } = Astro.props;
 ---
-
 <div class="carrousel">
     <div class="galery">
         <div class="carrousel-container">
@@ -10,46 +9,17 @@ const { miniatures } = Astro.props;
                 miniatures.map((pagina) => (
                     <>
                         <div class="container-image-carrousel cerrado-global-carrousel">
-                            <img
-                                class="miniature-news-carrousel"
-                                width="320"
-                                height="180"
-                                src={pagina.recorte}
-                                alt=""
-                            />
+                            <img class="miniature-news-carrousel" width="320" height="180" src={pagina.recorte} alt="" />
                         </div>
                         <div class="container-image-carrousel cerrado-global-carrousel">
-                            <img
-                                class="miniature-news-carrousel"
-                                width="320"
-                                height="180"
-                                src={pagina.contexto}
-                                alt=""
-                            />
+                            <img class="miniature-news-carrousel" width="320" height="180" src={pagina.contexto} alt="" />
                         </div>
                     </>
                 ))
             }
-            <!-- <div id="image-container" class="container-image-carrousel">
-        
-                <img
-                class="miniature-news-carrousel"
-                width="320"
-                height="180"
-                src={miniatures[0].recorte}
-                alt=""
-                />
-                
-            </div> -->
         </div>
         <div class="carrousel-cerrar cerrado-global-carrousel">
-            <img
-                class="cerrado-global-carrousel"
-                src="img/close.svg"
-                width="20"
-                height="20"
-                alt=""
-            />
+            <img class="cerrado-global-carrousel" src="img/close.svg" width="20" height="20" alt="" />
         </div>
         <div class="indice">
             <Indice2 miniatures={miniatures} padre="index-carrousel" />
@@ -71,8 +41,6 @@ const { miniatures } = Astro.props;
         grid-template-rows: 100%;
         transition: 1s;
     }
-    
-
     @keyframes example {
         0% {
             z-index: 20;
@@ -211,13 +179,11 @@ const { miniatures } = Astro.props;
             z-index: -1;
             width: 100%;
         }
-
         .carrousel-container {
             height: fit-content;
             display: block;
             
         }
-
         .container-image-carrousel {
             overflow: hidden;
             width: fit-content;
@@ -245,52 +211,36 @@ const { miniatures } = Astro.props;
         .galery{display:block;}
     }
 </style>
+
 <script is:inline>
 let currentZoom = 1;
-let minZoom = 0.5;
-let maxZoom = 3;
-let stepSize = 0.1;
 let startX = 0;
 let startY = 0;
-
 let currentMoveX = 0;
-let currentMoveY = 0;
 let containerimage = document.querySelectorAll(".container-miniature-in2");
-
 let carrousel = document.querySelector(".carrousel");
 let activepage = 0;
 let activesuplement = 0;
-let containers = document
-    .querySelector(".index-sidebar")
-    .querySelectorAll(".miniature-container");
-let containers2 = document
-    .querySelector(".index-carrousel")
-    .querySelectorAll(".miniature-container2");
+let containers = document.querySelector(".index-sidebar").querySelectorAll(".miniature-container");
+let containers2 = document.querySelector(".index-carrousel").querySelectorAll(".miniature-container2");
 let pages = document.querySelectorAll(".number-page");
 let pages2 = document.querySelectorAll(".number-page2");
-let carrouselimage = document.querySelectorAll(
-    ".container-image-carrousel",
-);
-let miniatures = document.querySelectorAll(".miniature-news");
+let carrouselimage = document.querySelectorAll(".container-image-carrousel");
 
 document.addEventListener("click", (e) => {
     if (e.target.matches(".cerrado-global-carrousel")) {
         carrousel.removeEventListener("mousedown", terminar);
-        carrouselimage[activesuplement].classList.remove("active-container-image-carrousel",);
-        carrouselimage[activesuplement].classList.remove("active-container-image-carrousel-first",);
+        carrouselimage[activesuplement].classList.remove("active-container-image-carrousel");
+        carrouselimage[activesuplement].classList.remove("active-container-image-carrousel-first");
         carrousel.classList.remove("active-carrousel");
         carrousel.classList.add("over-carrousel");
     }
     if (e.target.matches(".number-page")) {
         if (activepage !== e.target.dataset.pagina) {
             pages[activepage].classList.remove("active-page");
-            containers[activepage].classList.remove(
-                "active-page-container",
-            );
+            containers[activepage].classList.remove("active-page-container");
             pages2[activepage].classList.remove("active-page");
-            containers2[activepage].classList.remove(
-                "active-page-container",
-            );
+            containers2[activepage].classList.remove("active-page-container");
             activepage = e.target.dataset.pagina;
             containers[activepage].classList.add("active-page-container");
             pages[activepage].classList.add("active-page");
@@ -326,51 +276,28 @@ document.addEventListener("click", (e) => {
         carrousel.classList.add("active-carrousel");
 
         if (activesuplement !== e.target.id) {
-            containerimage[activesuplement].classList.remove(
-                "active-miniature",
-            );
-            carrouselimage[activesuplement].classList.remove(
-                "active-container-image-carrousel",
-            );
+            containerimage[activesuplement].classList.remove("active-miniature");
+            carrouselimage[activesuplement].classList.remove("active-container-image-carrousel");
             activesuplement = e.target.id;
-            containerimage[activesuplement].classList.add(
-                "active-miniature",
-            );
-            carrouselimage[activesuplement].classList.add(
-                "active-container-image-carrouse-first",
-            );
+            containerimage[activesuplement].classList.add("active-miniature");
+            carrouselimage[activesuplement].classList.add("active-container-image-carrouse-first");
         }
         if (activesuplement == e.target.id) {
-            containerimage[activesuplement].classList.add(
-                "active-miniature",
-            );
-            carrouselimage[activesuplement].classList.add(
-                "active-container-image-carrousel-first",
-            );
+            containerimage[activesuplement].classList.add( "active-miniature", );
+            carrouselimage[activesuplement].classList.add( "active-container-image-carrousel-first", );
         }
     }
     if (e.target.matches(".miniature-news2")) {
         if (activesuplement !== e.target.dataset.pagina) {
-            containerimage[activesuplement].classList.remove(
-                "active-miniature",
-            );
-            carrouselimage[activesuplement].classList.remove(
-                "active-container-image-carrousel",
-            );
-            carrouselimage[activesuplement].classList.remove(
-                "active-container-image-carrousel-first",
-            );
+            containerimage[activesuplement].classList.remove("active-miniature");
+            carrouselimage[activesuplement].classList.remove("active-container-image-carrousel");
+            carrouselimage[activesuplement].classList.remove("active-container-image-carrousel-first");
             activesuplement = e.target.dataset.pagina;
-            containerimage[activesuplement].classList.add(
-                "active-miniature",
-                );
-                carrouselimage[activesuplement].classList.add(
-                    "active-container-image-carrousel",
-                );
+            containerimage[activesuplement].classList.add("active-miniature");
+            carrouselimage[activesuplement].classList.add("active-container-image-carrousel");
             }
         }
     });
-
     function inicio(event) {
         let matrix = new WebKitCSSMatrix(event.toElement.style.transform);
         let x = matrix.m41;
@@ -381,28 +308,14 @@ document.addEventListener("click", (e) => {
         event.toElement.addEventListener("mouseup", terminar);
         event.toElement.addEventListener("mouseover", terminar);
     }
-
     function moviendo(e) {
         e.preventDefault();
         currentMoveX = e.pageX - startX;
         currentMoveY = e.pageY - startY;
-        e.toElement.style.transform =
-            "translateX(" +
-            currentMoveX +
-            "px" +
-            ")" +
-            "translateY(" +
-            0 +
-            "px" +
-            ")" +
-            "scale(" +
-            currentZoom +
-            ")";
-        // e.toElement.addEventListener("mouseleave", terminar);
+        e.toElement.style.transform =  "translateX(" + currentMoveX + "px" + ")" + "translateY(" + 0 + "px" + ")" + "scale(" + currentZoom + ")";
     }
 
     function terminar(e) {
-        
         e.toElement.removeEventListener("mousemove", moviendo);
         e.toElement.removeEventListener("mouseleave", terminar);
     }

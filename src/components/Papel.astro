@@ -1,52 +1,38 @@
 ---
-const { miniatures, padre} = Astro.props;
+const { miniatures, padre } = Astro.props;
 ---
-<div class={"hidden-pdf "+ padre}>
-    
-<div class="index-pag">
-    Página:
+
+<div class={"hidden-pdf " + padre}>
+    <div class="index-pag">
+        Página:
         <div class="index-container">
-        {miniatures.map( (pagina, i) =>
-        <div data-pagina={i} class={"number-page "  + (i == 0 ? " active-page":"")}>{pagina.pagina}</div>
-        )}
+            {
+                miniatures.map((pagina, i) => (
+                    <div
+                        data-pagina={i}
+                        class={"number-page " + (i == 0 ? " active-page" : "")}
+                    >
+                        {pagina.pagina}
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+    <div class="miniature-index">
+        {miniatures.map((pagina, i) => (
+                <div class={ "miniature-container start1 " + pagina.pagina + (i == 0 ? " active-page-container" : "")} >
+                    <div class="container-miniature-in">
+                        <img id={i + i} class="miniature-news" width="320" height="180" src={pagina.recorte} alt="" />
+                    </div>
+                    <div class="container-miniature-in">
+                        <img id={i + i + 1} class="miniature-news" width="320" height="180" src={pagina.contexto} alt="" />
+                    </div>
+                </div>
+            ))}
     </div>
 </div>
-
-<div class="miniature-index">
-    
-    {miniatures.map( (pagina, i)=>
-        
-        <div class={'miniature-container start1 '+ pagina.pagina + (i == 0 ? " active-page-container":"")  }>
-            <div class="container-miniature-in">
-                <img
-                id={i+i}
-                class="miniature-news"
-                width="320"
-                height="180"
-                src={pagina.recorte}
-                alt=""
-                />
-                
-            </div>
-            <div class="container-miniature-in">
-                
-            <img
-            id={i+i+1}
-            class="miniature-news"
-            width="320"
-            height="180"
-            src={pagina.contexto}
-            alt=""
-            />
-            </div>
-        </div>
-    )}
-</div>
-</div>
-
 <style>
-    
-    .index-pag{
+    .index-pag {
         display: flex;
         flex-direction: row;
         gap: 5px;
@@ -55,68 +41,66 @@ const { miniatures, padre} = Astro.props;
         flex-wrap: wrap;
         margin: 10px 0;
     }
-    .index-container{
+    .index-container {
         flex-wrap: wrap;
         display: flex;
         flex-direction: row;
         gap: 5px;
     }
-    .miniature-index{
+    .miniature-index {
         width: 100%;
-			display: grid;
-			grid-template-columns: 100%;
-			height: fit-content;
-		}
-		.miniature-container{
-			display: flex;
-			flex-wrap: wrap;
-			opacity: 0;
-            
-            pointer-events: none;
-			gap: 13px;
-			width: 100%;
-			flex-direction: row;
-            transition: 1s;
-            height: fit-content;
-		}
-        .active-page-container{
-            opacity: 1;
-            pointer-events: all;
-        }
-        .number-page{
-            height: 38px;
-            width: 38px;
-            display: grid;
-            place-content: center;
-            background-color: #e6e6e6;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-        .active-page{
+        display: grid;
+        grid-template-columns: 100%;
+        height: fit-content;
+    }
+    .miniature-container {
+        display: flex;
+        flex-wrap: wrap;
+        opacity: 0;
+
+        pointer-events: none;
+        gap: 13px;
+        width: 100%;
+        flex-direction: row;
+        transition: 1s;
+        height: fit-content;
+    }
+    .active-page-container {
+        opacity: 1;
+        pointer-events: all;
+    }
+    .number-page {
+        height: 38px;
+        width: 38px;
+        display: grid;
+        place-content: center;
+        background-color: #e6e6e6;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .active-page {
         color: white;
         background-color: #171717;
     }
-        .active-miniature{
-            border: 1px solid red;
-        }
-		.container-miniature-in{
-			display: flex;
-			width: fit-content;
-			height:auto;
-            cursor: pointer;
-		}
-        .miniature-news {
-		filter: contrast(0.9);
-		width: auto;
-		height: fit-content;
+    .active-miniature {
+        border: 1px solid red;
+    }
+    .container-miniature-in {
+        display: flex;
+        width: fit-content;
+        height: auto;
+        cursor: pointer;
+    }
+    .miniature-news {
+        filter: contrast(0.9);
+        width: auto;
+        height: fit-content;
         max-width: 120px;
         max-height: 217px;
+    }
+    @media print {
+        .container-miniature-in-carrousel {
+            opacity: 1;
         }
-        @media print {
-            .container-miniature-in-carrousel{
-                opacity: 1;
-            } 
-        }
-		
+    }
 </style>
-

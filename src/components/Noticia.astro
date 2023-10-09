@@ -9,29 +9,11 @@ const { post, fecha, fechap } = Astro.props;
     <div class="columna">
         <div class="navbar">
             <div class="izibrand flex align-center">
-                <img
-                    class="logo"
-                    src="img/izimedia2.svg"
-                    alt=""
-                    width="114"
-                    height="57"
-                />
-
-                <div class="izipress">
-                    IZI PRESS # {post.extra.numwords}
-                </div>
-                <div
-                    id="SidebarToggle"
-                    class="hidden-pdf xs pointer detail-layout"
-                >
+                <img class="logo" src="img/izimedia2.svg" alt="" width="114" height="57" />
+                <div class="izipress"> IZI PRESS # {post.extra.numwords}</div>
+                <div id="SidebarToggle" class="hidden-pdf xs pointer detail-layout" >
                     <div class="abrir flex">
-                        Detalles<img
-                            style="padding-top: 5px;"
-                            width="22"
-                            height="21.33"
-                            alt="options"
-                            src="img/right.svg"
-                        />
+                        Detalles<img style="padding-top: 5px;" width="22" height="21.33" alt="options" src="img/right.svg" />
                     </div>
                 </div>
             </div>
@@ -52,33 +34,22 @@ const { post, fecha, fechap } = Astro.props;
                     <img class="value" src="img/value.svg" alt="" />
                     <span>1.380.000 CLP</span>
                 </div>
-
-                {
-                    post.tono === 0 && (
+                {post.tono === 0 && (
                         <div class="denotacion denotation0 positiva">
                             Connotación Positiva
                         </div>
-                    )
-                }
-                {
-                    post.tono === 1 && (
+                    )}
+                {post.tono === 1 && (
                         <div class="denotacion denotation1 negativa ">
                             Connotación Negativa
                         </div>
-                    )
-                }
-                {
-                    post.tono === 2 && (
-                        <div class="denotacion denotation2 neutra">
-                            Connotación Neutral
-                        </div>
-                    )
-                }
+                    )}
+                {post.tono === 2 && (
+                        <div class="denotacion denotation2 neutra">Connotación Neutral</div>
+                    )}
                 <div class="item medium-sans purple">
                     <img class="audience" src="img/audience.svg" alt="" />
-                    <span
-                        >{post.extra.audience.toLocaleString("cl")} Audiecia</span
-                    >
+                    <span>{post.extra.audience.toLocaleString("cl")} Audiencia</span>
                 </div>
                 <div class="item medium-sans red">
                     <img class="rating" src="img/rating.svg" alt="" />
@@ -94,61 +65,37 @@ const { post, fecha, fechap } = Astro.props;
                     />
                     <span>Sección Nacional</span>
                 </div>
-
                 <div class="fecha2">
                     <img class="upload" src="img/up.svg" alt="" />
                     <span>{fechap} Hrs</span>
                 </div>
             </div>
-            {
-                post.tipo === 3 && (
+            {post.tipo === 3 && (
                     <div class="container grid">
-                        <video
-                            id="2"
-                            class="video start1 invisibility print-visibility "
-                            src={post.url_img}
-                        />
-                        <video
-                            controls
-                            id="2"
-                            class="video start1 print-block print-invisibility"
-                            src={post.url_img}
-                            webkit-playsinline
-                            playsinline
-                        />
+                        <video id="2" class="video start1 invisibility print-visibility " src={post.url_img} />
+                        <video controls id="2" class="video start1 print-block print-invisibility" src={post.url_img} webkit-playsinline playsinline />
                     </div>
-                )
-            }
-
+                )}
             {post.tipo == 1 && <div class="title-papel">{post.titulo}</div>}
 
             {post.tipo == 2 && <div class="title">{post.titulo}</div>}
 
-            {
-                [3, 4].indexOf(post.tipo) > -1 && (
+            {[3, 4].indexOf(post.tipo) > -1 && (
                     <div class="title-video" set:html={post.titulo} />
-                )
-            }
+                )}
 
-            {
-                post.tipo === 1 && (
+            {post.tipo === 1 && (
                     <div set:html={post.cachetxt} class="cachetxt-papel" />
-                )
-            }
-            {
-                post.tipo === 4 && (
+                )}
+            {post.tipo === 4 && (
                     <div class="radio hidden-pdf">
                         <Audio2 src={post.url_img} />
                     </div>
-                )
-            }
-            {
-                [2, 3, 4].indexOf(post.tipo) > -1 && (
+                )}
+            {[2, 3, 4].indexOf(post.tipo) > -1 && (
                     <div set:html={post.cachetxt} class="cachetxt" />
-                )
-            }
+                )}
         </div>
-
         <div class="footer">
             © Izimedia Soluciones Digitales para el Análisis de Prensa
         </div>
@@ -163,7 +110,6 @@ const { post, fecha, fechap } = Astro.props;
                         <span class="type">Internet</span>
                     </div>
                     <div class="fecha">
-                        <!-- <Image src={myImage} alt="A description of my image." /> -->
                         <img class="date" src="img/calendar.svg" alt="" />
                         <span>{fecha}</span>
                     </div>
@@ -171,144 +117,69 @@ const { post, fecha, fechap } = Astro.props;
                         <img class="value" src="img/value.svg" alt="" />
                         <span>1.380.000 CLP</span>
                     </div>
-
-                    {
-                        post.tono === 0 && (
+                    {post.tono === 0 && (
                             <div class="denotacion denotation0 positiva">
                                 Connotación Positiva
                             </div>
-                        )
-                    }
-                    {
-                        post.tono === 1 && (
+                        )}
+                    {post.tono === 1 && (
                             <div class="denotacion denotation1 negativa ">
                                 Connotación Negativa
                             </div>
-                        )
-                    }
-                    {
-                        post.tono === 2 && (
+                        )}
+                    {post.tono === 2 && (
                             <div class="denotacion denotation2 neutra">
                                 Connotación Neutral
                             </div>
-                        )
-                    }
+                        )}
                     <div class="item medium-sans purple">
                         <img class="audience" src="img/audience.svg" alt="" />
-                        <span
-                            >{post.extra.audience.toLocaleString("cl")} Audiecia</span
-                        >
+                        <span>{post.extra.audience.toLocaleString("cl")} Audiencia</span>
                     </div>
                     <div class="item medium-sans red">
                         <img class="rating" src="img/rating.svg" alt="" />
                         <span>10 pts Rating</span>
                     </div>
                     <div class="seccion">
-                        <img
-                            class="section"
-                            src="img/section3.svg"
-                            alt="section"
-                            width="17"
-                            height="10.56"
-                        />
+                        <img class="section" src="img/section3.svg" alt="section" width="17" height="10.56" />
                         <span>Sección Nacional</span>
                     </div>
-
                     <div class="fecha2">
                         <img class="upload" src="img/up.svg" alt="" />
                         <span>{fechap} Hrs</span>
                     </div>
                 </span>
-
                 <div class="actions-container hidden-pdf">
                     <div id="url" class="actions">
                         <img class="chain" src="img/copiar.svg" alt="" />
-                        <img
-                            class="chain hidden"
-                            src="img/copiar2.svg"
-                            alt=""
-                        />
-
+                        <img  class="chain hidden" src="img/copiar2.svg" alt="" />
                         <span class="precopy">Copiar Url</span>
                         <span class="postcopy hidden">Copiado!</span>
                     </div>
-
                     <div id="download" class="actions">
-                        <img
-                            class="download"
-                            src="img/pdf.svg"
-                            alt="descargar pdf"
-                        />
+                        <img class="download" src="img/pdf.svg" alt="descargar pdf" />
                         <span>Generar Pdf</span>
                         <span class="hidden">Generado!</span>
                     </div>
                     <div id="pr" class="actions">
-                        <img
-                            class="download"
-                            src="img/play.svg"
-                            alt="descargar pdf"
-                        />
+                        <img class="download" src="img/play.svg"  alt="descargar pdf" />
                         <span>Exportar a PR</span>
                         <span class="hidden">Exportado a PR!</span>
                     </div>
                 </div>
-                {
-                    [1].indexOf(post.tipo) > -1 && (
-                        <Papel
-                            miniatures={post.extra.miniatures}
-                            padre="index-sidebar"
-                        />
-                    )
-                }
-                {
-                    [2].indexOf(post.tipo) > -1 && (
-                        // <img class="miniature" src={post.url_img} alt="" width="1600" height="900" />
-
-                        // <Image class="miniature" src={post.url_img} alt="Imagen Realacionada" width="320" height="180"/>
-                        <img
-                            class="miniature"
-                            width="320"
-                            height="180"
-                            src="img/Aton_324985_rX8dU.webp"
-                            alt=""
-                        />
-                    )
-                }
+                {[1].indexOf(post.tipo) > -1 && (<Papel  miniatures={post.extra.miniatures} padre="index-sidebar" />)}
+                {[2].indexOf(post.tipo) > -1 && (<img class="miniature" width="320" height="180" src="img/Aton_324985_rX8dU.webp" alt="" />)}
             </div>
-            <div
-                id="SidebarToggleIn"
-                class="hidden-pdf xs pointer detail-layout2"
-            >
+            <div id="SidebarToggleIn" class="hidden-pdf xs pointer detail-layout2" >
                 <div class="cerrar flex">
-                    Cerrar<img
-                        style=" margin-top: 2px"
-                        width="22"
-                        height="21.33"
-                        alt="cerrar"
-                        src="img/right.svg"
-                    />
+                    Cerrar<img style=" margin-top: 2px" width="22" height="21.33" alt="cerrar" src="img/right.svg" />
                 </div>
             </div>
         </div>
     </div>
-
     {post.tipo === 1 && <Carrousel miniatures={post.extra.miniatures} />}
-    {
-        [2].indexOf(post.tipo) > -1 && (
-            // <img class="miniature" src={post.url_img} alt="" width="1600" height="900" />
-
-            // <Image class="miniature" src={post.url_img} alt="Imagen Realacionada" width="320" height="180"/>
-            <img
-                class="img-internet print-visibility"
-                width="320"
-                height="180"
-                src="img/Aton_324985.jpg"
-                alt=""
-            />
-        )
-    }
+    {[2].indexOf(post.tipo) > -1 && (
+            <img class="img-internet print-visibility" width="320" height="180" src="img/Aton_324985.jpg" alt="" />
+        )}
 </main>
 
-<style></style>
-
-<script></script>

@@ -8,10 +8,7 @@ const { miniatures, padre } = Astro.props;
         <div class="index-container2">
             {
                 miniatures.map((pagina, i) => (
-                    <div
-                        data-pagina={i}
-                        class={"number-page2 " + (i == 0 ? " active-page" : "")}
-                    >
+                    <div data-pagina={i} class={"number-page2 " + (i == 0 ? " active-page" : "")} >
                         {pagina.pagina}
                     </div>
                 ))
@@ -21,31 +18,12 @@ const { miniatures, padre } = Astro.props;
     <div class="miniature-index2">
         {
             miniatures.map((pagina, i) => (
-                <div
-                    class={
-                        "miniature-container2 start1 " +
-                        (i == 0 ? " active-page-container" : "")
-                    }
-                >
+                <div class={ "miniature-container2 start1 " + (i == 0 ? " active-page-container" : "")} >
                     <div class="container-miniature-in2">
-                        <img
-                            data-pagina={i + i}
-                            class="miniature-news2"
-                            width="320"
-                            height="180"
-                            src={pagina.recorte}
-                            alt=""
-                        />
+                        <img data-pagina={i + i} class="miniature-news2" width="320" height="180" src={pagina.recorte} alt="" />
                     </div>
                     <div class="container-miniature-in2">
-                        <img
-                            data-pagina={i + i + 1}
-                            class="miniature-news2"
-                            width="320"
-                            height="180"
-                            src={pagina.contexto}
-                            alt=""
-                        />
+                        <img data-pagina={i + i + 1} class="miniature-news2" width="320" height="180" src={pagina.contexto} alt="" />
                     </div>
                 </div>
             ))

@@ -161,7 +161,6 @@ const { post , title } = Astro.props;
 		grid-template-columns: auto auto auto;
 		column-gap: 15px;
 	}
-
 	main {
 		-webkit-font-smoothing: antialiased;
 		display: grid;
@@ -189,6 +188,7 @@ const { post , title } = Astro.props;
 	}
 
 	.izipress {
+		width: 100%;
 		font-family: "Open Sans";
 		font-size: 11px;
 		margin-top: 5px;
@@ -222,7 +222,6 @@ const { post , title } = Astro.props;
 	.xs {
 		display: none;
 	}
-
 	.title {
 		font-family: "Raleway", math;
 		font-size: 33px;
@@ -282,8 +281,6 @@ const { post , title } = Astro.props;
 	.timeline {
 		width: 100%;
 	}
-
-	
 	.columna {
 		overflow: auto;
 		background-color: #e6e6e6;
@@ -293,7 +290,6 @@ const { post , title } = Astro.props;
 		display: flex;
 		flex-direction: column;
 	}
-
 	.navbar {
 		display: flex;
 		flex-direction: column;
@@ -326,7 +322,6 @@ const { post , title } = Astro.props;
 		display: block;
 		flex: 1 1 0%;
 	}
-	
 	.vcenter {
 		align-self: center;
 	}
@@ -526,17 +521,13 @@ const { post , title } = Astro.props;
 			margin-bottom: 10px;
 			margin-top: 5px;
 		}
-		
-
-	.miniature {
+		.miniature {
 		width: 100%;
 		height: auto;
 		border: 2px solid white;
 		box-shadow: 0px 0px 3px #0000005c;
 		margin: 5px;
 	}
-	
-
 	.actions {
 		height: 38px;
 		display: flex;
@@ -578,8 +569,6 @@ const { post , title } = Astro.props;
 		animation-fill-mode: forwards;
 		animation-timing-function: ease-in;
 	}
-	
-
 	.descargar {
 		background-color: #e6e6e6;
 		width: fit-content;
@@ -657,12 +646,10 @@ const { post , title } = Astro.props;
                 display: none;
             }
 	}
-
 	@media (min-width: 961px) and (max-width: 1600px) {
 		main {
 			grid-template-columns: 74% 26% !important;
 		}
-
 		.navbar {
 			padding: 15px 22px;
 		}
@@ -675,9 +662,6 @@ const { post , title } = Astro.props;
 		.printdetails {
 			display: none;
 		}
-		/* .items{
-		padding: 20px 6.5% 20px 6.5%;
-	} */
 	}
 	@media  (min-width: 1601px) {
 		main {
@@ -686,7 +670,6 @@ const { post , title } = Astro.props;
 		.printdetails {
 			display: none;
 		}
-
 		.papel {
 			padding-left: 13.5%;
 			padding-right: 13.5%;
@@ -705,9 +688,6 @@ const { post , title } = Astro.props;
 		}
 		html {
 			background-color: #ffffff;
-		}
-		body {
-			
 		}
 		main {
 			height: auto;
@@ -747,18 +727,14 @@ const { post , title } = Astro.props;
 			height: auto;
 			display: block;
 		}
-
 		.start1 {
 			height: fit-content;
 			display: block;
 		}
-		
 		.cachetxt-papel {
 			height: fit-content;
 			display: block;
 		}
-
-		
 		.title {
 			padding-bottom: 30px;
 		}
@@ -769,7 +745,6 @@ const { post , title } = Astro.props;
 		.columnb {
 			display: none;
 		}
-		
 		.container {
 			width: 100%;
 			height: fit-content;
@@ -800,5 +775,4 @@ const { post , title } = Astro.props;
 			display: none;
 		}
 	}
-	
 </style>
