@@ -12,12 +12,16 @@ const { post , title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={post.cachetxt} />
-		<meta name="viewport" content="width=device-width" />
+		<!-- <meta name="viewport" content="width=device-width" /> -->
 		<!-- <meta property="og:image" itemprop="image" content="img/Aton_324985_rX8dU.webp"/> -->
-		<link rel="apple-touch-icon" href="https://live.pystatic.com/webassets/pwa/icons/icon-72x72.png">
-		<link href="https://live.pystatic.com/webassets/pwa/splash/iphonexsmax_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image">
-		<meta property="og:image" content="https://live.pystatic.com/webassets/AppscoreWeb/monolith/4.1.8//pwa/manifest/pedidosya/icons/icon-384x384-5.png" data-react-helmet="true">
-		<link rel="canonical" href="https://izimedia.netlify.app/1">
+		<meta charset="UTF-8">
+		<meta name="theme-color" content="#fa0050">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="icon" href="https://live.pystatic.com/webassets/pwa/pedidosya.ico">
+
+
 		<link rel="icon" href="img/icon.svg" type="image/svg+xml" />
 		<link rel="preload" as="image" href="img/izimedia2.svg" type="image/svg+xml" />
 		{ post.tipo === 1 && 
