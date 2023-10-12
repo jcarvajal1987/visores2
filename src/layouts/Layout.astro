@@ -13,18 +13,7 @@ const { post , title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content={post.cachetxt} />
 		<meta name="viewport" content="width=device-width" />
-		<meta data-react-helmet="true" name="description" content="¿Con Hambre y Nada te Tinca? Acá tu Comida más Rica, Hoy Puede Tener otro Gusto. PedidosYa, Te Llena el Corazón" />
-<meta data-react-helmet="true" property="og:site_name" content="PedidosYa" />
-<meta data-react-helmet="true" property="og:image" content="https://live.pystatic.com/webassets/AppscoreWeb/monolith/4.1.8/pwa/manifest/pedidosya/icons/icon-384x384-5.png" />
-<meta data-react-helmet="true" property="og:type" content="website" />
-<meta data-react-helmet="true" property="fb:app_id" content="342906170186" />
-<meta data-react-helmet="true" property="og:title" content="Todo lo que necesites, ¡te lo llevamos!" />
-<meta data-react-helmet="true" property="og:description" content="En PedidosYa puedes dejar volar tu imaginación porque ahora todo lo que quieras lo llevamos directo desde tu cabeza a donde estés, ¡en minutos!
-¿Lo quieres? ¡Lo tienes! Pide a los mejores restaurantes, haz el pedido del súper, compra la comida para tu mascota, la bebida para los amigos, pide lo que necesites de la farmacia y ¡mucho más!
-En simples pasos puedes tener lo que quieras directamente en tu puerta: Descubre, pide y recibe a domicilio con PedidosYa.              " />
-<meta data-react-helmet="true" property="og:url" content="https://www.pedidosya.cl/" />
-<link data-react-helmet="true" rel="canonical" href="https://www.pedidosya.cl/" /> 
-		<!-- <meta property="og:image" itemprop="image" content="img/Aton_324985_rX8dU.webp"/> -->
+		<meta property="og:image" itemprop="image" content="img/Aton_324985_rX8dU.webp"/>
 		<link rel="icon" href="img/icon.svg" type="image/svg+xml" />
 		<link rel="preload" as="image" href="img/izimedia2.svg" type="image/svg+xml" />
 		{ post.tipo === 1 && 
@@ -324,9 +313,10 @@ En simples pasos puedes tener lo que quieras directamente en tu puerta: Descubre
 		background-color: white;
 		box-shadow: -1px -3px 3px #00000029;
 		height: 100vh;
-		transition: 0.5s;
 		overflow-y: auto;
 		z-index: 19;
+		animation-timing-function: ease;
+		transition: transform 0.7s, opacity 0.7s;
 	}
 	.index-sidebar{
 		width: 100%;
