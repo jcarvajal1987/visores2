@@ -159,15 +159,17 @@ const { miniatures } = Astro.props;
     }
     @media (min-width: 1px) and (max-width: 960px) {
         .indice {
-            display: none;
+            top: auto;
+            bottom: 27px;
+            max-width: 100%;
         }
+        
         .carrousel-cerrar {
             background-color: #00000078;
             top: 10px;
             right: 32px;
         }
     }
-
     @media print{
         .carrousel {
             background-color: white;

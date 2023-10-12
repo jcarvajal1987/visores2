@@ -291,7 +291,6 @@ const { src } = Astro.props;
         let playState = "play";
         let muteState = "unmute";
         let raf = null;
-
         audio.src = element.getAttribute("data-src");
 
         playIconContainer.innerHTML = playIcon;
@@ -475,6 +474,5 @@ const { src } = Astro.props;
             });
         }
     };
-
     customElements.define("audio-player", AudioPlayer);
 </script>
