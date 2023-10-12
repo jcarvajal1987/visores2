@@ -13,7 +13,16 @@ const { post , title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content={post.cachetxt} />
 		<meta name="viewport" content="width=device-width" />
-		<meta property="og:image" itemprop="image" content="img/Aton_324985_rX8dU.webp"/>
+		<meta property="og:title" content="Site Title" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="http://my.site.com" />
+		<meta property="og:image" content="img/Aton_324985_rX8dU.webp" />
+		<meta property="og:description" content="Site description" />
+		<meta name="theme-color" content="#FF0000">
+
+		<!-- Include this to make the og:image larger -->
+		<meta name="twitter:card" content="summary_large_image">
+		<!-- <meta property="og:image" itemprop="image" content="img/Aton_324985_rX8dU.webp"/> -->
 		<link rel="icon" href="img/icon.svg" type="image/svg+xml" />
 		<link rel="preload" as="image" href="img/izimedia2.svg" type="image/svg+xml" />
 		{ post.tipo === 1 && 
@@ -216,9 +225,11 @@ const { post , title } = Astro.props;
 	}
 	.abrir {
 		gap: 10px;
+		line-height: 22px;
 	}
 	.cerrar {
 		gap: 10px;
+		line-height: 22px;
 	}
 	.xs {
 		display: none;
