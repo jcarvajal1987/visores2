@@ -129,16 +129,27 @@ const { post , title } = Astro.props;
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #012350;
+		/* background: #012350; */
 		background-size: 224px;
 		padding: 0;
 		margin: 0;
 		height: 100%;
+		display:flex;
+		justify-content: center;
 	}
 	body {
 		padding: 0;
 		margin: 0;
 		height: 100%;
+		width: 100%;
+		background: linear-gradient(
+    to right,
+    #e9ecef 0%,
+    #e9ecef 50%,
+    white 50%,
+    white 100%
+  );
+  /* background: white; */
 	}
 	* {
 		box-sizing: border-box;
@@ -174,10 +185,14 @@ const { post , title } = Astro.props;
 		min-height: 100vh;
 		overflow: hidden;
 		position: relative;
+		perspective: 738px;
+		margin: auto;
+		/* box-shadow: 0px -3px 3px #00000029; */
+		
 	}
 	.footer{
 		display: block;
-		padding: 46px 22px 22px 22px;
+		padding: 46px 22px 30px 22px;
 		font-size: 13px;
 		font-family: 'Nunito Sans';
 	}
@@ -294,6 +309,7 @@ const { post , title } = Astro.props;
 		height: 100%;
 		display: flex;
 		flex-direction: column;
+		transition: transform 0.7s;
 	}
 	.navbar {
 		display: flex;
@@ -319,6 +335,7 @@ const { post , title } = Astro.props;
 		z-index: 19;
 		animation-timing-function: ease;
 		transition: transform 0.7s, opacity 0.7s;
+		
 	}
 	.index-sidebar{
 		width: 100%;
@@ -603,6 +620,10 @@ const { post , title } = Astro.props;
 	.invisibility {
 		opacity: 0;
 	}
+	.print-visibility {
+			opacity: 0;
+			display: none;
+		}
 	@media (min-width: 1px) and (max-width: 960px) {
 		main {
 			grid-template-columns: 100%;
@@ -650,12 +671,13 @@ const { post , title } = Astro.props;
 		}
 		
 	}
-	@media (min-width: 961px) and (max-width: 1600px) {
+	@media  (min-width: 961px) and (max-width: 1798px) {
 		main {
 			grid-template-columns: 74% 26% !important;
+			
 		}
 		.navbar {
-			padding: 15px 22px;
+			padding: 15px 30px;
 		}
 		.papel {
 			padding: 0 8.5% 50px 8.5%;
@@ -666,17 +688,52 @@ const { post , title } = Astro.props;
 		.printdetails {
 			display: none;
 		}
+		
 	}
-	@media  (min-width: 1601px) {
+	@media  (min-width: 1799px) {
 		main {
-			grid-template-columns: 70% 30% !important;
+			grid-template-columns: 65% 33% !important;
+			align-content: center;
+			height: 100vh;
+			transform-style:preserve-3d;
+			max-width: 1800px;
 		}
 		.printdetails {
 			display: none;
 		}
+		.navbar {
+			padding: 19px 6% 15px;
+		}
 		.papel {
-			padding-left: 13.5%;
-			padding-right: 13.5%;
+			padding: 0 12.5%;
+			
+			
+		}
+		.columna{
+		/* transform: rotateY(5deg) translateX(0); */
+		align-self: center;
+		height: 105vh;
+		padding: 3% 0 6% 0;
+		width: 100%;
+		justify-self: right;
+		/* justify-content: center; */
+		/* border: 1px solid  red; */
+		}
+		.columnb{
+			height: 145vh;
+			/* transform: rotateY(-7deg) translateX(-5%) ; */
+		/* scale: 0.8; */
+		}
+		.detalles{
+			align-self: center;
+			height: 100vh;
+		}
+		.items{
+			padding: 105px 12.5% 40px 6.5%;
+		}
+		.footer{
+			padding: 50px 22px 30px 7%;
+
 		}
 	}
 	.hidden {
