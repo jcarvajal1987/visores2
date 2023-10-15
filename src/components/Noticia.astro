@@ -72,9 +72,8 @@ const { post, fecha, fechap } = Astro.props;
             </div>
             {post.tipo === 3 && (
                     <div class="container grid">
-                        <video id="2" class="video start1 invisibility print-visibility " src={post.url_img} />
-                        <video controls id="2" class="video start1 print-block print-invisibility" src={post.url_img} webkit-playsinline playsinline />
-                        
+                        <video class="video start1 invisibility print-visibility " src={post.url_img+"#t=1"} webkit-playsinline playsinline />
+                        <video controls  class="video start1 print-block print-invisibility" src={post.url_img} webkit-playsinline playsinline />
                     </div>
                     // <video id="2" class="video start1 invisibility print-visibility "  >
                     //     <source src={post.url_img+"#t=1"} type="video/mp4" />
