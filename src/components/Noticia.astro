@@ -75,7 +75,7 @@ const { post, fecha, fechap } = Astro.props;
                     
                 <div class="container grid">
                     <canvas class="start1 print-visibility" id="canvas"></canvas>
-                    <video id="videoprint" src={post.url_img} controls class="video start1 print-block print-invisibility" webkit-playsinline playsinline >
+                    <video id="videoprint" src={post.url_img+"#t=1"} controls class="video start1 print-block print-invisibility" webkit-playsinline playsinline >
                        
                     </video>
                 </div> 
