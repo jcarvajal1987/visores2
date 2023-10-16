@@ -93,7 +93,7 @@ const { post, fecha, fechap } = Astro.props;
                     <div set:html={post.cachetxt} class="cachetxt-papel" />
                 )}
             {post.tipo === 4 && (
-                    <div class="radio hidden-pdf">
+                    <div class="radio ">
                         <Audio2 src={post.url_img} />
                     </div>
                 )}

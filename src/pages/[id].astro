@@ -285,26 +285,21 @@ const fechap = post.hcarga;
 		}, 10);
 	}
 	
-	function downloadPdf(evento) {
-		var videoprint = document.querySelector("#videoprint");
-    var capturebtn = document.querySelector("#Capture");
-    videoprint.onclick = printVideo;
-    // capturebtn.onclick = capture;
-    
-    function printVideo(){
-        console.log(source.src)
-    }
+	function downloadPdf() {
 
-    function capture(){
-    var canvas = document.getElementById('canvas');
-    var video = document.getElementById('videoprint');
-    console.log(canvas.height )
-    canvas.height = video.videoHeight;
-    canvas.width = video.videoWidth;
-    canvas.getContext('2d').drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
-    }
-	capture()
-	var bajar = document.querySelector(".download");
+    
+
+		if (document.getElementById('canvas')!== null) {
+		function capture(){
+			var canvas = document.getElementById('canvas');
+			var video = document.getElementById('videoprint');
+			canvas.height = video.videoHeight;
+			canvas.width = video.videoWidth;
+			canvas.getContext('2d').drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+		}
+		
+		capture()
+	}
 	download.classList.remove("active-download");
 	setTimeout(() => {
 		download.classList.add("active-download");
