@@ -289,9 +289,24 @@ const { post , title } = Astro.props;
 	.video {
 		width: 90%;
 	}
+	.container-image-canvas{
+			border: 1px solid red;
+            overflow: hidden;
+            width: fit-content;
+            max-width: 100%;
+            display: block;
+            gap: 0;
+            height: auto;
+            max-height: 100vh;
+            opacity: 1;
+            padding-bottom: 0;
+            padding-top: 0;
+        }
 	#canvas {
-		width: 100%;
-		height: fit-content;
+		width: auto;
+    max-width: 100%;
+    height: fit-content;
+    max-height: max-content;
 		margin-bottom: 20px;
 	}
 	.radio {
