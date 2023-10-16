@@ -303,16 +303,17 @@ const fechap = post.hcarga;
     canvas.width = video.videoWidth;
     canvas.getContext('2d').drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
     }
-		capture()
-		var bajar = document.querySelector(".download");
-		download.classList.remove("active-download");
-		setTimeout(() => {
-			download.classList.add("active-download");
-			download.children[1].classList.add("hidden");
-			download.children[2].classList.remove("hidden");
-		}, 10);
-		main.scrollTo(0, 0);
-		window.print();
-	}
+	
+	capture()
+	var bajar = document.querySelector(".download");
+	download.classList.remove("active-download");
+	setTimeout(() => {
+		download.classList.add("active-download");
+		download.children[1].classList.add("hidden");
+		download.children[2].classList.remove("hidden");
+	}, 10);
+	main.scrollTo(0, 0);
+	window.print();
+}
 	
 </script>

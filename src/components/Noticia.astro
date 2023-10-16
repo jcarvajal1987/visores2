@@ -70,15 +70,16 @@ const { post, fecha, fechap } = Astro.props;
                     <span>{fechap} Hrs</span>
                 </div>
             </div>
+            
             {post.tipo === 3 && (
                     
-                    <div class="container grid">
-                        <canvas class="start1 print-visibility" id="canvas"></canvas>
-                        <video id="videoprint" controls class="video start1 print-block print-invisibility" webkit-playsinline playsinline >
-                            <source id="Source" src={post.url_img} type="video/mp4" />
-                        </video>
-                    </div> 
-            )}
+                <div class="container grid">
+                    <canvas class="start1 print-visibility" id="canvas"></canvas>
+                    <video id="videoprint" src={post.url_img} controls class="video start1 print-block print-invisibility" webkit-playsinline playsinline >
+                       
+                    </video>
+                </div> 
+        )}
             {post.tipo == 1 && <div class="title-papel">{post.titulo}</div>}
 
             {post.tipo == 2 && <div class="title">{post.titulo}</div>}
