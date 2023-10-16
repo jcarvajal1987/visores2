@@ -73,7 +73,7 @@ const { post, fecha, fechap } = Astro.props;
             
             {post.tipo === 3 && (
                     
-                <canvas class="start1 print-visibility" id="canvas"></canvas>
+                
                 <div class="container grid">
                     <video id="videoprint" src={post.url_img+"#t=1"} controls class="video start1 print-block print-invisibility" webkit-playsinline playsinline >
                        
@@ -183,8 +183,9 @@ const { post, fecha, fechap } = Astro.props;
     </div>
     {post.tipo == 1 && <Carrousel miniatures={post.extra.miniatures} />}
     {[2].indexOf(post.tipo) > -1 && (
-            <img class="img-internet print-visibility" width="320" height="180" src="img/Aton_324985.jpg" alt="" />
+        <img class="img-internet print-visibility" width="320" height="180" src="img/Aton_324985.jpg" alt="" />
         )}
+        {post.tipo == 3 && <canvas class="start1 print-visibility" id="canvas"></canvas>}
 </main>
 
 <script>
