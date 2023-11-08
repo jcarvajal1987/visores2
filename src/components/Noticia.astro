@@ -109,20 +109,20 @@ const { post, fecha, fechap } = Astro.props;
         <div class="detalles">
             <div class="items">
                 <span class="hidden-details block">
-                    <div class="medio">
+                        <div tip="Este es el medio que publico esta noticia" tip-delay="0.8" class="medio">
                         <img class="company" src="img/latercera.png" alt="" />
                         <span>24horas.cl</span><span class="type">-</span>
                         <span class="type">Internet</span>
                     </div>
-                    <div class="fecha">
+                    <div class="fecha"  tip="Esta es la fecha en que se publico esta noticia" tip-delay="0.8">
                         <img class="date" src="img/calendar.svg" alt="" />
                         <span>{fecha}</span>
                     </div>
-                    <div class="item medium-sans yellow">
+                    <div class="item medium-sans yellow"  tip="Este es el valor que se pago para publicar esta noticia" tip-delay="0.8">
                         <img class="value" src="img/value.svg" alt="" />
                         <span>1.380.000 CLP</span>
                     </div>
-                    {post.tono === 0 && (
+                    {post.tono === 0 && ( 
                             <div class="denotacion denotation0 positiva">
                                 Connotación Positiva
                             </div>
@@ -191,7 +191,36 @@ const { post, fecha, fechap } = Astro.props;
 
 <script>
     
-    
+    let tooltip = document.querySelector(".relative");
+    // tooltip.addEventListener("mouseover", (e) => {
+    //     // e.target.classList.add("tooltip-active")
+    //     setTimeout(() => {
+    //         console.log(e.target.children[0])
+    //         e.target.children[0].classList.add("tooltip-active")
+
+            
+    //     }, 2000);
+    // })
+
+    Array.from(document.querySelectorAll('[tip]')).forEach(el => {
+        let tip = document.createElement('div');
+        tip.classList.add('tooltip');
+        tip.innerText = el.getAttribute('tip');
+        let delay = el.getAttribute('tip-delay');
+        if (delay) {
+            tip.style.transitionDelay = delay + 's';
+        }
+        tip.style.transform =
+            'translate(' +
+            (el.hasAttribute('tip-left') ? 'calc(-100% - 5px)' : '15px') + ', ' +
+            (el.hasAttribute('tip-top') ? '-100%' : '0') +
+            ')';
+        el.appendChild(tip);
+        el.onmousemove = e => {
+            tip.style.left = e.clientX + 'px'
+            tip.style.top = e.clientY + 'px';
+        };
+        });
     
 </script>
 
